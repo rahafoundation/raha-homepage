@@ -6,6 +6,7 @@
   "license": "Apache-2.0",
   "private": true,
   "devDependencies": {
+    "amphtml-validator": "^1.0.23",
     "concurrently": "^3.5.1",
     "gh-pages": "^1.1.0",
     "live-server": "^1.2.0",
