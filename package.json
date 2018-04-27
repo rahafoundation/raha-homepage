@@ -17,6 +17,7 @@
     "build": "./scripts/build",
     "deploy:force": "yarn build && gh-pages -d build/",
     "deploy": "./scripts/deploy",
+    "lint": "./scripts/lint",
     "watch:build": "watch \"yarn build\" src/ locales/",
     "serve":
       "concurrently --kill-others \"live-server ./build\" \"yarn watch:build\""
