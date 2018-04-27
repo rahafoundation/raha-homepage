@@ -10,6 +10,7 @@
   # colors for output
   RED='\033[0;31m'
   GREEN='\033[0;32m'
+  DARK_GRAY='\033[1;30m'
   NO_COLOR='\033[0m'
 
   # code from https://stackoverflow.com/a/246128/1105281
@@ -46,7 +47,10 @@
 
   # run static-i18n with flags determined by translations present in i18n
   langFlags="$(constructLanguageFlags)"
-  ./node_modules/.bin/static-i18n $langFlags -o $TMP_DIR $SRC_DIR
+
+  cmd="./node_modules/.bin/static-i18n $langFlags -o $TMP_DIR $SRC_DIR"
+  echo -e "${DARK_GRAY}Running: $cmd${NO_COLOR}"
+  eval $cmd
 
   # if success, delete the backup, else move it back
   if [ $? -eq 0 ]; then
