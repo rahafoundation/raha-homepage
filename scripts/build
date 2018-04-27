@@ -8,7 +8,8 @@
   # relevant directories
   SRC_DIR="src"
   OUT_DIR="build"
-  TMP_DIR="$OUT_DIR.tmp"
+  MUSTACHE_TMP_DIR="$OUT_DIR.mustache.tmp"
+  OUT_TMP_DIR="$OUT_DIR.tmp"
 
   # colors for output
   RED='\033[0;31m'
@@ -26,6 +27,18 @@
       [[ $source != /* ]] && source="$sourceDir/$source" # if $source was a relative symlink, we need to resolve it relative to the path where the symlink file was located
     done
     echo "$( cd -P "$( dirname "$source" )" && pwd )"
+  }
+
+  # Construct mustache partials flags
+  # Assumes that we're in the project root
+  # Assumes partials, in `src/partials/` directory
+  function constructPartialsFlags()
+  {
+    local flags=""
+    for partialFile in $(find ./src/partials -name '*.mustache'); do
+      local flags="$(echo "$flags -p $partialFile")"
+    done
+    echo "$flags"
   }
 
   # Construct static-i18n language flags
@@ -48,20 +61,53 @@
   sourceDir=$(getScriptLocation)
   cd $(dirname "$sourceDir")
 
+  #########
+  # Compile Mustache templates
+  #########
+
+  echo -e "${DARK_GRAY}Compiling Mustache templates:${NO_COLOR}"
+
+  partialsFlags="$(constructPartialsFlags)"
+  mkdir -p $MUSTACHE_TMP_DIR
+  for mustacheTemplateFile in $(find ./src/pages -name '*.mustache'); do
+    outPath="$MUSTACHE_TMP_DIR/${mustacheTemplateFile#./src/pages/}"
+    outPath="${outPath%.mustache}.html"
+    cmd="mustache $partialsFlags ./src/mustacheView.json \"$mustacheTemplateFile\" \"$outPath\""
+    echo -e "\t${DARK_GRAY}Running: $cmd${NO_COLOR}"
+    eval $cmd
+
+    # if failure, delete the tmp mustache dir
+    if ! [ $? -eq 0 ]; then
+      echo -e "${RED}Mustache build failed${NO_COLOR}"
+      rm -rf "$MUSTACHE_TMP_DIR"
+    fi
+  done
+
+  echo -e "${GREEN}Compiled Mustache templates:${NO_COLOR}"
+
+  #########
+  # Compile internationalization strings
+  #########
+
   # run static-i18n with flags determined by translations present in i18n
   langFlags="$(constructLanguageFlags)"
 
-  cmd="./node_modules/.bin/static-i18n $langFlags -o $TMP_DIR $SRC_DIR"
+  cmd="./node_modules/.bin/static-i18n $langFlags -o $OUT_TMP_DIR $MUSTACHE_TMP_DIR"
   echo -e "${DARK_GRAY}Running: $cmd${NO_COLOR}"
   eval $cmd
 
-  # if success, delete the backup, else move it back
+  # in either case, delete the mustache directory
+  rm -rf "$MUSTACHE_TMP_DIR"
+
+  # if success, move the tmp output to the end result
   if [ $? -eq 0 ]; then
     echo -e "${GREEN}Build succeeded${NO_COLOR}"
     rm -rf "$OUT_DIR"
-    mv "$TMP_DIR" "$OUT_DIR"
+    mv "$OUT_TMP_DIR" "$OUT_DIR"
   else
     echo -e "${RED}Build failed${NO_COLOR}"
+    rm -rf "$OUT_TMP_DIR"
+    exit 1
   fi
 
   # Ensure the CNAME file is present
