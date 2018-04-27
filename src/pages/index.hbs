@@ -1,36 +1,96 @@
-<!doctype html>
-<html lang="en" amp>
-{{> raha/htmlBase/head }}
+{{#extend "raha/layout/base/layout"}}
+  {{#content "styles" mode="append"}}
+    .splashPage > h1 {
+      margin-bottom: 40px;
+    }
 
-<body>
-  {{> raha/layout/header/header}}
+    .splashPage > h2 {
+      margin-bottom: 30px;
+    }
 
-  <main class="splashPage">
-    <h1 data-t>raha_network</h1>
-    <h2 data-t>every_life</h2>
-    <ul class="features">
-      <li>
-        <h3 data-t>prosperity</h3>
-        <span data-t>prosperity_details</span>
-      </li>
-      <li>
-        <h3 data-t>trust</h3>
-        <span data-t>trust_details</span>
-      </li>
-      <li>
-        <h3 data-t>free</h3>
-        <span data-t>free_details</span>
-      </li>
-    </ul>
+    .splashPage > h1,
+    .splashPage > h2 {
+      text-align: center;
+    }
 
-    <section class="invite">
-      <h3 data-t>invite_only</h3>
-      <span data-t>already_member</span>
-      <a href="https://app.raha.io/login" data-t>login</a>
-    </section>
-  </main>
+    .splashPage > ul.features {
+      list-style-type: none;
+      padding: 0 50px;
+      margin-bottom: 30px;
 
-  {{> raha/layout/footer/footer}}
-</body>
+      display: flex;
+      justify-content: center;
+    }
 
-</html>
+    .splashPage > .features > li {
+      margin: 0 20px;
+    }
+
+    .splashPage > .features > li > h3 {
+      margin-bottom: 10px;
+    }
+
+    @media only screen and (max-width: 600px),
+      (max-device-width: 830px) and (-webkit-min-device-pixel-ratio: 2) {
+      .splashPage > ul.features {
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .splashPage > .features > li {
+        flex-shrink: 0;
+        margin: 0 20px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    }
+
+    @media only screen and (max-width: 600px) and (min-width: 480px) {
+      .splashPage > .features > li {
+        flex-basis: 40%;
+      }
+    }
+
+    @media only screen and (max-width: 480px),
+      (max-device-width: 830px) and (-webkit-min-device-pixel-ratio: 2) {
+      .splashPage > .features > li {
+        flex-basis: 100%;
+      }
+    }
+
+    .splashPage > .invite {
+      text-align: center;
+    }
+
+    .splashPage > .invite > h3 {
+      margin-bottom: 20px;
+    }
+  {{/content}}
+
+  {{#content "body"}}
+    <main class="splashPage">
+      <h1 data-t>raha_network</h1>
+      <h2 data-t>every_life</h2>
+      <ul class="features">
+        <li>
+          <h3 data-t>prosperity</h3>
+          <span data-t>prosperity_details</span>
+        </li>
+        <li>
+          <h3 data-t>trust</h3>
+          <span data-t>trust_details</span>
+        </li>
+        <li>
+          <h3 data-t>free</h3>
+          <span data-t>free_details</span>
+        </li>
+      </ul>
+
+      <section class="invite">
+        <h3 data-t>invite_only</h3>
+        <span data-t>already_member</span>
+        <a href="https://app.raha.io/login" data-t>login</a>
+      </section>
+    </main>
+  {{/content}}
+{{/extend }}
