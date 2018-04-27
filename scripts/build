@@ -65,5 +65,10 @@
   fi
 
   # Ensure the CNAME file is present
+  echo -e "${DARK_GRAY}Adding CNAME file${NO_COLOR}"
   echo $CUSTOM_DOMAIN > build/CNAME
+
+  # Copy assets file over
+  echo -e "${DARK_GRAY}Copying assets into build dir${NO_COLOR}"
+  cp -r assets build
 )
