@@ -72,7 +72,7 @@
   for mustacheTemplateFile in $(find ./src/pages -name '*.mustache'); do
     outPath="$MUSTACHE_TMP_DIR/${mustacheTemplateFile#./src/pages/}"
     outPath="${outPath%.mustache}.html"
-    cmd="mustache $partialsFlags ./src/mustacheView.json \"$mustacheTemplateFile\" \"$outPath\""
+    cmd="npx mustache $partialsFlags ./src/mustacheView.json \"$mustacheTemplateFile\" \"$outPath\""
     echo -e "\t${DARK_GRAY}Running: $cmd${NO_COLOR}"
     eval $cmd
 
@@ -92,7 +92,7 @@
   # run static-i18n with flags determined by translations present in i18n
   langFlags="$(constructLanguageFlags)"
 
-  cmd="./node_modules/.bin/static-i18n $langFlags -o $OUT_TMP_DIR $MUSTACHE_TMP_DIR"
+  cmd="npx static-i18n $langFlags -o $OUT_TMP_DIR $MUSTACHE_TMP_DIR"
   echo -e "${DARK_GRAY}Running: $cmd${NO_COLOR}"
   eval $cmd
 
