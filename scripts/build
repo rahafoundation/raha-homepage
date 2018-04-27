@@ -2,6 +2,9 @@
 
 # do everything in a subshell
 (
+  # configuration
+  CUSTOM_DOMAIN="next-amp.raha.io"
+
   # relevant directories
   SRC_DIR="src"
   OUT_DIR="build"
@@ -60,4 +63,7 @@
   else
     echo -e "${RED}Build failed${NO_COLOR}"
   fi
+
+  # Ensure the CNAME file is present
+  echo $CUSTOM_DOMAIN > build/CNAME
 )
