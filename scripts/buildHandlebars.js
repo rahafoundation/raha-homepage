@@ -39,31 +39,34 @@ async function compileTemplates() {
 
       compiler.registerPartial(
         templateName,
-        (await readFileAsync(templateFile)).toString()
+        await readFileAsync(templateFile, "utf8")
       );
     })
   );
 
   // compile the pages
-  return pagesToCompile.map(templateFile => {
-    const relPath = path.relative(
-      path.join(__dirname, "..", "src", "pages"),
-      templateFile
-    );
-    const uri = `${relPath.substr(
-      0,
-      relPath.length - TEMPLATE_EXTENSION.length
-    )}.html`;
-    return {
-      uri,
-      html: compiler.compile(fs.readFileSync(templateFile).toString())()
-    };
-  });
+  return await Promise.all(
+    pagesToCompile.map(async templateFile => {
+      const relPath = path.relative(
+        path.join(__dirname, "..", "src", "pages"),
+        templateFile
+      );
+      const uri = `${relPath.substr(
+        0,
+        relPath.length - TEMPLATE_EXTENSION.length
+      )}.html`;
+
+      return {
+        uri,
+        html: compiler.compile(await readFileAsync(templateFile, "utf8"))()
+      };
+    })
+  );
 }
 
 async function outputTemplates(templates) {
   if (!(await existsAsync(OUTPUT_DIR))) {
-    mkdirAsync(OUTPUT_DIR);
+    await mkdirAsync(OUTPUT_DIR);
   }
 
   await Promise.all(
@@ -78,14 +81,15 @@ console.info(colors.gray(`Will output to ${OUTPUT_DIR}`));
 console.info(colors.gray("Compiling Handlebars templates..."));
 compileTemplates()
   .then(async templates => {
-    console.log(colors.green("Templates compiled successfully"));
-    console.log(colors.gray("Outputting to files..."));
-    outputTemplates(templates);
+    console.info(colors.green("Templates compiled successfully"));
+    console.info(colors.gray("Outputting to files..."));
+    await outputTemplates(templates);
   })
   .then(() => {
-    console.log(colors.green("Compiled successfully"));
+    console.info(colors.green("Compiled successfully"));
   })
   .catch(err => {
-    console.log(colors.red("Compilation failed, aborting"));
-    throw err;
+    console.error(colors.red("Compilation failed, aborting"));
+    console.error(err);
+    process.exit(-1);
   });

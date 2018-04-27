@@ -57,6 +57,7 @@
 
   echo -e "${DARK_GRAY}Compiling Handlebars templates:${NO_COLOR}"
   node $rootDir/scripts/buildHandlebars.js $HANDLEBARS_TMP_DIR
+
   if ! [ $? -eq 0 ]; then
     echo -e "${RED}Error: Handlebars build failed.${NO_COLOR}"
     rm -rf "$HANDLEBARS_TMP_DIR"
