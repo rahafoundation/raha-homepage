@@ -18,42 +18,28 @@ yarn deploy
 ## Architecture
 
 It's a static [Google AMP](https://www.ampproject.org/) site; the AMP subset of
-HTML in the `src/` directory, written in mustache templates and with an
+HTML in the `src/` directory, written in handlebars templates and with an
 internationalization layer. This gets built into a static site with very fast
 performance.
 
-### Mustache
+### Handlebars
 
-The [Mustache templating language](http://mustache.github.io/) is used primarily
+The [Handlebars templating language](http://handlebarsjs.com/) is used primarily
 to allow for partial templates. `yarn build` calls its command line tool to turn
-the mustache files into matching HTML ones, matching the directory structure of
-the `src/pages/` directory.
+the handlebars files into matching HTML ones, matching the directory structure
+of the `src/pages/` directory.
 
 You can invoke a template by adding the partial to the `src/partials` directory
-(say, `./src/partials/mySpecialHeader`), and then in any mustache file, you can
-inject it by inputting `{{> mySpecialHeader}}`.
+(say, `./src/partials/path/to/mySpecialHeader`), and then in any handlebars
+file, you can inject it by inputting `{{> raha/path/to/mySpecialHeader}}`.
 
-A couple limitations/features:
-
-1.  Note that Mustache won't error on build if you gave it a nonexistent name;
-    it just won't inject anything there.
-1.  Because of how simple Mustache is, every partial must have unique names.
-    Even if they are in different subdirectories of the `src/partials` dir.
-    Mustache just names partials based on their file names.
-1.  Mustache doesn't care if the templates you give it are valid html or not. So
-    for instance, all the styles templates in this project are actually just
-    CSS, because Google AMP requires that all your custom styles go in one
-    `style` tag. Gee whiz.
-
-Mustache can also do things like injecting variables into the templates, but
-that's not really useful for us since we're not running it in a dynamic
-javascript context, so we don't pass it any input variables
-(`/src/mustacheView.json` is totally empty). Really, the only point is partials,
-but thankfully Mustache is so simple it does little else.
+This project also uses [Handlebars
+Layouts](https://github.com/shannonmoeller/handlebars-layouts) for a bit less
+repetition in layout code.
 
 ### Translations
 
-After the mustache templates are built, the
+After the handlebars templates are built, the
 [`static-i18n`](https://github.com/claudetech/node-static-i18n) tool is used to
 populate i18n placeholders into the actual generated HTML files from the `src/`
 directory.
