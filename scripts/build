@@ -5,12 +5,6 @@
   # configuration
   CUSTOM_DOMAIN="next-amp.raha.io"
 
-  # relevant directories
-  SRC_DIR="src"
-  OUT_DIR="build"
-  MUSTACHE_TMP_DIR="$OUT_DIR.mustache.tmp"
-  OUT_TMP_DIR="$OUT_DIR.tmp"
-
   # colors for output
   RED='\033[0;31m'
   GREEN='\033[0;32m'
@@ -27,18 +21,6 @@
       [[ $source != /* ]] && source="$sourceDir/$source" # if $source was a relative symlink, we need to resolve it relative to the path where the symlink file was located
     done
     echo "$( cd -P "$( dirname "$source" )" && pwd )"
-  }
-
-  # Construct mustache partials flags
-  # Assumes that we're in the project root
-  # Assumes partials, in `src/partials/` directory
-  function constructPartialsFlags()
-  {
-    local flags=""
-    for partialFile in $(find ./src/partials -name '*.mustache'); do
-      local flags="$(echo "$flags -p $partialFile")"
-    done
-    echo "$flags"
   }
 
   # Construct static-i18n language flags
@@ -59,31 +41,28 @@
 
   # cd to the root of the project
   sourceDir=$(getScriptLocation)
-  cd $(dirname "$sourceDir")
+  rootDir=$(dirname "$sourceDir")
+  cd $rootDir
+
+  # relevant directories
+  SRC_DIR="$rootDir/src"
+  OUT_DIR="$rootDir/build"
+  I18N_TMP_DIR="$rootDir/build.i18n.tmp"
+  HANDLEBARS_TMP_DIR="$rootDir/build.hbs.tmp"
+  ASSETS_DIR="$rootDir/assets"
 
   #########
-  # Compile Mustache templates
+  # Compile Handlebars templates
   #########
 
-  echo -e "${DARK_GRAY}Compiling Mustache templates:${NO_COLOR}"
-
-  partialsFlags="$(constructPartialsFlags)"
-  mkdir -p $MUSTACHE_TMP_DIR
-  for mustacheTemplateFile in $(find ./src/pages -name '*.mustache'); do
-    outPath="$MUSTACHE_TMP_DIR/${mustacheTemplateFile#./src/pages/}"
-    outPath="${outPath%.mustache}.html"
-    cmd="npx mustache $partialsFlags ./src/mustacheView.json \"$mustacheTemplateFile\" \"$outPath\""
-    echo -e "\t${DARK_GRAY}Running: $cmd${NO_COLOR}"
-    eval $cmd
-
-    # if failure, delete the tmp mustache dir
-    if ! [ $? -eq 0 ]; then
-      echo -e "${RED}Error: Mustache build failed${NO_COLOR}"
-      rm -rf "$MUSTACHE_TMP_DIR"
-    fi
-  done
-
-  echo -e "${GREEN}Successfully compiled Mustache templates.${NO_COLOR}"
+  echo -e "${DARK_GRAY}Compiling Handlebars templates:${NO_COLOR}"
+  node $rootDir/scripts/buildHandlebars.js $HANDLEBARS_TMP_DIR
+  if ! [ $? -eq 0 ]; then
+    echo -e "${RED}Error: Handlebars build failed.${NO_COLOR}"
+    rm -rf "$HANDLEBARS_TMP_DIR"
+    exit 1
+  fi
+  echo -e "${GREEN}Successfully compiled Handlebars templates.${NO_COLOR}"
 
   #########
   # Compile internationalization strings
@@ -94,7 +73,7 @@
 
   echo -e "${DARK_GRAY}Compiling internationalization strings into HTML:${NO_COLOR}"
 
-  cmd="npx static-i18n $langFlags -o $OUT_TMP_DIR $MUSTACHE_TMP_DIR"
+  cmd="npx static-i18n $langFlags -o $I18N_TMP_DIR $HANDLEBARS_TMP_DIR"
   echo -e "${DARK_GRAY}Running: $cmd${NO_COLOR}"
   eval $cmd
 
@@ -102,23 +81,22 @@
   if [ $? -eq 0 ]; then
     echo -e "${GREEN}Successfully compiled internationalization strings.${NO_COLOR}"
     rm -rf "$OUT_DIR"
-    rm -rf "$MUSTACHE_TMP_DIR"
-    mv "$OUT_TMP_DIR" "$OUT_DIR"
-
+    rm -rf "$HANDLEBARS_TMP_DIR"
+    mv "$I18N_TMP_DIR" "$OUT_DIR"
   else
     echo -e "${RED}Error: Internationalization build failed.${NO_COLOR}"
-    rm -rf "$OUT_TMP_DIR"
-    rm -rf "$MUSTACHE_TMP_DIR"
+    rm -rf "$I18N_TMP_DIR"
+    rm -rf "$HANDLEBARS_TMP_DIR"
     exit 1
   fi
 
   # Ensure the CNAME file is present
   echo -e "${DARK_GRAY}Adding CNAME file${NO_COLOR}"
-  echo $CUSTOM_DOMAIN > build/CNAME
+  echo $CUSTOM_DOMAIN > $OUT_DIR/CNAME
 
   # Copy assets file over
   echo -e "${DARK_GRAY}Copying assets into build dir${NO_COLOR}"
-  cp -r assets build
+  cp -r $ASSETS_DIR $OUT_DIR
 
   echo -e "${GREEN}Build succeeded${NO_COLOR}"
 )
