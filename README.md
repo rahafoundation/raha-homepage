@@ -13,6 +13,9 @@ yarn serve
 
 # To deploy the site
 yarn deploy
+
+# To run lint
+yarn lint
 ```
 
 ## Architecture
