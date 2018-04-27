@@ -1,0 +1,19 @@
+# dependencies
+/node_modules
+
+# production
+/build
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Mac
+.DS_Store
+
+# logs
+*.log
+
