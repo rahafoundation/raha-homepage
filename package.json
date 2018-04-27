@@ -1,0 +1,12 @@
+{
+  "name": "@raha/homepage",
+  "version": "0.0.1",
+  "description": "Google AMP static site for the Raha Foundation",
+  "repository": "git@github.com:rahafoundation/raha-homepage.git",
+  "author": "Omar Diab <me@omardiab.com>",
+  "license": "Apache-2.0",
+  "private": true,
+  "devDependencies": {
+    "static-i18n": "^0.1.24"
+  }
+}
