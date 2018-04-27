@@ -15,8 +15,10 @@
   },
   "scripts": {
     "build": "./scripts/build",
-    "deploy": "yarn build && gh-pages -d build/",
+    "deploy:force": "yarn build && gh-pages -d build/",
+    "deploy": "./scripts/deploy",
     "watch:build": "watch \"yarn build\" src/ locales/",
-    "serve": "concurrently --kill-others \"live-server ./build\" \"yarn watch:build\""
+    "serve":
+      "concurrently --kill-others \"live-server ./build\" \"yarn watch:build\""
   }
 }

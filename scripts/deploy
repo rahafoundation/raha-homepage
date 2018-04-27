@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# do everything in a subshell
+(
+  # colors for output
+  RED='\033[0;31m'
+  GREEN='\033[0;32m'
+  DARK_GRAY='\033[1;30m'
+  NO_COLOR='\033[0m'
+
+  echo -e "${DARK_GRAY}Checking if you are on master branch...${NO_COLOR}"
+
+  # from https://stackoverflow.com/a/37890564/1105281
+  BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  if [[ "$BRANCH" != "master" ]]; then
+    echo -e "${RED}Error: Must be on master branch.${NO_COLOR}";
+    exit 1;
+  fi
+
+  echo -e "${DARK_GRAY}Checking if there are unstaged changes...${NO_COLOR}"
+
+  # from https://stackoverflow.com/a/25149786/1105281
+  if [[ `git status --porcelain` ]]; then
+    echo -e "${RED}Error: There are unstaged changes.${NO_COLOR}"
+    exit 1;
+  fi
+
+  echo -e "${DARK_GRAY}Checking if master is up to date...${NO_COLOR}"
+
+  git fetch
+
+  if [[ $(git rev-parse HEAD) != $(git rev-parse @{u}) ]]; then
+    echo -e "${RED}Error: your master branch is not up to date.${NO_COLOR}"
+    exit 1
+  fi
+
+  echo -e "${GREEN}All checks passed. Deploying!${NO_COLOR}"
+
+  yarn deploy:force
+)
