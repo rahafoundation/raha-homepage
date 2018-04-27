@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+# do everything in a subshell
+(
+  # relevant directories
+  SRC_DIR="src"
+  OUT_DIR="build"
+  TMP_DIR="$OUT_DIR.tmp"
+
+  # colors for output
+  RED='\033[0;31m'
+  GREEN='\033[0;32m'
+  NO_COLOR='\033[0m'
+
+  # code from https://stackoverflow.com/a/246128/1105281
+  function getScriptLocation()
+  {
+    local source="${BASH_SOURCE[0]}"
+    while [ -h "$source" ]; do # resolve $source until the file is no longer a symlink
+      local sourceDir="$( cd -P "$( dirname "$source" )" && pwd )"
+      local source="$(readlink "$source")"
+      [[ $source != /* ]] && source="$sourceDir/$source" # if $source was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+    done
+    echo "$( cd -P "$( dirname "$source" )" && pwd )"
+  }
+
+  # Construct static-i18n language flags
+  # Assumes that we're in the project root
+  # Assumes locale files JSON, and in `locales/` directory, not in a
+  # subdirectory, and no other JSON files in there
+  # Assumes default is English (en)
+  function constructLanguageFlags()
+  {
+    local flags="-l en"
+    for localeFile in ./locales/*.json; do
+      local localeName="${localeFile%.json}"
+      local localeName="${localeName#./locales/}"
+      local flags="$(echo "$flags -i $localeName")"
+    done
+    echo "$flags"
+  }
+
+  # cd to the root of the project
+  sourceDir=$(getScriptLocation)
+  cd $(dirname "$sourceDir")
+
+  # run static-i18n with flags determined by translations present in i18n
+  langFlags="$(constructLanguageFlags)"
+  ./node_modules/.bin/static-i18n $langFlags -o $TMP_DIR $SRC_DIR
+
+  # if success, delete the backup, else move it back
+  if [ $? -eq 0 ]; then
+    echo -e "${GREEN}Build succeeded${NO_COLOR}"
+    rm -rf "$OUT_DIR"
+    mv "$TMP_DIR" "$OUT_DIR"
+  else
+    echo -e "${RED}Build failed${NO_COLOR}"
+  fi
+)
