@@ -78,12 +78,12 @@
 
     # if failure, delete the tmp mustache dir
     if ! [ $? -eq 0 ]; then
-      echo -e "${RED}Mustache build failed${NO_COLOR}"
+      echo -e "${RED}Error: Mustache build failed${NO_COLOR}"
       rm -rf "$MUSTACHE_TMP_DIR"
     fi
   done
 
-  echo -e "${GREEN}Compiled Mustache templates:${NO_COLOR}"
+  echo -e "${GREEN}Successfully compiled Mustache templates.${NO_COLOR}"
 
   #########
   # Compile internationalization strings
@@ -92,21 +92,23 @@
   # run static-i18n with flags determined by translations present in i18n
   langFlags="$(constructLanguageFlags)"
 
+  echo -e "${DARK_GRAY}Compiling internationalization strings into HTML:${NO_COLOR}"
+
   cmd="npx static-i18n $langFlags -o $OUT_TMP_DIR $MUSTACHE_TMP_DIR"
   echo -e "${DARK_GRAY}Running: $cmd${NO_COLOR}"
   eval $cmd
 
-  # in either case, delete the mustache directory
-  rm -rf "$MUSTACHE_TMP_DIR"
-
   # if success, move the tmp output to the end result
   if [ $? -eq 0 ]; then
-    echo -e "${GREEN}Build succeeded${NO_COLOR}"
+    echo -e "${GREEN}Successfully compiled internationalization strings.${NO_COLOR}"
     rm -rf "$OUT_DIR"
+    rm -rf "$MUSTACHE_TMP_DIR"
     mv "$OUT_TMP_DIR" "$OUT_DIR"
+
   else
-    echo -e "${RED}Build failed${NO_COLOR}"
+    echo -e "${RED}Error: Internationalization build failed.${NO_COLOR}"
     rm -rf "$OUT_TMP_DIR"
+    rm -rf "$MUSTACHE_TMP_DIR"
     exit 1
   fi
 
@@ -117,4 +119,6 @@
   # Copy assets file over
   echo -e "${DARK_GRAY}Copying assets into build dir${NO_COLOR}"
   cp -r assets build
+
+  echo -e "${GREEN}Build succeeded${NO_COLOR}"
 )
