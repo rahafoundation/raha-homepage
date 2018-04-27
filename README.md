@@ -25,21 +25,25 @@ performance.
 ### Mustache
 
 The [Mustache templating language](http://mustache.github.io/) is used primarily
-to allow for partial templates. `yarn build` calls its command line tool to
-turn the mustache files into matching HTML ones, matching the directory
-structure of the `src/pages/` directory.
+to allow for partial templates. `yarn build` calls its command line tool to turn
+the mustache files into matching HTML ones, matching the directory structure of
+the `src/pages/` directory.
 
 You can invoke a template by adding the partial to the `src/partials` directory
-(say, `./src/partials/mySpecialHeader`), and then in any mustache file, you
-can inject it by inputting `{{> mySpecialHeader}}`.
+(say, `./src/partials/mySpecialHeader`), and then in any mustache file, you can
+inject it by inputting `{{> mySpecialHeader}}`.
 
-A couple limitations:
+A couple limitations/features:
 
-1.  Note that Mustache won't error on build if you gave it a nonexistent name; it
-    just won't inject anything there.
-1.  Because of how simple Mustache is, every partial must have unique names. Even
-    if they are in different subdirectories of the `src/partials` dir. Mustache
-    just names partials based on their file names.
+1.  Note that Mustache won't error on build if you gave it a nonexistent name;
+    it just won't inject anything there.
+1.  Because of how simple Mustache is, every partial must have unique names.
+    Even if they are in different subdirectories of the `src/partials` dir.
+    Mustache just names partials based on their file names.
+1.  Mustache doesn't care if the templates you give it are valid html or not. So
+    for instance, all the styles templates in this project are actually just
+    CSS, because Google AMP requires that all your custom styles go in one
+    `style` tag. Gee whiz.
 
 Mustache can also do things like injecting variables into the templates, but
 that's not really useful for us since we're not running it in a dynamic
@@ -67,7 +71,7 @@ alongside everything else. Nothing magical here!
 
 ### Hosting
 
-It's hosted on github pages; deploying just pushes the `build/` directory
-to the `gh-pages` branch.
+It's hosted on github pages; deploying just pushes the `build/` directory to the
+`gh-pages` branch.
 
 # Enjoy!
