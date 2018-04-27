@@ -7,6 +7,13 @@
   "license": "Apache-2.0",
   "private": true,
   "devDependencies": {
-    "static-i18n": "^0.1.24"
+    "gh-pages": "^1.1.0",
+    "static-i18n": "^0.1.24",
+    "static-server": "^2.2.1"
+  },
+  "scripts": {
+    "build": "./scripts/build",
+    "deploy": "yarn build && gh-pages -d build/",
+    "serve": "yarn build && cd build && static-server -o"
   }
 }
