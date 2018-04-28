@@ -20,6 +20,18 @@
     echo "$( cd -P "$( dirname "$source" )" && pwd )"
   }
 
+  scriptDir=$(getScriptLocation)
+  rootDir=$(dirname "$scriptDir")
+  buildDir="$rootDir/build"
+
+  echo -e "${BLUE}Checking if all english locale strings are present in other languages.${NO_COLOR}"
+  node "$rootDir/scripts/checkLocaleKeys.js" "$rootDir/locales"
+
+  if ! [ $? -eq 0 ]; then
+    echo -e "${RED}Error: Locales are invalid, aborting${NO_COLOR}"
+    exit 1
+  fi
+
   echo -e "${DARK_GRAY}Building${NO_COLOR}"
   yarn build
 
@@ -27,10 +39,6 @@
     echo -e "${RED}Build failed${NO_COLOR}"
     exit 1
   fi
-
-  scriptDir=$(getScriptLocation)
-  rootDir=$(dirname "$scriptDir")
-  buildDir="$rootDir/build"
 
   invalidHTMLExists=0
   for htmlFile in $(find "$buildDir" -name "*.html"); do

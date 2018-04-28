@@ -104,5 +104,5 @@ compileTemplates(LOCALES_DIR, OUTPUT_DIR)
   .catch(err => {
     console.error(colors.red("Compilation failed, aborting"));
     console.error(err);
-    process.exit(-1);
+    process.exit(1);
   });
