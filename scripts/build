@@ -23,6 +23,13 @@
     echo "$( cd -P "$( dirname "$source" )" && pwd )"
   }
 
+  # cd to the root of the project
+  sourceDir=$(getScriptLocation)
+  rootDir=$(dirname "$sourceDir")
+  cd $rootDir
+
+  LOCALES_DIR="$rootDir/locales"
+
   # Construct static-i18n language flags
   # Assumes that we're in the project root
   # Assumes locale files JSON, and in `locales/` directory, not in a
@@ -31,18 +38,13 @@
   function constructLanguageFlags()
   {
     local flags="-l en"
-    for localeFile in ./locales/*.json; do
+    for localeFile in $LOCALES_DIR/*.json; do
       local localeName="${localeFile%.json}"
-      local localeName="${localeName#./locales/}"
+      local localeName="${localeName#$LOCALES_DIR/}"
       local flags="$(echo "$flags -i $localeName")"
     done
     echo "$flags"
   }
-
-  # cd to the root of the project
-  sourceDir=$(getScriptLocation)
-  rootDir=$(dirname "$sourceDir")
-  cd $rootDir
 
   # relevant directories
   SRC_DIR="$rootDir/src"
@@ -56,7 +58,7 @@
   #########
 
   echo -e "${DARK_GRAY}Compiling Handlebars templates:${NO_COLOR}"
-  node $rootDir/scripts/buildHandlebars.js $HANDLEBARS_TMP_DIR
+  node "$rootDir/scripts/buildHandlebars.js" "$HANDLEBARS_TMP_DIR" "$LOCALES_DIR"
 
   if ! [ $? -eq 0 ]; then
     echo -e "${RED}Error: Handlebars build failed.${NO_COLOR}"
