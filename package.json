@@ -7,8 +7,13 @@
   "private": true,
   "devDependencies": {
     "amphtml-validator": "^1.0.23",
+    "colors": "^1.2.1",
     "concurrently": "^3.5.1",
     "gh-pages": "^1.1.0",
+    "glob": "^7.1.2",
+    "glob-promise": "^3.4.0",
+    "handlebars": "^4.0.11",
+    "handlebars-layouts": "^3.1.4",
     "live-server": "^1.2.0",
     "static-i18n": "^0.1.24",
     "watch": "^1.0.2"
@@ -19,7 +24,6 @@
     "deploy": "./scripts/deploy",
     "lint": "./scripts/lint",
     "watch:build": "watch \"yarn build\" src/ locales/",
-    "serve":
-      "concurrently --kill-others \"live-server ./build\" \"yarn watch:build\""
+    "serve": "concurrently --kill-others \"live-server ./build\" \"yarn watch:build\""
   }
 }

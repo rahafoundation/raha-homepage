@@ -5,11 +5,6 @@
   # configuration
   CUSTOM_DOMAIN="next-amp.raha.io"
 
-  # relevant directories
-  SRC_DIR="src"
-  OUT_DIR="build"
-  TMP_DIR="$OUT_DIR.tmp"
-
   # colors for output
   RED='\033[0;31m'
   GREEN='\033[0;32m'
@@ -46,29 +41,63 @@
 
   # cd to the root of the project
   sourceDir=$(getScriptLocation)
-  cd $(dirname "$sourceDir")
+  rootDir=$(dirname "$sourceDir")
+  cd $rootDir
+
+  # relevant directories
+  SRC_DIR="$rootDir/src"
+  OUT_DIR="$rootDir/build"
+  I18N_TMP_DIR="$rootDir/build.i18n.tmp"
+  HANDLEBARS_TMP_DIR="$rootDir/build.hbs.tmp"
+  ASSETS_DIR="$rootDir/assets"
+
+  #########
+  # Compile Handlebars templates
+  #########
+
+  echo -e "${DARK_GRAY}Compiling Handlebars templates:${NO_COLOR}"
+  node $rootDir/scripts/buildHandlebars.js $HANDLEBARS_TMP_DIR
+
+  if ! [ $? -eq 0 ]; then
+    echo -e "${RED}Error: Handlebars build failed.${NO_COLOR}"
+    rm -rf "$HANDLEBARS_TMP_DIR"
+    exit 1
+  fi
+  echo -e "${GREEN}Successfully compiled Handlebars templates.${NO_COLOR}"
+
+  #########
+  # Compile internationalization strings
+  #########
 
   # run static-i18n with flags determined by translations present in i18n
   langFlags="$(constructLanguageFlags)"
 
-  cmd="./node_modules/.bin/static-i18n $langFlags -o $TMP_DIR $SRC_DIR"
+  echo -e "${DARK_GRAY}Compiling internationalization strings into HTML:${NO_COLOR}"
+
+  cmd="npx static-i18n $langFlags -o $I18N_TMP_DIR $HANDLEBARS_TMP_DIR"
   echo -e "${DARK_GRAY}Running: $cmd${NO_COLOR}"
   eval $cmd
 
-  # if success, delete the backup, else move it back
+  # if success, move the tmp output to the end result
   if [ $? -eq 0 ]; then
-    echo -e "${GREEN}Build succeeded${NO_COLOR}"
+    echo -e "${GREEN}Successfully compiled internationalization strings.${NO_COLOR}"
     rm -rf "$OUT_DIR"
-    mv "$TMP_DIR" "$OUT_DIR"
+    rm -rf "$HANDLEBARS_TMP_DIR"
+    mv "$I18N_TMP_DIR" "$OUT_DIR"
   else
-    echo -e "${RED}Build failed${NO_COLOR}"
+    echo -e "${RED}Error: Internationalization build failed.${NO_COLOR}"
+    rm -rf "$I18N_TMP_DIR"
+    rm -rf "$HANDLEBARS_TMP_DIR"
+    exit 1
   fi
 
   # Ensure the CNAME file is present
   echo -e "${DARK_GRAY}Adding CNAME file${NO_COLOR}"
-  echo $CUSTOM_DOMAIN > build/CNAME
+  echo $CUSTOM_DOMAIN > $OUT_DIR/CNAME
 
   # Copy assets file over
   echo -e "${DARK_GRAY}Copying assets into build dir${NO_COLOR}"
-  cp -r assets build
+  cp -r $ASSETS_DIR $OUT_DIR
+
+  echo -e "${GREEN}Build succeeded${NO_COLOR}"
 )
