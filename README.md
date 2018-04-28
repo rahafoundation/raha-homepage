@@ -50,7 +50,7 @@ directory.
 All translations are in JSON files in the `locales/` directory. To add support
 for a language, simply add a locale json file for that language, named after its
 [language
-code](https://en.wikipedia.org/wiki/Hreflang#Language_and_Country_Codes).
+code](https://support.google.com/webmasters/answer/189077).
 
 On build, lint will inform you if there are missing translations and prevent a
 build; if you don't have translations ready for that text, just put the English
