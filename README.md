@@ -11,8 +11,11 @@ served from next-amp.raha.io.
 # To run the site
 yarn serve
 
-# To deploy the site
+# To deploy the site. This happens automatically on a successful merge.
 yarn deploy
+
+# To run lint
+yarn lint
 ```
 
 ## Architecture

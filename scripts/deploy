@@ -34,6 +34,13 @@
     exit 1
   fi
 
+  echo -e "${DARK_GRAY}Checking if lint passes...${NO_COLOR}"
+  yarn lint
+  if ! [ $? -eq 0 ]; then
+    echo -e "${RED}Error: lint failed${NO_COLOR}"
+    exit 1
+  fi
+
   echo -e "${GREEN}All checks passed. Deploying!${NO_COLOR}"
 
   yarn deploy:force
