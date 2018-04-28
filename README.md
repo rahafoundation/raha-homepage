@@ -1,6 +1,6 @@
 # raha-homepage
 
-[The public website of Raha.io.](next-amp.raha.io)
+[The public website of Raha.io.](https://next-amp.raha.io)
 
 NOTE: this is not yet published to the root domain, raha.io; instead it is
 served from next-amp.raha.io.
