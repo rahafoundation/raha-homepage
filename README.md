@@ -48,8 +48,14 @@ populate i18n placeholders into the actual generated HTML files from the `src/`
 directory.
 
 All translations are in JSON files in the `locales/` directory. To add support
-for a language, simply add a locale json file for that language. Please ensure
-there are translations available for every language.
+for a language, simply add a locale json file for that language, named after its
+[language
+code](https://en.wikipedia.org/wiki/Hreflang#Language_and_Country_Codes).
+
+On build, lint will inform you if there are missing translations and prevent a
+build; if you don't have translations ready for that text, just put the English
+text in each other locale file for now, and add a note about it to
+`locales/MISSING_TRANSLATIONS` for record-keeping.
 
 ### Static Assets
 
