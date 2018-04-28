@@ -42,10 +42,11 @@ async function checkLocaleFiles() {
   const localeFiles = await glob(`${LOCALES_DIR}/**/!(en).json`);
   const enLocaleKeys = getObjectLeafKeys(enLocale);
 
-  let missingKeyFound = false;
+  let problemFound = false;
 
   localeFiles.forEach(localeFile => {
     const curLocale = require(localeFile);
+    const curLocaleKeys = getObjectLeafKeys(curLocale);
 
     // type: { [enLocaleKey: string]: boolean }
     // values represent whether or not they are in the current locale.
@@ -66,12 +67,25 @@ async function checkLocaleFiles() {
         colors.red(`Locale file ${localeFile} is missing the following keys`)
       );
       console.error(colors.blue(JSON.stringify(missingKeys)));
-      missingKeyFound = true;
+      problemFound = true;
+    }
+
+    const extraneousKeys = curLocaleKeys.filter(
+      key => !enLocaleKeys.includes(key)
+    );
+    if (extraneousKeys.length > 0) {
+      console.error(
+        colors.red(
+          `Locale file ${localeFile} contains extraneous keys that aren't present in the primary local, en:`
+        )
+      );
+      console.error(colors.blue(JSON.stringify(extraneousKeys)));
+      problemFound = true;
     }
   });
 
-  if (missingKeyFound) {
-    throw new Error("Keys missing from some translations, aborting.");
+  if (problemFound) {
+    throw new Error("Keys in locales are inconsistent, aborting.");
   }
 }
 
