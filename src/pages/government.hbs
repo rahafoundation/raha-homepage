@@ -1,0 +1,35 @@
+{{#extend "raha/layout/base/layout"}}
+  {{#content "body"}}
+    <main class="governmentPage">
+      <article>
+        {{> raha/util/backHome }}
+        <h1 data-t="governmentPage.title"></h1>
+        <h2 data-t>governmentPage.parliament.title</h2>
+        <p data-t>governmentPage.parliament.text1</p>
+        <p data-t>governmentPage.parliament.text2</p>
+        <p>
+          <span data-t="governmentPage.parliament.text3"></span> <a
+            href="https://discourse.raha.io/c/raha-governance"
+            data-t="governmentPage.parliament.participate"
+          ></a>
+        </p>
+
+        <h2 data-t>governmentPage.parliamentBudget.title</h2>
+        <p>
+          <span data-t="governmentPage.parliamentBudget.text"></span> <a
+            href="https://discourse.raha.io/c/raha-governance"
+            data-t="governmentPage.parliamentBudget.participate"
+          ></a> <span
+            data-t="governmentPage.parliamentBudget.participateReason"
+          ></span>
+        </p>
+        <ul>
+          <li data-t>governmentPage.parliamentBudget.point1</li>
+          <li data-t>governmentPage.parliamentBudget.point2</li>
+          <li data-t>governmentPage.parliamentBudget.point3</li>
+          <li data-t>governmentPage.parliamentBudget.point4</li>
+        </ul>
+      </article>
+    </main>
+  {{/content}}
+{{/extend }}

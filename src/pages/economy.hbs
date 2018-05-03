@@ -1,51 +1,37 @@
 {{#extend "raha/layout/base/layout"}}
-  {{#content "styles" mode="append"}}
-    .economyPage {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .economyPage > ul > li {
-      margin-bottom: 10px;
-    }
-  {{/content}}
-
   {{#content "body"}}
     <main class="economyPage">
-      <h1 data-t>economy.title</h1>
+      <article>
+        {{> raha/util/backHome }}
 
-      <h2 data-t>economy.income.title</h2>
-      <p data-t>economy.income.text</p>
+        <h1 data-t>economyPage.title</h1>
 
-      <h2 data-t>economy.inactive.title</h2>
-      <p data-t>economy.inactive.text</p>
+        <h2 data-t>economyPage.income.title</h2>
+        <p data-t>economyPage.income.text</p>
 
-      <h2 data-t>economy.transactions.title</h2>
-      <p data-t>economy.transactions.text</p>
+        <h2 data-t>economyPage.inactive.title</h2>
+        <p data-t>economyPage.inactive.text</p>
 
-      <h2 data-t>economy.ten_billion.title</h2>
-      <p data-t>economy.ten_billion.text</p>
+        <h2 data-t>economyPage.transactions.title</h2>
+        <p data-t>economyPage.transactions.text</p>
 
-      <h2 data-t>economy.invite.title</h2>
-      <p data-t>economy.invite.text</p>
+        <h2 data-t>economyPage.invite.title</h2>
+        <p data-t>economyPage.invite.text</p>
 
-      <h2 data-t>economy.parliament.title</h2>
-      <p data-t>economy.parliament.text1</p>
-      <p data-t>economy.parliament.text2</p>
-      <p data-t>economy.parliament.text3</p>
+        <h2 data-t>economyPage.parliamentFund.title</h2>
+        <p data-t>economyPage.parliamentFund.text1</p>
+        <p>
+          <span
+            data-t="economyPage.parliamentFund.text2"
+          ></span> <a
+            href="/government"
+            data-t="economyPage.parliamentFund.learnMoreGovernment"
+          ></a>
+        </p>
 
-      <h2 data-t>economy.parliament_fund.title</h2>
-      <p data-t>economy.parliament_fund.text1</p>
-      <p data-t>economy.parliament_fund.text2</p>
-
-      <h2 data-t>economy.parliament_budget.title</h2>
-      <p data-t>economy.parliament_budget.text</p>
-      <ul>
-        <li data-t>economy.parliament_budget.point1</li>
-        <li data-t>economy.parliament_budget.point2</li>
-        <li data-t>economy.parliament_budget.point3</li>
-        <li data-t>economy.parliament_budget.point4</li>
-      </ul>
+        <h2 data-t>economyPage.tenBillion.title</h2>
+        <p data-t>economyPage.tenBillion.text</p>
+      </article>
     </main>
   {{/content}}
 {{/extend }}
