@@ -37,7 +37,7 @@
   # Assumes default is English (en)
   function constructLanguageFlags()
   {
-    local flags="-l en --allow-html true"
+    local flags="-l en"
     for localeFile in $LOCALES_DIR/*.json; do
       local localeName="${localeFile%.json}"
       local localeName="${localeName#$LOCALES_DIR/}"
