@@ -150,62 +150,6 @@
             padding: 50px 30px;
             background: rgb(238, 238, 238);
           }
-    .splashPage > .banner {
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    .splashPage > h1 {
-      margin-bottom: 40px;
-    }
-
-    .splashPage > h2 {
-      margin-bottom: 30px;
-    }
-
-    .splashPage > h1,
-    .splashPage > h2 {
-      text-align: center;
-    }
-
-    .splashPage > ul.features {
-      list-style-type: none;
-      padding: 0 30px;
-      margin: 50px auto;
-
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      text-align: center;
-    }
-
-    .splashPage > .features > li {
-      flex-basis: 300px;
-      margin: 0 20px;
-      margin-bottom: 20px;
-    }
-
-    .splashPage > .features > li > h3 {
-      margin-bottom: .5rem;
-    }
-
-    @media only screen and (max-width: 600px) and (min-width: 480px) {
-      .splashPage > .features > li {
-        flex-basis: 40%;
-      }
-    }
-
-    @media only screen and (max-width: 480px),
-      (max-device-width: 830px) and (-webkit-min-device-pixel-ratio: 2) {
-      .splashPage > .features > li {
-        flex-basis: 100%;
-      }
-    }
-
-    .splashPage > .login {
-      text-align: center;
-    }
-
       </style>
   </head>
 
@@ -219,34 +163,35 @@
       </a>
     </header>
 
-    <main class="splashPage">
-      <section class="banner">
-        <h1>Universal Basic Income for the World</h1>
-        <h2>Because Every Life Has Value</h2>
-      </section>
-      <ul class="features">
-        <li>
-          <h3>
-            <a href="/economy">Shared Prosperity</a>
-          </h3>
-          <span>End extreme poverty wth the Raha Basic Income.</span>
-        </li>
-        <li>
-          <h3>Trusted Identity</h3>
-          <span>Know who you're paying with Raha-verified identity.</span>
-        </li>
-        <li>
-          <h3>
-            <a href="/government">Economic Rights</a>
-          </h3>
-          <span>For everyone, with no cost to join and democratic governance.</span>
-        </li>
-      </ul>
+    <main class="economyPage">
+      <article>
+        <a href="/">Back to Homepage</a>
 
-      <section class="login">
-        <span>Already a member?</span>
-        <a href="https://app.raha.io/login">Login</a>
-      </section>
+        <h1>Shared Prosperity in the Giving Economy</h1>
+
+        <h2 id="rbi">Raha Basic Income (RBI)</h2>
+        <p>Verified Raha members receive a Raha Basic Income that is currently 10 Raha points per week. To receive your RBI, you must claim it; you can accrue at most 4 weeks of unclaimed basic income at a time.</p>
+
+        <h2>Inactivity Donations</h2>
+        <p>If you do not issue any transactions for 400 days, your account will be marked as inactive. Until you send another transaction or your account balance runs out, 1% of your balance when your account became inactive will automatically be donated every day to the Raha Basic Income fund.</p>
+
+        <h2>Transaction Donations</h2>
+        <p>Instead of transaction fees, the Raha Network encourages optional donations of 3% of each transaction received to help fund the Raha Basic Income. For verified members, there are no required sender fees for the first 20 transactions a day. After that, all transactions you send will incur a fee of 0.01 Raha points.</p>
+
+        <h2>Invite Bonus</h2>
+        <p>While the Raha Network is small, you may instantly claim 6 weeks of basic income for each new verified member you refer, up to a maximum of 150 members. The Raha Parliament will likely change this bonus amount frequently, and it may one day go to 0.</p>
+
+        <h2>Parliament Fund</h2>
+        <p>80% of all Raha points distributed from the Raha Basic Income fund goes directly to verified members, and 20% goes to the member-elected Raha Parliament to fund the long-term growth of the Raha Network.</p>
+        <p>
+          <span>The Raha Parliament fund can only be spent after approving a budget, and no budget can be approved until the Raha Parliament exists. The Raha Parliament will not exist until voting has been implemented and its constitution has been written. All spending will be completely transparent via the immutable and distributed Raha audit log.</span> <a href="/government">Learn more about Raha governance.</a>
+        </p>
+
+        <h2 id="tbu">Ten Billion Units (TBU)</h2>
+        <p>In the Raha blockchain, there are ten billion units of the base currency total. This base Raha token is known as TBU, and internally, your balance will be stored in terms of TBUs. Initially, all the currency belongs to the Raha Basic Income fund, and shall be distributed to verified members via the basic income over time.</p>
+        <p>On the other hand, Raha points are the user-facing denomination of TBUs, and the way your balance is displayed in the app. As the value of TBU changes, the Raha Parliament may change the exchange rate between TBUs and Raha points so that typical Raha transactions transfer intuitively reasonable quantities of Raha points.</p>
+        <p>The current exchange rate between TBU and Raha points is 1:1.</p>
+      </article>
     </main>
 
     <div class="pageSpacer"></div>
