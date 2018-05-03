@@ -1,0 +1,39 @@
+{{#extend "raha/layout/base/layout"}}
+  {{#content "body"}}
+    <main class="economyPage">
+      <article>
+        {{> raha/util/backHome }}
+
+        <h1 data-t>economyPage.title</h1>
+
+        <h2 id="rbi" data-t>economyPage.income.title</h2>
+        <p data-t>economyPage.income.text</p>
+
+        <h2 data-t>economyPage.inactive.title</h2>
+        <p data-t>economyPage.inactive.text</p>
+
+        <h2 data-t>economyPage.transactions.title</h2>
+        <p data-t>economyPage.transactions.text</p>
+
+        <h2 data-t>economyPage.invite.title</h2>
+        <p data-t>economyPage.invite.text</p>
+
+        <h2 data-t>economyPage.parliamentFund.title</h2>
+        <p data-t>economyPage.parliamentFund.text1</p>
+        <p>
+          <span
+            data-t="economyPage.parliamentFund.text2"
+          ></span> <a
+            href="/government"
+            data-t="economyPage.parliamentFund.learnMoreGovernment"
+          ></a>
+        </p>
+
+        <h2 id="tbu" data-t>economyPage.tenBillion.title</h2>
+        <p data-t>economyPage.tenBillion.text1</p>
+        <p data-t>economyPage.tenBillion.text2</p>
+        <p data-t>economyPage.tenBillion.text3</p>
+      </article>
+    </main>
+  {{/content}}
+{{/extend }}

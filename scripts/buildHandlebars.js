@@ -4,6 +4,7 @@ const glob = require("glob-promise");
 const colors = require("colors/safe");
 const path = require("path");
 const fs = require("fs");
+const mkdirp = require("mkdirp");
 const util = require("util");
 
 const generateHreflangsTemplate = require("./generateHreflangsTemplate");
@@ -11,7 +12,7 @@ const generateHreflangsTemplate = require("./generateHreflangsTemplate");
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
 const existsAsync = util.promisify(fs.exists);
-const mkdirAsync = util.promisify(fs.mkdir);
+const mkdirpAsync = util.promisify(mkdirp);
 
 const TEMPLATE_EXTENSION = ".hbs";
 const OUTPUT_DIR = process.argv[2];
@@ -64,10 +65,21 @@ async function compileTemplates(localesDir, outputDir) {
         path.join(__dirname, "..", "src", "pages"),
         templateFile
       );
-      const uri = `${relPath.substr(
-        0,
-        relPath.length - TEMPLATE_EXTENSION.length
-      )}.html`;
+
+      const fileName = path
+        .basename(relPath)
+        .substr(0, relPath.length - TEMPLATE_EXTENSION.length);
+      const pathWithoutExtension = path.join(path.dirname(relPath), fileName);
+
+      // if not an index.html file, create it as a folder with an index.html
+      // file inside of it, so that urls can be addressed as
+      // /path/to/page, rather than /path/to/page.htm
+      const uri =
+        fileName === "index"
+          ? `${pathWithoutExtension}.html`
+          : path.join(pathWithoutExtension, "index.html");
+
+      console.log(fileName, pathWithoutExtension, uri);
 
       return {
         uri,
@@ -79,14 +91,14 @@ async function compileTemplates(localesDir, outputDir) {
 
 async function outputTemplates(templates) {
   if (!(await existsAsync(OUTPUT_DIR))) {
-    await mkdirAsync(OUTPUT_DIR);
+    await mkdirpAsync(OUTPUT_DIR);
   }
 
   await Promise.all(
-    templates.map(
-      async ({ uri, html }) =>
-        await writeFileAsync(path.join(OUTPUT_DIR, uri), html)
-    )
+    templates.map(async ({ uri, html }) => {
+      await mkdirpAsync(path.join(OUTPUT_DIR, path.dirname(uri)));
+      await writeFileAsync(path.join(OUTPUT_DIR, uri), html);
+    })
   );
 }
 
