@@ -42,6 +42,15 @@
             font-size: 20px;
           }
 
+          {{!-- scale font size up on phones --}}
+          @media only screen
+            and (max-device-width: 480px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+              html, body {
+                font-size: 4vw;
+              }
+          }
+
           * {
             font-family: 'Source Sans Pro', sans-serif;
             margin: 0;
@@ -49,8 +58,9 @@
             line-height: 1.58;
           }
 
-          {{!-- headers --}}
-          h1, h2, h3, h4, h5 {
+          {{!-- text styles --}}
+          h1, h2, h3, h4, h5,
+          h1 *, h2 *, h3 *, h4 *, h5 * {
             font-family: 'Raleway', sans-serif;
             font-weight: 700;
             line-height: 1.1;
@@ -64,7 +74,21 @@
             margin-top: 1.5rem;
           }
 
+          h1, article h1 {
+            font-size: 1.85rem;
+          }
+
           p:not(:first-child) {
+            margin-top: 1rem;
+          }
+
+          article {
+            max-width: 700px;
+            margin: 0 auto;
+          }
+
+          {{!-- lists --}}
+          li:not(:first-of-type) {
             margin-top: 1rem;
           }
 
@@ -77,15 +101,18 @@
             color: #26C6DA;
           }
 
+          a:active {
+            color: #00ACC1;
+          }
+
           {{!-- Links in headers look nicer without the underline --}}
           h1 a, h2 a, h3 a, h4 a, h5 a {
             text-decoration: none;
           }
 
-          a:active {
-            color: #00ACC1;
-          }
+          {{!-- page layout --}}
 
+          {{!-- flex for pushing footer to the bottom --}}
           body {
             font-family: sans-serif;
             display: flex;
@@ -93,15 +120,7 @@
             min-height: 100vh;
           }
 
-          @media only screen
-            and (max-device-width: 480px)
-            and (-webkit-min-device-pixel-ratio: 2) {
-              body {
-                font-size: 4vw;
-              }
-          }
-
-          body> .pageSpacer {
+          body > .pageSpacer {
             flex-grow: 1;
           }
 
