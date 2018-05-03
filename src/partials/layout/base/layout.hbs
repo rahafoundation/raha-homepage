@@ -66,6 +66,16 @@
             line-height: 1.1;
           }
 
+          {{!-- text spacing --}}
+          article {
+            max-width: 700px;
+            margin: 0 auto;
+          }
+
+          article > *:not(:first-child) {
+            margin-top: 1rem;
+          }
+
           h1:not(:first-child),
           h2:not(:first-child),
           h3:not(:first-child),
@@ -79,16 +89,6 @@
           }
 
           p:not(:first-child) {
-            margin-top: 1rem;
-          }
-
-          article {
-            max-width: 700px;
-            margin: 0 auto;
-          }
-
-          {{!-- lists --}}
-          li:not(:first-of-type) {
             margin-top: 1rem;
           }
 
