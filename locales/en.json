@@ -1,11 +1,14 @@
 {
   "raha_network": "Raha Network",
-  "raha_slogan": "Every Life Has Value",
   "login": "Login",
   "util": {
     "backHome": "Back to Homepage"
   },
   "splashPage": {
+    "banner": {
+      "title": "Universal Basic Income for the World",
+      "subtitle": "Because Every Life Has Value"
+    },
     "alreadyMember": "Already a member?",
     "prosperity": "Shared Prosperity",
     "prosperityDetails": "End extreme poverty wth the Raha Basic Income.",

@@ -1,5 +1,10 @@
 {{#extend "raha/layout/base/layout"}}
   {{#content "styles" mode="append"}}
+    .splashPage > .banner {
+      padding: 0 20px;
+      text-align: center;
+    }
+
     .splashPage > h1 {
       margin-bottom: 40px;
     }
@@ -47,19 +52,18 @@
       }
     }
 
-    .splashPage > .invite {
+    .splashPage > .login {
       text-align: center;
     }
 
-    .splashPage > .invite > h3 {
-      margin-bottom: 20px;
-    }
   {{/content}}
 
   {{#content "body"}}
     <main class="splashPage">
-      <h1 data-t>raha_network</h1>
-      <h2 data-t>raha_slogan</h2>
+      <section class="banner">
+        <h1 data-t="splashPage.banner.title"></h1>
+        <h2 data-t="splashPage.banner.subtitle"></h2>
+      </section>
       <ul class="features">
         <li>
           <h3>
@@ -79,8 +83,7 @@
         </li>
       </ul>
 
-      <section class="invite">
-        <h3 data-t>splashPage.inviteOnly</h3>
+      <section class="login">
         <span data-t>splashPage.alreadyMember</span>
         <a href="https://app.raha.io/login" data-t>login</a>
       </section>
