@@ -1,55 +1,87 @@
 {
   "raha_network": "Raha Network",
-  "every_life": "Every Life Has Value",
-  "invite_only": "Invite Only",
-  "already_member": "Already a member?",
+  "raha_slogan": "Every Life Has Value",
   "login": "Login",
-  "prosperity": "Shared Prosperity",
-  "prosperity_details": "Creating an end to extreme poverty with the Raha basic income.",
-  "trust": "Trusted Identity",
-  "trust_details": "Unique identity network of trusted individuals built for the sharing economy.",
-  "free": "Economic Rights",
-  "free_details": "Raha is for everyone with no cost to join and a democratic evolution.",
-  "economy": {
-    "title": "Shared Prosperity with the Raha Economy",
+  "util": {
+    "backHome": "Back to Homepage"
+  },
+  "splashPage": {
+    "alreadyMember": "Already a member?",
+    "prosperity": "Shared Prosperity",
+    "prosperityDetails": "End extreme poverty wth the Raha basic income.",
+    "trust": "Trusted Identity",
+    "trustDetails": "Know who you're paying with Raha-verified identity.",
+    "rights": "Economic Rights",
+    "rightsDetails":
+      "For everyone, with no cost to join and democratic governance.",
+    "inviteOnly": "Invite Only"
+  },
+
+  "economyPage": {
+    "title": "Shared Prosperity in the Giving Economy",
     "income": {
       "title": "Raha Basic Income",
-      "text": "Verified Raha members receive a Raha Basic Income that is currently 10 Raha points per week. You must periodically claim this income, and can accrue at most 4 weeks of unclaimed basic income."
+      "text":
+        "Verified Raha members receive a Raha Basic Income that is currently 10 Raha points per week. To receive your RBI, you must claim it; you can accrue at most 4 weeks of unclaimed basic income at a time."
     },
     "inactive": {
       "title": "Inactivity Donations",
-      "text": "An account has issued no transactions for 400 days goes inactive and donates its balance to the basic income fund at a rate of 1% per day."
+      "text":
+        "If you do not issue any transactions for 400 days, your account will be marked as inactive. Until you send another transaction, 1% of your balance per day will automatically be donated to the Raha basic income fund."
     },
     "transactions": {
       "title": "Transaction Donations",
-      "text": "Instead of transaction fees, the Raha Network encourages optional donations of 3% of each transaction received to help fund the basic income. For verified members there are no required sender fees for the first 20 transactions a day, and after that it is 0.01 Raha points."
-    },
-    "ten_billion": {
-      "title": "Ten Billion Units",
-      "text": "There are ten billion units known as TBU and initially all belong to the basic income fund. The current exchange rate between TBU and Raha points is 1:1, though this may change to make common denominations of Raha points more user friendly."
+      "text":
+        "Instead of transaction fees, the Raha Network encourages optional donations of 3% of each transaction received to help fund the Raha basic income. For verified members there are no required sender fees for the first 20 transactions a day, and after that it is 0.01 Raha points."
     },
     "invite": {
       "title": "Invite Bonus",
-      "text": "While the network is bootstrapping, you may instantly claim 6 weeks of basic income for each new member you refer via video, up to a maximum of 150 members. The Raha Parliament will likely change this bonus amount frequently, and it may one day go to 0."
+      "text":
+        "While the network is bootstrapping, you may instantly claim 6 weeks of basic income for each new member you refer via video, up to a maximum of 150 members. The Raha Parliament will likely change this bonus amount frequently, and it may one day go to 0."
     },
+    "parliamentFund": {
+      "title": "Parliament Fund",
+      "text1":
+        "80% of all Raha points distributed from the basic income fund goes directly to members, and 20% goes to the member-elected Raha Parliament to fund the long-term growth of the Raha Network.",
+      "text2":
+        "The Raha Parliament fund can only be spent after approving a budget, and no budget can be approved until the Raha Parliament exists. The Raha Parliament will not exist until voting has been implemented and its constitution has been written. All spending will be completely transparent via the immutable and distributed Raha audit log.",
+      "learnMoreGovernment": "Learn more about Raha governance."
+    },
+    "tenBillion": {
+      "title": "Ten Billion Units",
+      "text":
+        "There are ten billion units known as TBU and initially all belong to the basic income fund. The current exchange rate between TBU and Raha points is 1:1, though this may change to make common denominations of Raha points more user friendly."
+    }
+  },
+
+  "governmentPage": {
+    "title": "Empowering All Members with the Raha Parliament",
     "parliament": {
       "title": "Raha Parliament",
-      "text1": "The Raha Network will evolve frequently over time, and these evolutions will be controlled by the member elected Raha Parliament. The two main responsibilities of the Raha Parliament are changing network parameters and approving budgets.",
-      "text2": "For instance, over time the Raha Parliament will have to lower the basic income amount to prevent the fund from running out as there are only ten billion units. The good news is that because of Metcalfe’s Law, more members means a much more valuable network. Even as the basic income decreases in amount, it will likely increase in market value.",
-      "text3": "The Raha Parliament will be elected by members of Raha, but the voting system and mechanisms are still under consideration. To participate in the Raha voting system design, please visit the Raha Governance category in the <a href=\"https://discourse.raha.io/c/raha-governance\">Raha Discourse</a>."
+      "text1":
+        "The Raha Network will evolve over time, based on the decisions of the member-elected Raha Parliament. The Raha Parliament has two main responsibilities: changing network parameters, and approving budgets.",
+      "text2":
+        "For instance, over time the Raha Parliament will have to lower the number of Raha base units distributed via the Raha basic income to prevent the basic income fund from running out, as there are only ten billion units. The good news is that because of Metcalfe’s Law, more members means a much more valuable network. Even as the basic income decreases in amount, it will likely increase in market value.",
+      "text3":
+        "The Raha Parliament will be elected by members of Raha, but the voting system and mechanisms are still under consideration.",
+      "participate":
+        "Help design the Raha voting system on our Discourse forum."
     },
-    "parliament_fund": {
-      "title": "Parliament Fund",
-      "text1": "80% of all raha distributed from the basic income fund goes directly to members, and 20% goes to the member-elected Raha Parliament to fund the long-term growth of the Raha Network.",
-      "text2": "The Raha Parliament fund can only be spent after approving a budget, and no budget can be approved until the Raha Parliament exists. The Raha Parliament will not exist until voting has been implemented and its constitution has been written. All spending will be completely transparent via the immutable and distributed Raha audit log."
-    },
-    "parliament_budget": {
+    "parliamentBudget": {
       "title": "Parliament Budget",
-      "text": "An example budget for how the Raha Parliament’s 20% allotment from the basic income fund might be spent is listed below. Join us on <a href=\"https://discourse.raha.io\">Discourse</a> to advocate for new ideas for the budget, or lay the groundwork for an election campaign so you can join the Raha Parliament and approve budgets yourself!",
-      "point1": "5% for expanding the network to underrepresented demographics in the Raha network.",
-      "point2": "5% to expanding the Raha marketplace and establishing partnership programs to grow Raha adoption.",
-      "point3": "5% Raha Network software development, maintenance, and server costs.",
-      "point4": "5% towards building an endowment to help stabilize the market value of Raha."
+      "text":
+        "An example budget for how the Raha Parliament’s 20% allotment from the basic income fund might be spent is listed below.",
+      "participate": "Engage on the Raha Discourse forum",
+      "participateReason":
+        "to advocate for your ideas for the budget, or lay the groundwork for an election campaign so you can join the Raha Parliament and approve budgets yourself!",
+      "point1":
+        "5% for expanding the network to underrepresented demographics in the Raha network.",
+      "point2":
+        "5% to expanding the Raha marketplace and establishing partnership programs to grow Raha adoption.",
+      "point3":
+        "5% Raha Network software development, maintenance, and server costs.",
+      "point4":
+        "5% towards building an endowment to help stabilize the market value of Raha."
     }
   }
 }
