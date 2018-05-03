@@ -30,9 +30,30 @@
 
       <style amp-custom>
         {{#block "styles" }}
+          {{!-- colors are taken from material-ui colors--}}
+          {{!-- http://www.material-ui.com/#/customization/colors --}}
+
           * {
             margin: 0;
             border: 0;
+            line-height: 1.4;
+          }
+
+          a {
+            color: #00ACC1;
+          }
+
+          a:hover, a:focus {
+            color: #26C6DA;
+          }
+
+          {{!-- Links in headers look nicer without the underline --}}
+          h1 a, h2 a, h3 a, h4 a {
+            text-decoration: none;
+          }
+
+          a:active {
+            color: #00ACC1;
           }
 
           body {
