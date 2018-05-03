@@ -1,5 +1,10 @@
 {{#extend "raha/layout/base/layout"}}
   {{#content "styles" mode="append"}}
+    h3 > a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
     .splashPage > h1 {
       margin-bottom: 40px;
     }
@@ -24,6 +29,7 @@
 
     .splashPage > .features > li {
       margin: 0 20px;
+      min-width: 11rem;
     }
 
     .splashPage > .features > li > h3 {
@@ -73,7 +79,9 @@
       <h2 data-t>every_life</h2>
       <ul class="features">
         <li>
-          <h3 data-t>prosperity</h3>
+          <h3>
+            <a href="economy.html" data-t>prosperity</a>
+          </h3>
           <span data-t>prosperity_details</span>
         </li>
         <li>

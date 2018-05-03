@@ -1,0 +1,68 @@
+{{#extend "raha/layout/base/layout"}}
+  {{#content "styles" mode="append"}}
+    .wrapper {
+        margin: 20px auto;
+        max-width: 600px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .wrapper > h2 {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .wrapper > h2 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .wrapper > p {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .wrapper > ul > li {
+        margin-bottom: 10px;
+    }
+  {{/content}}
+
+  {{#content "body"}}
+    <main class="wrapper">
+      <h1 data-t>economy.title</h1>
+
+      <h2 data-t>economy.income.title</h2>
+      <p data-t>economy.income.text</p>
+
+      <h2 data-t>economy.inactive.title</h2>
+      <p data-t>economy.inactive.text</p>
+
+      <h2 data-t>economy.transactions.title</h2>
+      <p data-t>economy.transactions.text</p>
+
+      <h2 data-t>economy.ten_billion.title</h2>
+      <p data-t>economy.ten_billion.text</p>
+
+      <h2 data-t>economy.invite.title</h2>
+      <p data-t>economy.invite.text</p>
+
+      <h2 data-t>economy.parliament.title</h2>
+      <p data-t>economy.parliament.text1</p>
+      <p data-t>economy.parliament.text2</p>
+      <p data-t>economy.parliament.text3</p>
+
+      <h2 data-t>economy.parliament_fund.title</h2>
+      <p data-t>economy.parliament_fund.text1</p>
+      <p data-t>economy.parliament_fund.text2</p>
+
+      <h2 data-t>economy.parliament_budget.title</h2>
+      <p data-t>economy.parliament_budget.text</p>
+      <ul>
+        <li data-t>economy.parliament_budget.point1</li>
+        <li data-t>economy.parliament_budget.point2</li>
+        <li data-t>economy.parliament_budget.point3</li>
+        <li data-t>economy.parliament_budget.point4</li>
+      </ul>
+    </main>
+  {{/content}}
+{{/extend }}
