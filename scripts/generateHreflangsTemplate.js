@@ -14,7 +14,7 @@ async function getLanguages(localesDir) {
 }
 
 function linkTagForLanguage(lang) {
-  return `<link rel="alternate" hreflang="${lang}" href="https://raha.io/${lang}">`;
+  return `<link rel="alternate" hreflang="${lang}" href="/${lang}">`;
 }
 
 async function generateHreflangsTemplate(localesDir) {
