@@ -37,7 +37,7 @@
   # Assumes default is English (en)
   function constructLanguageFlags()
   {
-    local flags="-l en --allow-html true"
+    local flags="-l en"
     for localeFile in $LOCALES_DIR/*.json; do
       local localeName="${localeFile%.json}"
       local localeName="${localeName#$LOCALES_DIR/}"
@@ -76,7 +76,7 @@
 
   echo -e "${DARK_GRAY}Compiling internationalization strings into HTML:${NO_COLOR}"
 
-  cmd="npx static-i18n $langFlags -o $I18N_TMP_DIR $HANDLEBARS_TMP_DIR"
+  cmd="npx static-i18n $langFlags --allow-html true --xml true -o $I18N_TMP_DIR $HANDLEBARS_TMP_DIR"
   echo -e "${DARK_GRAY}Running: $cmd${NO_COLOR}"
   eval $cmd
 
