@@ -4,6 +4,7 @@
     {{#block "head"}}
       <meta charset="utf-8">
       {{> raha/layout/base/ampBoilerplate }}
+      <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
       <title data-t>raha_network</title>
 
@@ -133,6 +134,7 @@
   </head>
 
   <body>
+    {{> raha/layout/base/trackPageview}}
     {{> raha/layout/header/header}}
 
     {{#block "body"}}
