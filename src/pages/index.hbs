@@ -1,16 +1,35 @@
 {{#extend "raha/layout/base/layout"}}
   {{#content "styles" mode="append"}}
     .splashPage > .banner {
-      padding: 0 20px;
+      width: 100%;
+      height: 260px;
+      background-image: url("/assets/img/Give.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .centerFlex {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       text-align: center;
     }
 
-    .splashPage > h1 {
-      margin-bottom: 40px;
+    .splashPage > .description > div {
+      flex-basis: 300px;
+      {{!-- margin: 20px;
+      margin-bottom: 20px;
+      padding: 20px; --}}
+      box-shadow: inset 0 0 10px #000000;
     }
 
-    .splashPage > h2 {
-      margin-bottom: 30px;
+    .splashPage > .banner > h1, h2 {
+      padding: 0;
+      line-height: 8vw;
+      text-align: center;
+      max-width: 350px;
+      margin: auto;
     }
 
     .splashPage > h1,
@@ -18,36 +37,42 @@
       text-align: center;
     }
 
-    .splashPage > ul.features {
-      list-style-type: none;
-      padding: 0 30px;
-      margin: 50px auto;
-
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+    h2.supports {
       text-align: center;
     }
 
-    .splashPage > .features > li {
-      flex-basis: 300px;
-      margin: 0 20px;
-      margin-bottom: 20px;
+    ul.features {
+      list-style-type: none;
+      padding: 0 30px;
+      margin: 50px auto;
     }
 
-    .splashPage > .features > li > h3 {
-      margin-bottom: .5rem;
+    ul.features > li {
+      margin: 20px;
+    }
+
+    ul.features > li > a > div {
+      flex-basis: 25vw;
+      height: 325px;
+      max-width: 250px;
+      margin: 1px;
+      box-shadow: inset 0 0 10px #00ff00;
+      padding: 1px;
+    }
+
+    ul.features > li > a > div > p {
+      {{!-- margin: 20px; --}}
     }
 
     @media only screen and (max-width: 600px) and (min-width: 480px) {
-      .splashPage > .features > li {
+      ul.features > li {
         flex-basis: 40%;
       }
     }
 
     @media only screen and (max-width: 480px),
       (max-device-width: 830px) and (-webkit-min-device-pixel-ratio: 2) {
-      .splashPage > .features > li {
+      ul.features > li {
         flex-basis: 100%;
       }
     }
@@ -61,28 +86,60 @@
   {{#content "body"}}
     <main class="splashPage">
       <section class="banner">
-        <h1 data-t="splashPage.banner.title"></h1>
-        <h2 data-t="splashPage.banner.subtitle"></h2>
+        <h1>Raha</h1>
+        <h2 data-t="splashPage.bannerTitle"></h2>
       </section>
-      <ul class="features">
-        <li>
-          <h3>
-            <a href="/economy" data-t>splashPage.prosperity</a>
-          </h3>
-          <span data-t>splashPage.prosperityDetails</span>
-        </li>
-        <li>
-          <h3 data-t>splashPage.trust</h3>
-          <span data-t>splashPage.trustDetails</span>
-        </li>
-        <li>
-          <h3>
-            <a href="/government" data-t>splashPage.rights</a>
-          </h3>
-          <span data-t>splashPage.rightsDetails</span>
-        </li>
-      </ul>
+      <section class="description centerFlex">
+        <div>
+          <form method="post" action-xhr="https://example.com/subscribe" target="_top">
+            <fieldset>
+              <h4 data-t="splashPage.everyLife"></h4>
+              <input type="text" name="name" placeholder="ENTER YOUR EMAIL" required>
+              <br>
+              <input type="submit" data-attr-t value-t="splashPage.join">
+            </fieldset>
+            <div submit-success>
+                Subscription successful!
+            </div>
+            <div submit-error>
+                Subscription failed!
+            </div>
+          </form>
+        </div>
+      </section>
 
+      <section>
+        <ul class="features centerFlex">
+          <li>
+            <a href="/why-ubi/">
+              <div>
+                <amp-img height="108px" width="192px" layout="responsive" src="/assets/img/Mint.png"></amp-img>
+                <p data-t="splashPage.prosperity"></p>
+                <p data-t="splashPage.learnWhy"></p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/why-trust/">
+              <div>
+                <amp-img height="108px" width="192px" layout="responsive" src="/assets/img/Give.png"></amp-img>
+                <p data-t="splashPage.trust"></p>
+                <p data-t="splashPage.learnWhy"></p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/why-values/">
+              <div>
+                <amp-img height="108px" width="192px" layout="responsive" src="/assets/img/Video.png"></amp-img>
+                <p data-t="splashPage.rights"></p>
+                <p data-t="splashPage.learnWhy"></p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+    
       <section class="login">
         <span data-t>splashPage.alreadyMember</span>
         <a href="https://web.raha.app/login" data-t>login</a>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html amp lang="en">
+
+<head>
+  <meta charset="utf-8">
+  {{> raha/layout/base/ampBoilerplate }}
+  <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
+  <title data-t>why.title</title>
+  <style amp-custom>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI ", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji ", "Segoe UI Emoji ", "Segoe UI Symbol ";
+    }
+
+    amp-story-page {
+      background-color: white;
+      color: black;
+      text-align: center;
+    }
+
+    #world_gdp_title {
+      margin-top: 50vh;
+    }
+
+    [template=thirds] {
+      padding: 0;
+    }
+  </style>
+  <!-- Internationalization -->
+  <link rel="canonical" href="https://raha.app/"> {{!-- Hreflang link tags are added at compile time automatically. --}} {{> raha/generated/hreflangs}}
+</head>
+
+<body>
+  <!-- TODO Need a portrain logo -->
+  <amp-story standalone publisher-logo-src="assets/lib/icons/favicons/android-chrome-512x512.png" poster-portrait-src="assets/lib/icons/favicons/android-chrome-512x512.png"
+    title="Why Raha?" publisher="Raha">
+
+    <amp-story-page id="fourthIndustrial">
+       <amp-story-grid-layer template="vertical">
+        <h3 data-t>why.fourthIndustrial.heading</h3>
+        <h4 data-t>why.fourthIndustrial.graph</h4>
+        <amp-img src="/assets/img/world_gdp.jpg" width="720" height="1280" layout="responsive" />
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="inequality">
+       <amp-story-grid-layer template="vertical">
+        <h3 data-t>why.inequality.heading</h3>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="bigBanks">
+       <amp-story-grid-layer template="vertical">
+        <h3 data-t>why.bigBanks.heading</h3>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="peopleMint">
+       <amp-story-grid-layer template="vertical">
+        <h3 data-t>why.peopleMint</h3>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="basicIncome">
+       <amp-story-grid-layer template="vertical">
+        <h3 data-t>why.basicIncome</h3>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="tbu">
+       <amp-story-grid-layer template="vertical">
+        <h3 data-t>why.tbu</h3>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="poverty">
+       <amp-story-grid-layer template="vertical">
+        <h3 data-t>why.poverty</h3>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="paymentsNetwork">
+       <amp-story-grid-layer template="vertical">
+        <h3 data-t>why.paymentsNetwork</h3>
+      </amp-story-grid-layer>
+    </amp-story-page>
+  </amp-story>
+</body>
+
+</html>
