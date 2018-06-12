@@ -94,21 +94,9 @@
           }
 
           {{!-- links --}}
-          a {
-            color: #00ACC1;
-          }
-
-          a:hover, a:focus {
-            color: #26C6DA;
-          }
-
-          a:active {
-            color: #00ACC1;
-          }
-
-          {{!-- Links in headers look nicer without the underline --}}
-          h1 a, h2 a, h3 a, h4 a, h5 a {
+          a, a:hover, a:focus, a:active {
             text-decoration: none;
+            color: inherit;
           }
 
           {{!-- page layout --}}
@@ -138,8 +126,6 @@
 
     {{#block "body"}}
     {{/block}}
-
-    {{> raha/layout/footer/footer}}
   </body>
 </html>
 

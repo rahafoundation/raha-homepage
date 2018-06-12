@@ -27,6 +27,7 @@
     "lint": "./scripts/lint",
     "watch:build": "watch \"yarn build\" src/ locales/ scripts/",
     "serve":
-      "concurrently --kill-others \"live-server ./build\" \"yarn watch:build\""
+      "concurrently --kill-others \"live-server ./build\" \"yarn watch:build\"",
+    "start": "yarn serve"
   }
 }
