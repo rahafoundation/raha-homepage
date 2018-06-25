@@ -1,25 +1,37 @@
 {
   "raha_network": "Raha Network",
-  "login": "Login",
+  "learnWhy": "Learn Why",
+  "learnMore": "Learn More",
   "util": {
     "backHome": "Back to Homepage"
   },
   "splashPage": {
     "bannerTitle": "PAYMENTS THAT PAY THE COMMUNITY BACK.",
     "learnMore": "LEARN MORE",
-    "alreadyMember": "Already a member?",
+    "description":
+      "Raha is a payments network where transaction fees fund a basic income for all members.",
+    "alreadyMember": "Already a member? Login.",
+    "problem":
+      "Robots and AI are creating unprecedented levels of inequality.</b>",
+    "solution": "Universal basic income is a promising solution.",
     "everyLife": "Help create an economy where Every Life Has Value!",
     "join": "Join Our Movement!",
-    "prosperity": "Basic Income and the End of Extreme Poverty",
+    "ubi": "Universal Basic Income to End Extreme Poverty",
     "trust": "Trusted Identities for Safe and Secure Payments",
-    "rights": "Delegative Democracy and Values-Based Development",
+    "values": "Delegative Democracy and Values-Based Development",
     "inviteOnly": "Invite Only",
-    "learnWhy": "Learn Why"
+    "learnWhat": "What is Raha?"
   },
-
   "whatIsRaha": {
-    "title": "Shared Prosperity in the Giving Economy",
-    "description": "Raha is a payments network where transaction fees fund a basic income for all members.",
+    "title": "What Is Raha?",
+    "manifesto": {
+      "title": "Manifesto",
+      "text1":
+        "Inequality is the defining problem of the 21st century. Capitalism has brought massive wealth and innovation to the world, but it has left many behind. As global stability and financialization of markets increase, so too does the tendency of money to make more money. This system cannot be sustained indefinitely as wealth surges upwards to the select few. Equal opportunity is collapsing.",
+      "text2":
+        "Raha is the foundation of a sustainable future through shared prosperity. Equal opportunity and human dignity require economic security for everyone. In the last 50 years global wealth has increased by 346%, and artificial intelligence and robotics will accelerate this growth. A universal basic income augments the innovation and growth of capitalism by unlocking the socioeconomic potential of everyone. No matter your nation or status, the Raha unique identity platform captures the value inherent to every human life.",
+      "text3": "The development of Raha is based on 3 core principles:"
+    },
     "income": {
       "title": "Raha Basic Income (RBI)",
       "text":
@@ -60,15 +72,17 @@
       "title": "Raha Parliament",
       "text1":
         "The Raha Network will evolve over time, based on the decisions of the member-elected Raha Parliament. The Raha Parliament has three primary responsibilities: changing network parameters, and approving budgets.",
-      "resp1": "Future: designing the future of Raha, including approving feature development and changing network parameters.",
-      "resp2": "Budget: approve which individuals and organization have the right to mint Raha.",
-      "resp3": "Judicial: dispute resolution in cases of fraud, fake accounts, money laundering, or harrassment.",
+      "resp1":
+        "Future: designing the future of Raha, including approving feature development and changing network parameters.",
+      "resp2":
+        "Budget: approve which individuals and organization have the right to mint Raha.",
+      "resp3":
+        "Judicial: dispute resolution in cases of fraud, fake accounts, money laundering, or harrassment.",
       "text2":
         "For instance, if all <a href=\"/economy/#tbu\">TBUs</a> are in circulation, then no one could mint their own basic income, so the Raha Parliament will likely have to. The good news is that because of Metcalfe’s Law, more members means a much more valuable network. Even as the basic income decreases in amount, it will likely increase in market value.",
       "text3":
         "The Raha Parliament will be elected by members of Raha, but the voting system and mechanisms are still under consideration.",
-      "participate":
-        "Help design the Raha voting system."
+      "participate": "Help design the Raha voting system."
     },
     "parliamentBudget": {
       "title": "Parliament Budget",
@@ -88,26 +102,74 @@
     }
   },
 
+  "whyUbi": {
+    "p1":
+      "It's the dawn of a fourth industrial revolution, with artificial intelligence and robotics creating unprecedented wealth. The world’s economy is larger than ever before, and it’s only going to get bigger. But that enormous value is not going to everyday people, but instead to the elites. Technology means the 1% can put their money to work instead of working themselves. This unprecedented decline in wage share from people who work for a living is unsustainable and immoral. Economic security should not be based on one’s parents or country of birth, but instead a basic human right.",
+    "p2":
+      "A small basic income could have a transformative effect on the global economy if enough people receive it. Imagine $1 a day. In the short term this would end extreme poverty in the most impoverished countries where basic goods and services are less expensive, and in the long-term contribute to worldwide economic development and international stability. Over 18 years a person would receive over $6500 - which is more than 60% of the world has in savings. A universal basic income raises the floor, so that people can start on a more equal playing field and take steps to invest in their future like buying a home or attending school.",
+    "p3":
+      "With Raha, the ambition is to make universal basic income just that: <b>universal</b>. It won’t only go to people in a certain neighborhoods, income brackets, or countries, but to everybody, by the virtue of being a part of our global community. We're kicking it off by enabling anyone who can prove their identity to mint Raha, but we’re hoping that our unique identity platform enables partnerships with real currencies in the future."
+  },
+
+  "whyTrust": {
+    "p1":
+      "As technology and globalization spread, so too does international interdependency. Today we might find ourselves buying food from a stranger, getting a ride from a peer, or even staying in someone else’s home when traveling! This is difficult for our human brains that evolved to understand roughly 150 people. So, technology to the rescue! We have news and review apps that helps us understand everything from foreign governments to celebrities lives to local restaurants.",
+    "p2":
+      "Unfortunately on many of these sites, fake news, paid-for reviews, and troll accounts have proliferated. This is understandable, as these profit-driven companies have to grow fast. However, it also decreases the long-term usability and value of these identity networks.",
+    "p3":
+      "At Raha, we believe that every real identity has value. That is why members with a verified identity can mint their own Raha, as they help prevent a Sybil attack from taking over the network. And more members means more value. The total value of a network usually grows in proportion to the square of the number of people connected. This hypothesis is known as Metcalfe’s Law, and has been empirically confirmed at a large scale with the rise of Facebook and Tencent.",
+    "p4":
+      "At Raha, we are creating an economy that belongs to everyone. We believe decentralized platforms that enable people to connect and help each other directly will create progress, connection, and wealth. Technologies that connect us also pose enormous challenges, such as fraud and identity theft (which cost us $16.8 billion in the US alone in 2017), and accounts spreading misinformation - an estimated 6-10% of all accounts on Facebook are fake!",
+    "p5":
+      "No system is perfect, but our goal is to make it more time and money intensive to generate a fake Raha identity than a fake US passport, which can be obtained for about $1000. This will be done through a variety of methods, starting with video/voice identification and expanding to other biometrics such as fingerprint and iris, linked and timestamped social network activity such as Facebook and LinkedIn, and traditional identity forms such as drivers license and passports. Through a constellation of identity factors different applications can decide what level of trust is needed. Because Raha is invite-only, a giant tree can be formed where clusters of bad actors can be detected and pruned."
+  },
+
+  "whyValues": {
+    "p1":
+      "<em>The history of the distribution of wealth has always been deeply political, and it cannot be reduced to purely economic mechanisms.</em> - <a href=\"https://en.wikipedia.org/wiki/Thomas_Piketty\">Piketty</a>",
+    "p2":
+      "We believe values-based development is critical to creating standards that lead to a better society for all instead of protocols controlled by a wealthy few such as Bitcoin, which is best known for wasting electricity and facilitating criminal activity. Klaus Tuber, founder of the World Economic Forum, knows this well: \"We can’t possibly increase human wellbeing if we don’t take the time to identify our collective values before creating technology we know will align with those ideals.\" Raha is based on the principle that every life has value. By creating an economic system that reflects this, we can create greater prosperity for all.",
+    "p3":
+      "Individuals in fair capitalist systems can make their own merit and bring fantastic wealth to themselves and others through hard work and innovation. However, some systems are extremely unfair. It’s worth examining systemic political changes that have driven wealth inequality of entire populations in many countries, starting with the US. For instance, moving off of the gold standard was a political decision, as is taking on unprecedented levels of debt which reflects very short-term thinking.",
+    "p4":
+      "Now that the government feels free to spend so much more money than it takes in, we should examine where this excess money tends to end up. Some of our federal budget goes to very productive programs with long-term returns like education ($102 billion) and transportation ($85 billion). More goes to paying off our existing debt ($229 billion - which is expected to rapidly increase) funding the military industrial complex ($609 billion) and on big bank bailouts. As more money flows into politics, people become rich from crony capitalism instead of fair markets and innovation. This is part of why the income of the upper 1% has risen so dramatically since 1970.",
+    "p5":
+      "Today we have the world’s most established constitutional democracy working for the rich rather than the people. The resulting populist backlash makes short-term, reactionary decisions based on headlines instead of creating long-term plans for prosperity. The engines driving our economy have been hijacked to benefit the wealthy, while simplistic partisan issues divide and distract voters. We believe that a truly delegative democracy could make better long-term economic decisions. For this reason Raha is controlled by the Raha Parliament. Raha makes voting more effective and equal by allowing us to support any other member instead of having to choose amongst the tiny number who have enough money and influence to run for election.",
+    "p6":
+      "But how will we create an effective collective that can quickly improve and agree on a realistic path forwards? We want a hybrid system: delegative democracy where your default vote goes to the person who invited you to join Raha. You can change your vote at any time to ensure that the developments always stays in line with the will of the people.",
+    "p7":
+      "At the beginning, this default gives a huge advantage to early members who are passionate about spreading Raha. This delegative democracy is still highly experimental and the ramifications not fully understood. Initially in order to nominate yourself, you will have to be approved as a valid account with good intentions by the majority of the existing Raha Parliament. We expect many modifications will be necessary. Over time, as Raha becomes more important and people care more about what the Raha Parliament does with their budget, we believe members will be more likely to change their vote. When you change your vote, this could mean voting directly for someone who is running for Raha Parliament, or giving your vote to anyone not already indirectly voting for you. This means you can give it to anyone you know who has similar values to you and you trust will research the relevant issues well. We hope that it leads to a more personalized and productive form of politics. Instead of making decisions from a tiny pool of candidates based on headlines fed to us by profit-driven media engines, we can make productive decisions based on a combination of facts and trust in people close to us."
+  },
+
   "tagline": "every life has value",
 
   "why": {
     "title": "Why Raha?",
     "fourthIndustrial": {
-      "heading": "It's the dawn of a fourth industrial revolution with artificial intelligence and robotics creating unprecedented wealth.",
+      "heading":
+        "It's the dawn of a fourth industrial revolution with artificial intelligence and robotics creating unprecedented wealth.",
       "graph": "World GDP over the last two millennia",
-      "source": "https://ourworldindata.org/grapher/world-gdp-over-the-last-two-millennia"
+      "source":
+        "https://ourworldindata.org/grapher/world-gdp-over-the-last-two-millennia"
     },
     "inequality": {
-      "heading": "But our economy is designed for automation to create huge inequality and political dysfunction.",
+      "heading":
+        "But our economy is designed for automation to create huge inequality and political dysfunction.",
       "source": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4405569/"
     },
     "bigBanks": {
-      "heading": "Governments mint fiat currency and trade debt to fund wars and bailout big banks. This unsustainable inflationary system encourages crony capitalism and fiscal irresponsibility."
+      "heading":
+        "Governments mint fiat currency and trade debt to fund wars and bailout big banks. This unsustainable inflationary system encourages crony capitalism and fiscal irresponsibility."
     },
-    "peopleMint": "Raha aims to change the status quo by giving minting power to the people, creating a more sustainable and fair economic system.",
-    "basicIncome": "With Raha, you can mint your own weekly basic income of 10 Raha after verifying your identity. This results in a global universal basic income, creating a capitalist system that rewards hard work and innovation while recognizing that every life has value.",
-    "tbu": "The number of underlying units is limited to 10 billion, so Raha gradually redistributes wealth by encouraging optional 3% donations with every transaction and inactive account donation after 400 days of no transactions.",
-    "poverty": "While a 3% transaction donation might sound small, 3% of world GDP would be over 2.3 trillion dollars a year - spread evenly, that's enough to give every person over $300 a year, which would end extreme poverty in poor countries.",
-    "paymentsNetwork": "By using the Raha payments network of trusted identities, you can protect yourself from fraud and theft while supporting a more prosperous future for all."
+    "peopleMint":
+      "Raha aims to change the status quo by giving minting power to the people, creating a more sustainable and fair economic system.",
+    "basicIncome":
+      "With Raha, you can mint your own weekly basic income of 10 Raha after verifying your identity. This results in a global universal basic income, creating a capitalist system that rewards hard work and innovation while recognizing that every life has value.",
+    "tbu":
+      "The number of underlying units is limited to 10 billion, so Raha gradually redistributes wealth by encouraging optional 3% donations with every transaction and inactive account donation after 400 days of no transactions.",
+    "poverty":
+      "While a 3% transaction donation might sound small, 3% of world GDP would be over 2.3 trillion dollars a year - spread evenly, that's enough to give every person over $300 a year, which would end extreme poverty in poor countries.",
+    "paymentsNetwork":
+      "By using the Raha payments network of trusted identities, you can protect yourself from fraud and theft while supporting a more prosperous future for all."
   }
 }
