@@ -1,12 +1,40 @@
 {{#extend "raha/layout/base/layout"}}
   {{#content "styles" mode="append"}}
+    .splashPage {
+      margin: 20px auto;
+    }
+
     .splashPage > .banner {
-      width: 100%;
-      height: 260px;
-      background-image: url("/assets/img/Give.png");
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .networkImg {
+      margin-top: -11%;
+    }
+
+    .emailInput {
+      font-size: 20px;
+      margin-top: 10px;
+      border: 1px solid black;
+      padding: 5px;
+      border-radius: 2px;
+      border-color: #cfcfcf;
+    }
+
+    .spacer {
+      height: 30px;
+    }
+
+    .button {
+      font-size: 24px;
+      font-weight: 600;
+      background-color: lightblue;
+      border-radius: 12px;
+      padding: 10px 30px;
+      margin-top: 10px;
     }
 
     .centerFlex {
@@ -18,15 +46,28 @@
 
     .splashPage > .description > div {
       flex-basis: 300px;
-      {{!-- margin: 20px;
-      margin-bottom: 20px;
-      padding: 20px; --}}
-      box-shadow: inset 0 0 10px #000000;
+    }
+
+    .whyContainer {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    .whyContainer > h3 {
+      margin-top: 0;
+    }
+
+    .whyLearnMore {
+      justify-content: flex-end;
+      margin: 0 10px;
     }
 
     .splashPage > .banner > h1, h2 {
       padding: 0;
-      line-height: 8vw;
+      line-height: 1.5;
       text-align: center;
       max-width: 350px;
       margin: auto;
@@ -44,37 +85,19 @@
     ul.features {
       list-style-type: none;
       padding: 0 30px;
-      margin: 50px auto;
+      margin: auto;
     }
 
-    ul.features > li {
-      margin: 20px;
+      
+    ul.features > li > a {
+      text-decoration: none;
+      color: inherit;
     }
 
     ul.features > li > a > div {
-      flex-basis: 25vw;
-      height: 325px;
+      height: 315px;
       max-width: 250px;
-      margin: 1px;
-      box-shadow: inset 0 0 10px #00ff00;
       padding: 1px;
-    }
-
-    ul.features > li > a > div > p {
-      {{!-- margin: 20px; --}}
-    }
-
-    @media only screen and (max-width: 600px) and (min-width: 480px) {
-      ul.features > li {
-        flex-basis: 40%;
-      }
-    }
-
-    @media only screen and (max-width: 480px),
-      (max-device-width: 830px) and (-webkit-min-device-pixel-ratio: 2) {
-      ul.features > li {
-        flex-basis: 100%;
-      }
     }
 
     .splashPage > .login {
@@ -88,52 +111,62 @@
       <section class="banner">
         <h1>Raha</h1>
         <h2 data-t="splashPage.bannerTitle"></h2>
+        <amp-img class="networkImg" height="9" width="16" layout="responsive" src="/assets/img/Network.png"></amp-img>
       </section>
       <section class="description centerFlex">
         <div>
-          <form method="post" action-xhr="https://example.com/subscribe" target="_top">
+          <h4 data-t="splashPage.problem"></h4>
+          <h4 data-t="splashPage.solution"></h4>
+          <h4 data-t="splashPage.description"> </h4>
+          <a href="/what-is-raha/"><button class="button" data-t="learnMore"></button></a>
+          <div class="spacer"></div>
+          <h4 data-t="splashPage.everyLife"></h4>
+          <form method="post" action-xhr="https://raha.us18.list-manage.com/subscribe/post?u=df19cb2bb2149b51990f5aa31&amp;id=865d902f37" target="_top">
             <fieldset>
-              <h4 data-t="splashPage.everyLife"></h4>
-              <input type="text" name="name" placeholder="ENTER YOUR EMAIL" required>
-              <br>
-              <input type="submit" data-attr-t value-t="splashPage.join">
+              <input class="emailInput" type="email" name="EMAIL" placeholder="ENTER YOUR EMAIL" required>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div id="mce-responses">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div> 
+              <input class="button" type="submit" data-attr-t value-t="splashPage.join">
             </fieldset>
             <div submit-success>
                 Subscription successful!
             </div>
+            {{!-- TODO This should show failure, but it gets shown even for 200 --}}
             <div submit-error>
-                Subscription failed!
+                Subscribed!
             </div>
           </form>
         </div>
       </section>
-
       <section>
         <ul class="features centerFlex">
           <li>
             <a href="/why-ubi/">
-              <div>
-                <amp-img height="108px" width="192px" layout="responsive" src="/assets/img/Mint.png"></amp-img>
-                <p data-t="splashPage.prosperity"></p>
-                <p data-t="splashPage.learnWhy"></p>
+              <div class="whyContainer">
+                <amp-img height="9" width="16" layout="responsive" src="/assets/img/Mint.png"></amp-img>
+                <h3 data-t="splashPage.ubi"></h3>
+                <div class="button whyLearnMore" data-t="learnMore" />
               </div>
             </a>
           </li>
           <li>
             <a href="/why-trust/">
-              <div>
-                <amp-img height="108px" width="192px" layout="responsive" src="/assets/img/Give.png"></amp-img>
-                <p data-t="splashPage.trust"></p>
-                <p data-t="splashPage.learnWhy"></p>
+              <div class="whyContainer">
+                <amp-img height="9" width="16" layout="responsive" src="/assets/img/Give.png"></amp-img>
+                <h3 data-t="splashPage.trust"></h3>
+                <div class="button whyLearnMore" data-t="learnMore" />
               </div>
             </a>
           </li>
           <li>
             <a href="/why-values/">
-              <div>
-                <amp-img height="108px" width="192px" layout="responsive" src="/assets/img/Video.png"></amp-img>
-                <p data-t="splashPage.rights"></p>
-                <p data-t="splashPage.learnWhy"></p>
+              <div class="whyContainer">
+                <amp-img height="9" width="16" layout="responsive" src="/assets/img/Video.png"></amp-img>
+                <h3 data-t="splashPage.values"></h3>
+                <div class="button whyLearnMore" data-t="learnMore" />
               </div>
             </a>
           </li>
@@ -141,8 +174,7 @@
       </section>
     
       <section class="login">
-        <span data-t>splashPage.alreadyMember</span>
-        <a href="https://web.raha.app/login" data-t>login</a>
+        <a href="https://web.raha.app/login" data-t>splashPage.alreadyMember</a>
       </section>
     </main>
   {{/content}}
