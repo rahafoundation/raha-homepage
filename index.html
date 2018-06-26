@@ -39,14 +39,6 @@
             font-size: 20px;
           }
 
-          @media only screen
-            and (max-device-width: 480px)
-            and (-webkit-min-device-pixel-ratio: 2) {
-              html, body {
-                font-size: 4vw;
-              }
-          }
-
           * {
             font-family: 'Source Sans Pro', sans-serif;
             margin: 0;
@@ -87,22 +79,6 @@
             margin-top: 1rem;
           }
 
-          a {
-            color: #00ACC1;
-          }
-
-          a:hover, a:focus {
-            color: #26C6DA;
-          }
-
-          a:active {
-            color: #00ACC1;
-          }
-
-          h1 a, h2 a, h3 a, h4 a, h5 a {
-            text-decoration: none;
-          }
-
 
           body {
             font-family: sans-serif;
@@ -114,54 +90,78 @@
           body > .pageSpacer {
             flex-grow: 1;
           }
+    .splashPage {
+      margin: 20px auto;
+    }
 
-          body > header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-          
-            height: 70px;
-            margin-bottom: 20px;
-            padding: 10px 20px;
-          
-            background: rgb(76, 175, 80);
-          
-            border-bottom: 1px solid white;
-            box-shadow: rgb(239, 239, 239) 0px 2px 2px;
-          }
-          
-          body > header > .headerLogo {
-            height: 100%;
-            color: white;
-            font-size: 2rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-          }
-          
-          body > header > .headerLogo > .logo {
-            color: white;
-            height: 60%;
-            margin-right: 20px;
-          }
-          .footer {
-            margin-top: 50px;
-            text-align: center;
-            padding: 50px 30px;
-            background: rgb(238, 238, 238);
-          }
     .splashPage > .banner {
-      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .networkImg {
+      margin-top: -11%;
+    }
+
+    .emailInput {
+      font-size: 20px;
+      margin-top: 10px;
+      border: 1px solid black;
+      padding: 5px;
+      border-radius: 2px;
+      border-color: #cfcfcf;
+    }
+
+    .spacer {
+      height: 30px;
+    }
+
+    .button {
+      font-size: 24px;
+      font-weight: 600;
+      background-color: lightblue;
+      border-radius: 12px;
+      padding: 10px 30px;
+      margin-top: 10px;
+    }
+
+    .centerFlex {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       text-align: center;
     }
 
-    .splashPage > h1 {
-      margin-bottom: 40px;
+    .splashPage > .description > div {
+      flex-basis: 300px;
     }
 
-    .splashPage > h2 {
+    .whyContainer {
+      margin-top: 30px;
       margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    .whyContainer > h3 {
+      margin-top: 0;
+    }
+
+    .whyLearnMore {
+      justify-content: flex-end;
+      margin: 0 10px;
+    }
+
+    .splashPage > .banner > h1, h2 {
+      padding: 0;
+      line-height: 1.5;
+      text-align: center;
+      max-width: 350px;
+      margin: auto;
+      font-size: 29px;
     }
 
     .splashPage > h1,
@@ -169,45 +169,36 @@
       text-align: center;
     }
 
-    .splashPage > ul.features {
-      list-style-type: none;
-      padding: 0 30px;
-      margin: 50px auto;
-
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+    h2.supports {
       text-align: center;
     }
 
-    .splashPage > .features > li {
-      flex-basis: 300px;
-      margin: 0 20px;
-      margin-bottom: 20px;
+    ul.features {
+      list-style-type: none;
+      padding: 0 30px;
+      margin: auto;
     }
 
-    .splashPage > .features > li > h3 {
-      margin-bottom: .5rem;
+    #mce-responses {
+      display: none;
+    }
+      
+    ul.features > li > a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    @media only screen and (max-width: 600px) and (min-width: 480px) {
-      .splashPage > .features > li {
-        flex-basis: 40%;
-      }
-    }
-
-    @media only screen and (max-width: 480px),
-      (max-device-width: 830px) and (-webkit-min-device-pixel-ratio: 2) {
-      .splashPage > .features > li {
-        flex-basis: 100%;
-      }
+    ul.features > li > a > div {
+      height: 315px;
+      max-width: 250px;
+      padding: 1px;
     }
 
     .splashPage > .login {
       text-align: center;
     }
-
       </style>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
   </head>
 
   <body>
@@ -226,47 +217,71 @@
     }
     </script>
     </amp-analytics>
-    <header>
-      <a href="/" class="headerLogo">
-        <svg class="logo" viewbox="0 0 99.1 113.68">
-          <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFF" d="M32.081 59.932c-1.132 6.594-2.526 12.724-3.146 18.931-.511 5.111-.315 10.326-.063 15.477.568 11.66-4.183 15.354-15.338 18.751-7.021 2.138-11.877-1.638-12.242-9.642-.324-7.1-.171-14.38 1.042-21.359C5.136 65.969 9.986 50.356 17.57 35.808c2.309-4.43 5.729-8.716 9.652-11.766 5.606-4.358 10.602-1.527 10.451 5.59-.136 6.406-1.064 12.795-1.615 18.883 4.848 0 9.541.043 14.23-.043.744-.014 1.662-.424 2.189-.958 5.085-5.148 5.588-11.628 4.469-18.176-.952-5.571-5.167-8.235-10.52-9.24-10.388-1.95-20.151.049-29.55 4.546-3.146 1.504-6.24 3.38-9.573 4.129-2.096.471-5.488-.118-6.645-1.56-1.076-1.341-.728-4.885.318-6.69C6.45 11.073 15.402 5.965 25.417 2.708c11.559-3.758 23.31-3.411 34.926-.153 12.122 3.398 21.72 9.854 23.907 23.275 2.242 13.762-2.094 25.301-13.317 33.936-6.952 5.35-6.997 5.326-4.636 14.041 1.043 3.849 2.018 7.73 3.338 11.487 1.814 5.162 3.146 5.525 7.332 1.815 3.983-3.53 7.498-7.599 11.564-11.018 1.85-1.555 5.234-3.508 6.67-2.787 1.98.996 3.676 4.282 3.855 6.71.232 3.144-.482 6.754-1.949 9.557-6.023 11.506-15.421 19.065-28.223 21.896-10.897 2.408-18.974-2.338-21.506-13.181-1.922-8.231-2.974-16.686-4.051-25.088-.464-3.618-1.576-6.135-5.042-7.829-2.114-1.034-3.691-3.17-6.204-5.437z">
-        </svg>
-        Raha Foundation
-      </a>
-    </header>
-
     <main class="splashPage">
       <section class="banner">
-        <h1>Universal Basic Income for the World</h1>
-        <h2>Because Every Life Has Value</h2>
+        <h1>Raha</h1>
+        <h2>PAYMENTS THAT PAY THE COMMUNITY BACK.</h2>
+        <amp-img class="networkImg" height="9" width="16" layout="responsive" src="/assets/img/Network.png"></amp-img>
       </section>
-      <ul class="features">
-        <li>
-          <h3>
-            <a href="/economy">Shared Prosperity</a>
-          </h3>
-          <span>End extreme poverty with the Raha Basic Income.</span>
-        </li>
-        <li>
-          <h3>Trusted Identity</h3>
-          <span>Know who you're paying with Raha-verified identity.</span>
-        </li>
-        <li>
-          <h3>
-            <a href="/government">Economic Rights</a>
-          </h3>
-          <span>For everyone, with no cost to join and democratic governance.</span>
-        </li>
-      </ul>
-
+      <section class="description centerFlex">
+        <div>
+          <h4>Robots and AI are creating unprecedented levels of inequality.</h4>
+          <h4>Universal basic income is a promising solution.</h4>
+          <h4>Raha is a payments network where transaction fees fund a basic income for all members.</h4>
+          <a href="/what-is-raha/"><button class="button">Learn More</button></a>
+          <div class="spacer"></div>
+          <h4>Help create an economy where Every Life Has Value!</h4>
+          <form method="post" action-xhr="https://raha.us18.list-manage.com/subscribe/post?u=df19cb2bb2149b51990f5aa31&amp;id=865d902f37" target="_top">
+            <fieldset>
+              <input class="emailInput" type="email" name="EMAIL" placeholder="ENTER YOUR EMAIL" required>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div id="mce-responses">
+                <div class="response" id="mce-error-response"></div>
+                <div class="response" id="mce-success-response"></div>
+              </div> 
+              <input class="button" type="submit" value="Join Our Movement!">
+            </fieldset>
+            <div submit-success="">
+                Subscription successful!
+            </div>
+            <div submit-error="">
+                Subscribed!
+            </div>
+          </form>
+        </div>
+      </section>
+      <section>
+        <ul class="features centerFlex">
+          <li>
+            <a href="/why-ubi/">
+              <div class="whyContainer">
+                <amp-img height="9" width="16" layout="responsive" src="/assets/img/Mint.png"></amp-img>
+                <h3>Universal Basic Income to End Extreme Poverty</h3>
+                <div class="button whyLearnMore">Learn More</div>
+            </div></a>
+          </li>
+          <li>
+            <a href="/why-trust/">
+              <div class="whyContainer">
+                <amp-img height="9" width="16" layout="responsive" src="/assets/img/Give.png"></amp-img>
+                <h3>Trusted Identities for Safe and Secure Payments</h3>
+                <div class="button whyLearnMore">Learn More</div>
+            </div></a>
+          </li>
+          <li>
+            <a href="/why-values/">
+              <div class="whyContainer">
+                <amp-img height="9" width="16" layout="responsive" src="/assets/img/Video.png"></amp-img>
+                <h3>Delegative Democracy and Values-Based Development</h3>
+                <div class="button whyLearnMore">Learn More</div>
+            </div></a>
+          </li>
+        </ul>
+      </section>
       <section class="login">
-        <span>Already a member?</span>
-        <a href="https://web.raha.app/login">Login</a>
+        <a href="https://web.raha.app/login">Already a member? Login.</a>
       </section>
     </main>
-
-    <div class="pageSpacer"></div>
-    <footer class="footer">Raha Foundation, 2018</footer>
   </body>
 </html>
 
