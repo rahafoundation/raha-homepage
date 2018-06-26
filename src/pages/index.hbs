@@ -1,4 +1,8 @@
 {{#extend "raha/layout/base/layout"}}
+
+  {{#content "head" mode="append"}}
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  {{/content}}
   {{#content "styles" mode="append"}}
     .splashPage {
       margin: 20px auto;
@@ -12,6 +16,7 @@
     }
 
     .networkImg {
+      {{!-- TODO edit image to remove top whitespacer instead of this hack --}}
       margin-top: -11%;
     }
 
@@ -71,6 +76,7 @@
       text-align: center;
       max-width: 350px;
       margin: auto;
+      font-size: 29px;
     }
 
     .splashPage > h1,
@@ -88,6 +94,9 @@
       margin: auto;
     }
 
+    #mce-responses {
+      display: none;
+    }
       
     ul.features > li > a {
       text-decoration: none;
@@ -103,7 +112,6 @@
     .splashPage > .login {
       text-align: center;
     }
-
   {{/content}}
 
   {{#content "body"}}
@@ -126,8 +134,8 @@
               <input class="emailInput" type="email" name="EMAIL" placeholder="ENTER YOUR EMAIL" required>
               <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
               <div id="mce-responses">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
+                <div class="response" id="mce-error-response"></div>
+                <div class="response" id="mce-success-response"></div>
               </div> 
               <input class="button" type="submit" data-attr-t value-t="splashPage.join">
             </fieldset>
@@ -172,7 +180,6 @@
           </li>
         </ul>
       </section>
-    
       <section class="login">
         <a href="https://web.raha.app/login" data-t>splashPage.alreadyMember</a>
       </section>
