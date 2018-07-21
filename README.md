@@ -61,6 +61,8 @@ You can refer to static assets with relative links, i.e.
 `assets/` dir gets copied into the root of the website and served statically
 alongside everything else. Nothing magical here!
 
+Also, the `.well-known` folder gets copied over in the same way.
+
 ### Hosting
 
 It's hosted on github pages; deploying just pushes the `build/` directory to the

@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "app.raha.mobile",
+    "sha256_cert_fingerprints":
+    ["5A:18:9E:42:6B:58:FE:56:E8:87:93:6D:B9:43:37:43:26:34:13:3E:A3:FA:7E:3C:83:3E:98:F5:15:5D:B4:9B"]
+  }
+}]

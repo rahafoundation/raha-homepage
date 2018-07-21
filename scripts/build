@@ -52,6 +52,7 @@
   I18N_TMP_DIR="$rootDir/build.i18n.tmp"
   HANDLEBARS_TMP_DIR="$rootDir/build.hbs.tmp"
   ASSETS_DIR="$rootDir/assets"
+  WELL_KNOWN_DIR="$rootDir/.well-known"
 
   #########
   # Compile Handlebars templates
@@ -100,6 +101,7 @@
   # Copy assets file over
   echo -e "${DARK_GRAY}Copying assets into build dir${NO_COLOR}"
   cp -r $ASSETS_DIR $OUT_DIR
+  cp -r $WELL_KNOWN_DIR $OUT_DIR
 
   echo -e "${GREEN}Build succeeded${NO_COLOR}"
 )
