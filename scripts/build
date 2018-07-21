@@ -98,9 +98,15 @@
   echo -e "${DARK_GRAY}Adding CNAME file${NO_COLOR}"
   echo $CUSTOM_DOMAIN > $OUT_DIR/CNAME
 
+  # prevent Github Pages from trying to interpret files with Jekyll
+  # (causes dotfiles to be ignored)
+  echo -e "${DARK_GRAY}Adding .nojekyll file to build dir${NO_COLOR}"
+  touch $OUT_DIR/.nojekyll
+
   # Copy assets file over
   echo -e "${DARK_GRAY}Copying assets into build dir${NO_COLOR}"
   cp -r $ASSETS_DIR $OUT_DIR
+  echo -e "${DARK_GRAY}Copying .well-known into build dir${NO_COLOR}"
   cp -r $WELL_KNOWN_DIR $OUT_DIR
 
   echo -e "${GREEN}Build succeeded${NO_COLOR}"
