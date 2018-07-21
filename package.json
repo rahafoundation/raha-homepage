@@ -22,7 +22,7 @@
   "scripts": {
     "build": "./scripts/build",
     "deploy:force":
-      "yarn build && gh-pages -d build/ -m \"Updated website [skip ci]\"",
+      "yarn build && gh-pages -d build/ -t -m \"Updated website [skip ci]\"",
     "deploy": "./scripts/deploy",
     "lint": "./scripts/lint",
     "watch:build": "watch \"yarn build\" src/ locales/ scripts/",
