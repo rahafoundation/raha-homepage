@@ -1,17 +1,15 @@
 {{#extend "raha/layout/base/layout"}}
-
-  {{#content "head" mode="append"}}
-    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-  {{/content}}
   {{#content "styles" mode="append"}}
-    .splashPage > .banner {
+    .splashPage > section {
       display: flex;
       flex-direction: column;
-      width: 100%;
-      background: linear-gradient(90deg, #5ec3e9, #96E6B3);
       text-align: center;
       padding-top: 30px;
       padding-bottom: 30px;
+    }
+
+    .splashPage > .banner {
+      background: linear-gradient(90deg, #5ec3e9, #96E6B3);
     }
 
     {{!-- global content max-width of 800px --}}
@@ -29,6 +27,34 @@
       max-width: 500px;
     }
 
+    .rahaBasicIncome > * {
+      max-width: 800px;
+      padding: 0px 30px;
+      margin: 0 auto;
+    }
+
+    .rahaBasicIncome > *:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    .rahaBasicIncome > .details {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+    }
+
+    .rahaBasicIncome > .details > *:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    {{!-- Necessary since AMP images in flex parents receive no width:
+    https://github.com/ampproject/amphtml/issues/7144 --}}
+    .rahaBasicIncome > .details > amp-img {
+      flex-basis: 50%;
+      flex-shrink: 0;
+    }
+
     .emailInput {
       font-size: 20px;
       margin-top: 10px;
@@ -36,17 +62,6 @@
       padding: 5px;
       border-radius: 2px;
       border-color: #cfcfcf;
-    }
-
-    .spacer {
-      height: 30px;
-    }
-
-    .centerFlex {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      text-align: center;
     }
 
     .splashPage > .description > div {
@@ -106,43 +121,22 @@
         <div class="content">
           <h2 data-t="splashPage.bannerTitle"></h2>
           <a class="button" href="/join" data-t="util.signUp"></a>
-          <amp-img class="networkImg" height="7" width="16" layout="responsive" src="/assets/img/toons/family.png"></amp-img>
+          <amp-img height="7" width="16" layout="responsive" src="/assets/img/toons/family.png"></amp-img>
         </div>
       </section>
-      <section class="description centerFlex">
-        <div>
-          <h4 data-t="splashPage.problem"></h4>
-          <h4 data-t="splashPage.solution"></h4>
-          <h4 data-t="splashPage.description"> </h4>
-          <a href="/what-is-raha/"><button class="button" data-t="learnMore"></button></a>
-          <div class="spacer"></div>
-          <h4 data-t="splashPage.everyLife"></h4>
-          <form method="post" action-xhr="https://raha.us18.list-manage.com/subscribe/post?u=df19cb2bb2149b51990f5aa31&amp;id=865d902f37" target="_top">
-            <fieldset>
-              <input class="emailInput" type="email" name="EMAIL" placeholder="ENTER YOUR EMAIL" required>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div id="mce-responses">
-                <div class="response" id="mce-error-response"></div>
-                <div class="response" id="mce-success-response"></div>
-              </div>
-              <input class="button" type="submit" data-attr-t value-t="splashPage.join">
-            </fieldset>
-            <div submit-success>
-                Subscription successful!
-            </div>
-            {{!-- TODO This should show failure, but it gets shown even for 200 --}}
-            <div submit-error>
-                Subscribed!
-            </div>
-          </form>
+      <section class="rahaBasicIncome">
+        <h2 data-t="splashPage.rahaBasicIncome.title"></h2>
+        <div class="details">
+          <p data-t="splashPage.rahaBasicIncome.description"></p>
+          <amp-img height="4" width="5" layout="responsive" src="/assets/img/toons/coin.png"></amp-img>
         </div>
       </section>
+
       <section>
         <ul class="features centerFlex">
           <li>
             <a href="/why-ubi/">
               <div class="whyContainer">
-                <amp-img height="9" width="16" layout="responsive" src="/assets/img/Mint.png"></amp-img>
                 <h3 data-t="splashPage.ubi"></h3>
                 <div class="button whyLearnMore" data-t="learnMore" />
               </div>
