@@ -8,6 +8,11 @@
   },
   "splashPage": {
     "bannerTitle": "Join us on our quest to build the economy of the future.",
+    "rahaBasicIncome": {
+      "title": "Earn Raha by the virtue of being human.",
+      "description":
+        "Snap a video to prove you're real, then start minting your basic income."
+    },
     "learnMore": "LEARN MORE",
     "description":
       "Raha is a payments network where transaction fees fund a basic income for all members.",
