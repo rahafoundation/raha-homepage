@@ -3,10 +3,11 @@
   "learnWhy": "Learn Why",
   "learnMore": "Learn More",
   "util": {
+    "signUp": "Sign up",
     "backHome": "Back to Homepage"
   },
   "splashPage": {
-    "bannerTitle": "PAYMENTS THAT PAY THE COMMUNITY BACK.",
+    "bannerTitle": "Join us on our quest to build the economy of the future.",
     "learnMore": "LEARN MORE",
     "description":
       "Raha is a payments network where transaction fees fund a basic income for all members.",

@@ -8,7 +8,7 @@
       <title data-t>raha_network</title>
 
       <!-- Webfonts -->
-      <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Aleo:700" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
 
       <!-- Favicons -->
@@ -52,7 +52,7 @@
           {{!-- text styles --}}
           h1, h2, h3, h4, h5,
           h1 *, h2 *, h3 *, h4 *, h5 * {
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Aleo', sans-serif;
             font-weight: 700;
             line-height: 1.1;
           }
@@ -76,6 +76,15 @@
             margin-top: 1.5rem;
           }
 
+          .button {
+            display: inline-block;
+            color: white;
+            background-color: #6558f5;
+            border-radius: 4px;
+            padding: 10px 30px;
+            text-decoration: none;
+          }
+
           h1, article h1 {
             font-size: 1.85rem;
           }
@@ -87,15 +96,42 @@
           {{!-- page layout --}}
 
           {{!-- flex for pushing footer to the bottom --}}
+          {{!-- top padding offsets the fixed header height --}}
           body {
             font-family: sans-serif;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            padding-top: 80px;
           }
 
           body > .pageSpacer {
             flex-grow: 1;
+          }
+
+          {{!-- fixed header height and position for sticky header --}}
+          body > header {
+            height: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, #5ec3e9, #96E6B3);
+            display: flex;
+            align-items: center;
+            z-index: 1;
+            border-bottom: 2px solid rgba(0, 0, 0, .1);
+            box-shadow:rgba(0, 0, 0, .2) 0px 0px 4px;
+            padding: 0 15px;
+          }
+
+          body > header > .headerContent {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
           }
         {{/block }}
       </style>
@@ -104,6 +140,7 @@
 
   <body>
     {{> raha/layout/base/trackPageview}}
+    {{> raha/layout/base/header}}
     {{#block "body"}}
     {{/block}}
   </body>

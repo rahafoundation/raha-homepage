@@ -4,20 +4,28 @@
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
   {{/content}}
   {{#content "styles" mode="append"}}
-    .splashPage {
-      margin: 20px auto;
-    }
-
     .splashPage > .banner {
       display: flex;
       flex-direction: column;
-      max-width: 500px;
-      margin: auto;
+      width: 100%;
+      background: linear-gradient(90deg, #5ec3e9, #96E6B3);
+      text-align: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    {{!-- Max width must match that of max header width, defined in layout.hbs --}}
+    .splashPage > .banner > .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 30px;
     }
 
-    .networkImg {
-      {{!-- TODO edit image to remove top whitespacer instead of this hack --}}
-      margin-top: -11%;
+    .splashPage > .banner > .content > *:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    .splashPage > .banner h2 {
+      max-width: 500px;
     }
 
     .emailInput {
@@ -31,15 +39,6 @@
 
     .spacer {
       height: 30px;
-    }
-
-    .button {
-      font-size: 24px;
-      font-weight: 600;
-      background-color: lightblue;
-      border-radius: 12px;
-      padding: 10px 30px;
-      margin-top: 10px;
     }
 
     .centerFlex {
@@ -70,20 +69,6 @@
       margin: 0 10px;
     }
 
-    .splashPage > .banner > h1, h2 {
-      padding: 0;
-      line-height: 1.5;
-      text-align: center;
-      max-width: 350px;
-      margin: auto;
-      font-size: 29px;
-    }
-
-    .splashPage > h1,
-    .splashPage > h2 {
-      text-align: center;
-    }
-
     h2.supports {
       text-align: center;
     }
@@ -97,7 +82,7 @@
     #mce-responses {
       display: none;
     }
-      
+
     ul.features > li > a {
       text-decoration: none;
       color: inherit;
@@ -117,9 +102,11 @@
   {{#content "body"}}
     <main class="splashPage">
       <section class="banner">
-        <h1>Raha</h1>
-        <h2 data-t="splashPage.bannerTitle"></h2>
-        <amp-img class="networkImg" height="9" width="16" layout="responsive" src="/assets/img/Network.png"></amp-img>
+        <div class="content">
+          <h2 data-t="splashPage.bannerTitle"></h2>
+          <a class="button" href="/join" data-t="util.signUp"></a>
+          <amp-img class="networkImg" height="7" width="16" layout="responsive" src="/assets/img/toons/family.png"></amp-img>
+        </div>
       </section>
       <section class="description centerFlex">
         <div>
@@ -136,7 +123,7 @@
               <div id="mce-responses">
                 <div class="response" id="mce-error-response"></div>
                 <div class="response" id="mce-success-response"></div>
-              </div> 
+              </div>
               <input class="button" type="submit" data-attr-t value-t="splashPage.join">
             </fieldset>
             <div submit-success>
