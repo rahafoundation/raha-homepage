@@ -8,8 +8,8 @@
       <title data-t>raha_network</title>
 
       <!-- Webfonts -->
-      <link href="https://fonts.googleapis.com/css?family=Aleo:700" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+      {{!-- <link href="https://fonts.googleapis.com/css?family=Aleo:700" rel="stylesheet"> --}}
+      <link href="https://fonts.googleapis.com/css?family=Lato:400,600" rel="stylesheet">
 
       <!-- Favicons -->
       <link rel="shortcut icon" href="/assets/lib/icons/favicons/favicon.ico">
@@ -43,7 +43,7 @@
           }
 
           * {
-            font-family: 'Source Sans Pro', sans-serif;
+            font-family: 'Lato', sans-serif;
             margin: 0;
             border: 0;
             line-height: 1.58;
@@ -52,8 +52,8 @@
           {{!-- text styles --}}
           h1, h2, h3, h4, h5,
           h1 *, h2 *, h3 *, h4 *, h5 * {
-            font-family: 'Aleo', sans-serif;
-            font-weight: 700;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
             line-height: 1.1;
           }
 
@@ -123,6 +123,10 @@
             border-bottom: 2px solid rgba(0, 0, 0, .1);
             box-shadow:rgba(0, 0, 0, .2) 0px 0px 4px;
             padding: 0 15px;
+          }
+
+          body > header .logoText {
+            height: 65px;
           }
 
           {{!-- global content max-width of 800px --}}
