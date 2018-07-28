@@ -1,4 +1,8 @@
 {{#extend "raha/layout/base/layout"}}
+  {{#content "head" mode="append"}}
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  {{/content}}
+
   {{#content "styles" mode="append"}}
     .splashPage > section {
       display: flex;
@@ -48,11 +52,46 @@
       margin-right: 30px;
     }
 
+    .rahaBasicIncome .text {
+      flex-basis: 175px;
+      flex-shrink: 0;
+      flex-grow: 1;
+    }
+
+    .rahaBasicIncome .text p {
+      margin-bottom: 1.3em;
+    }
+
+    @media(max-width: 500px) {
+      .rahaBasicIncome > .details > *:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      .rahaBasicIncome .text p {
+        margin-bottom: 0;
+      }
+
+      .rahaBasicIncome .text > a {
+        display: none;
+      }
+    }
+
+    @media(max-width: 400px) {
+      .rahaBasicIncome > .text {
+        margin-right: 0;
+      }
+    }
+
+    @media(min-width: 500px) {
+      .rahaBasicIncome .bottomLink {
+        display: none;
+      }
+    }
+
     {{!-- Necessary since AMP images in flex parents receive no width:
     https://github.com/ampproject/amphtml/issues/7144 --}}
     .rahaBasicIncome > .details > amp-img {
       flex-basis: 50%;
-      flex-shrink: 0;
     }
 
     .emailInput {
@@ -120,16 +159,20 @@
       <section class="banner">
         <div class="content">
           <h2 data-t="splashPage.bannerTitle"></h2>
-          <a class="button" href="/join" data-t="util.signUp"></a>
+          <button on="tap:joinUs.scrollTo(duration=200)" data-t="util.signUpLong"></button>
           <amp-img height="7" width="16" layout="responsive" src="/assets/img/toons/family.png"></amp-img>
         </div>
       </section>
       <section class="rahaBasicIncome">
         <h2 data-t="splashPage.rahaBasicIncome.title"></h2>
         <div class="details">
-          <p data-t="splashPage.rahaBasicIncome.description"></p>
+          <div class="text">
+            <p data-t="splashPage.rahaBasicIncome.description"></p>
+            <a href="/rahaBasicIncome" data-t="splashPage.rahaBasicIncome.learnMore"></a>
+          </div>
           <amp-img height="4" width="5" layout="responsive" src="/assets/img/toons/coin.png"></amp-img>
         </div>
+        <a class="bottomLink" href="/rahaBasicIncome" data-t="splashPage.rahaBasicIncome.learnMore"></a>
       </section>
 
       <section>

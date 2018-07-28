@@ -5,7 +5,7 @@
       <meta charset="utf-8">
       {{> raha/layout/base/ampBoilerplate }}
 
-      <title data-t>raha_network</title>
+      <title data-t="raha"></title>
 
       <!-- Webfonts -->
       {{!-- <link href="https://fonts.googleapis.com/css?family=Aleo:700" rel="stylesheet"> --}}
@@ -35,11 +35,8 @@
 
       <style amp-custom>
         {{#block "styles" }}
-          {{!-- colors are taken from material-ui colors--}}
-          {{!-- http://www.material-ui.com/#/customization/colors --}}
-
           html, body {
-            font-size: 20px;
+            font-size: 1.1rem;
           }
 
           * {
@@ -76,13 +73,28 @@
             margin-top: 1.5rem;
           }
 
-          .button {
+          a:not(.button) {
+            color: #6448f5;
+          }
+
+          a:not(.button):hover, a:not(.button):focus {
+            color: #8976ef;
+          }
+
+          button, .button {
+            font-size: 1.1rem;
             display: inline-block;
             color: white;
             background-color: #6558f5;
             border-radius: 4px;
             padding: 10px 30px;
             text-decoration: none;
+            cursor: hand;
+            cursor: pointer;
+          }
+
+          button:hover, button:focus, .button:hover, .button:focus {
+            background-color: #8976ef;
           }
 
           h1, article h1 {
