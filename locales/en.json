@@ -15,20 +15,13 @@
         "Snap a video to prove you're real, then start minting your basic income.",
       "learnMore": "Learn more about the Raha Basic Income."
     },
-    "learnMore": "LEARN MORE",
-    "description":
-      "Raha is a payments network where transaction fees fund a basic income for all members.",
-    "alreadyMember": "Already a member? Login.",
-    "problem":
-      "Robots and AI are creating unprecedented levels of inequality.</b>",
-    "solution": "Universal basic income is a promising solution.",
-    "everyLife": "Help create an economy where Every Life Has Value!",
-    "join": "Join Our Movement!",
-    "ubi": "Universal Basic Income to End Extreme Poverty",
-    "trust": "Trusted Identities for Safe and Secure Payments",
-    "values": "Delegative Democracy and Values-Based Development",
-    "inviteOnly": "Invite Only",
-    "learnWhat": "What is Raha?"
+    "payments": {
+      "title": "Give your friends Raha for doing great things.",
+      "description":
+        "Show your gratitude, and make the world better while doing it.",
+      "learnMore":
+        "Learn how members give back to the community when they receive Raha."
+    }
   },
   "whatIsRaha": {
     "title": "What Is Raha?",
