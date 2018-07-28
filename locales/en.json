@@ -1,9 +1,10 @@
 {
-  "raha_network": "Raha Network",
+  "raha": "Raha - Basic Income App",
   "learnWhy": "Learn Why",
   "learnMore": "Learn More",
   "util": {
     "signUp": "Sign up",
+    "signUpLong": "Sign up for app updates",
     "backHome": "Back to Homepage"
   },
   "splashPage": {
@@ -11,7 +12,8 @@
     "rahaBasicIncome": {
       "title": "Earn Raha by the virtue of being human.",
       "description":
-        "Snap a video to prove you're real, then start minting your basic income."
+        "Snap a video to prove you're real, then start minting your basic income.",
+      "learnMore": "Learn more about the Raha Basic Income."
     },
     "learnMore": "LEARN MORE",
     "description":
