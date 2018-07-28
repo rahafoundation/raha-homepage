@@ -3,11 +3,19 @@
   "learnWhy": "Learn Why",
   "learnMore": "Learn More",
   "util": {
-    "signUp": "Sign up",
-    "signUpLong": "Sign up for app updates",
+    "signUp": "Sign Up",
+    "signUpLong": "Sign Up for the Raha App",
     "backHome": "Back to Homepage"
   },
+  "joinForm": {
+    "title": "Sign up for our mailing list",
+    "description":
+      "We're excited to shape the future together! The app is coming out soon. Until then, sign up to get updates about Raha.",
+    "email": "Email address",
+    "submit": "Join the movement"
+  },
   "splashPage": {
+    "alreadyMember": "Already a beta member? Log In",
     "bannerTitle": "Join us on our quest to build the economy of the future.",
     "rahaBasicIncome": {
       "title": "Earn Raha by the virtue of being human.",
@@ -104,6 +112,7 @@
   },
 
   "whyUbi": {
+    "title": "Universal Basic Income to End Extreme Poverty",
     "p1":
       "It's the dawn of a fourth industrial revolution, with artificial intelligence and robotics creating unprecedented wealth. The world’s economy is larger than ever before, and it’s only going to get bigger. But that enormous value is not going to everyday people, but instead to the elites. Technology means the 1% can put their money to work instead of working themselves. This unprecedented decline in wage share from people who work for a living is unsustainable and immoral. Economic security should not be based on one’s parents or country of birth, but instead a basic human right.",
     "p2":
@@ -113,6 +122,7 @@
   },
 
   "whyTrust": {
+    "title": "Trusted Identities for Safe and Secure Payments",
     "p1":
       "As technology and globalization spread, so too does international interdependency. Today we might find ourselves buying food from a stranger, getting a ride from a peer, or even staying in someone else’s home when traveling! This is difficult for our human brains that evolved to understand roughly 150 people. So, technology to the rescue! We have news and review apps that helps us understand everything from foreign governments to celebrities lives to local restaurants.",
     "p2":
@@ -126,6 +136,7 @@
   },
 
   "whyValues": {
+    "title": "Delegative Democracy and Values-Based Development",
     "p1":
       "<em>The history of the distribution of wealth has always been deeply political, and it cannot be reduced to purely economic mechanisms.</em> - <a href=\"https://en.wikipedia.org/wiki/Thomas_Piketty\">Piketty</a>",
     "p2":
