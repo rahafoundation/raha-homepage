@@ -1,8 +1,4 @@
 {{#extend "raha/layout/base/layout"}}
-  {{#content "head" mode="append"}}
-    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-  {{/content}}
-
   {{#content "styles" mode="append"}}
     .splashPage > section {
       display: flex;
@@ -32,7 +28,17 @@
     }
 
     .payments {
-      background-color: #c7c3fa;
+      background: linear-gradient(90deg, #6558f5, #8976ef);
+      color: white;
+    }
+
+    .payments a:not(.button) {
+      color: #96E6B3;
+      transition: color .1s ease-in;
+    }
+
+    .payments a:not(.button):hover, .payments a:not(.button):focus {
+      color: #B1E4C3;
     }
 
     .infoSection > * {
@@ -96,15 +102,6 @@
     https://github.com/ampproject/amphtml/issues/7144 --}}
     .infoSection > .details > amp-img {
       flex-basis: 50%;
-    }
-
-    .emailInput {
-      font-size: 20px;
-      margin-top: 10px;
-      border: 1px solid black;
-      padding: 5px;
-      border-radius: 2px;
-      border-color: #cfcfcf;
     }
 
     .splashPage > .description > div {
@@ -172,11 +169,11 @@
         <div class="details">
           <div class="text">
             <p data-t="splashPage.rahaBasicIncome.description"></p>
-            <a href="/rahaBasicIncome" data-t="splashPage.rahaBasicIncome.learnMore"></a>
+            <a href="/why-ubi" data-t="splashPage.rahaBasicIncome.learnMore"></a>
           </div>
           <amp-img height="4" width="5" layout="responsive" src="/assets/img/toons/coin.png"></amp-img>
         </div>
-        <a class="bottomLink" href="/rahaBasicIncome" data-t="splashPage.rahaBasicIncome.learnMore"></a>
+        <a class="bottomLink" href="/why-ubi" data-t="splashPage.rahaBasicIncome.learnMore"></a>
       </section>
       <section class="payments infoSection">
         <h2 data-t="splashPage.payments.title"></h2>
@@ -184,42 +181,12 @@
           <amp-img height="10" width="16" layout="responsive" src="/assets/img/toons/give.png"></amp-img>
           <div class="text">
             <p data-t="splashPage.payments.description"></p>
-            <a href="/payments" data-t="splashPage.payments.learnMore"></a>
+            <a href="/what-is-raha" data-t="splashPage.payments.learnMore"></a>
           </div>
         </div>
-        <a class="bottomLink" href="/payments" data-t="splashPage.payments.learnMore"></a>
+        <a class="bottomLink" href="/what-is-raha" data-t="splashPage.payments.learnMore"></a>
       </section>
 
-      <section>
-        <ul class="features centerFlex">
-          <li>
-            <a href="/why-ubi/">
-              <div class="whyContainer">
-                <h3 data-t="splashPage.ubi"></h3>
-                <div class="button whyLearnMore" data-t="learnMore" />
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="/why-trust/">
-              <div class="whyContainer">
-                <amp-img height="9" width="16" layout="responsive" src="/assets/img/Give.png"></amp-img>
-                <h3 data-t="splashPage.trust"></h3>
-                <div class="button whyLearnMore" data-t="learnMore" />
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="/why-values/">
-              <div class="whyContainer">
-                <amp-img height="9" width="16" layout="responsive" src="/assets/img/Video.png"></amp-img>
-                <h3 data-t="splashPage.values"></h3>
-                <div class="button whyLearnMore" data-t="learnMore" />
-              </div>
-            </a>
-          </li>
-        </ul>
-      </section>
       <section class="login">
         <a href="https://web.raha.app/login" data-t>splashPage.alreadyMember</a>
       </section>
