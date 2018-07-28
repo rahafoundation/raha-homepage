@@ -31,66 +31,70 @@
       max-width: 500px;
     }
 
-    .rahaBasicIncome > * {
+    .payments {
+      background-color: #c7c3fa;
+    }
+
+    .infoSection > * {
       max-width: 800px;
       padding: 0px 30px;
       margin: 0 auto;
     }
 
-    .rahaBasicIncome > *:not(:last-child) {
+    .infoSection > *:not(:last-child) {
       margin-bottom: 30px;
     }
 
-    .rahaBasicIncome > .details {
+    .infoSection > .details {
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: left;
     }
 
-    .rahaBasicIncome > .details > *:not(:last-child) {
+    .infoSection > .details > *:not(:last-child) {
       margin-right: 30px;
     }
 
-    .rahaBasicIncome .text {
+    .infoSection .text {
       flex-basis: 175px;
       flex-shrink: 0;
       flex-grow: 1;
     }
 
-    .rahaBasicIncome .text p {
+    .infoSection .text p {
       margin-bottom: 1.3em;
     }
 
     @media(max-width: 500px) {
-      .rahaBasicIncome > .details > *:not(:last-child) {
+      .infoSection > .details > *:not(:last-child) {
         margin-right: 20px;
       }
 
-      .rahaBasicIncome .text p {
+      .infoSection .text p {
         margin-bottom: 0;
       }
 
-      .rahaBasicIncome .text > a {
+      .infoSection .text > a {
         display: none;
       }
     }
 
     @media(max-width: 400px) {
-      .rahaBasicIncome > .text {
+      .rahaBasicIncome > .details > *:not(:last-child) {
         margin-right: 0;
       }
     }
 
     @media(min-width: 500px) {
-      .rahaBasicIncome .bottomLink {
+      .infoSection .bottomLink {
         display: none;
       }
     }
 
     {{!-- Necessary since AMP images in flex parents receive no width:
     https://github.com/ampproject/amphtml/issues/7144 --}}
-    .rahaBasicIncome > .details > amp-img {
+    .infoSection > .details > amp-img {
       flex-basis: 50%;
     }
 
@@ -163,7 +167,7 @@
           <amp-img height="7" width="16" layout="responsive" src="/assets/img/toons/family.png"></amp-img>
         </div>
       </section>
-      <section class="rahaBasicIncome">
+      <section class="rahaBasicIncome infoSection">
         <h2 data-t="splashPage.rahaBasicIncome.title"></h2>
         <div class="details">
           <div class="text">
@@ -173,6 +177,17 @@
           <amp-img height="4" width="5" layout="responsive" src="/assets/img/toons/coin.png"></amp-img>
         </div>
         <a class="bottomLink" href="/rahaBasicIncome" data-t="splashPage.rahaBasicIncome.learnMore"></a>
+      </section>
+      <section class="payments infoSection">
+        <h2 data-t="splashPage.payments.title"></h2>
+        <div class="details">
+          <amp-img height="10" width="16" layout="responsive" src="/assets/img/toons/give.png"></amp-img>
+          <div class="text">
+            <p data-t="splashPage.payments.description"></p>
+            <a href="/payments" data-t="splashPage.payments.learnMore"></a>
+          </div>
+        </div>
+        <a class="bottomLink" href="/payments" data-t="splashPage.payments.learnMore"></a>
       </section>
 
       <section>
