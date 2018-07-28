@@ -1,4 +1,11 @@
 {{#extend "raha/layout/base/layout"}}
+  {{#content "styles" mode="append"}}
+    .whatIsRaha {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  {{/content}}
+
   {{#content "body"}}
     <main class="whatIsRaha">
       <article>
@@ -12,13 +19,13 @@
         <p data-t>whatIsRaha.manifesto.text3</p>
         <ul>
           <li>
-            <span data-t>splashPage.ubi</span>. <a href="/why-ubi/" data-t>learnMore</a>.
+            <span data-t>whyUbi.title</span>. <a href="/why-ubi/" data-t>learnMore</a>.
           </li>
           <li>
-            <span data-t>splashPage.trust</span>. <a href="/why-trust/" data-t>learnMore</a>.
+            <span data-t>whyTrust.title</span>. <a href="/why-trust/" data-t>learnMore</a>.
           </li>
           <li>
-            <span data-t>splashPage.values</span>. <a href="/why-values/" data-t>learnMore</a>.
+            <span data-t>whyValues.title</span>. <a href="/why-values/" data-t>learnMore</a>.
           </li>
         </ul>
 

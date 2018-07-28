@@ -1,112 +1,107 @@
 {{#extend "raha/layout/base/layout"}}
-
-  {{#content "head" mode="append"}}
-    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-  {{/content}}
   {{#content "styles" mode="append"}}
-    .splashPage {
-      margin: 20px auto;
+    .splashPage > section {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
     }
 
     .splashPage > .banner {
-      display: flex;
-      flex-direction: column;
-      max-width: 500px;
-      margin: auto;
+      background: linear-gradient(90deg, #5ec3e9, #96E6B3);
     }
 
-    .networkImg {
-      {{!-- TODO edit image to remove top whitespacer instead of this hack --}}
-      margin-top: -11%;
-    }
-
-    .emailInput {
-      font-size: 20px;
-      margin-top: 10px;
-      border: 1px solid black;
-      padding: 5px;
-      border-radius: 2px;
-      border-color: #cfcfcf;
-    }
-
-    .spacer {
-      height: 30px;
-    }
-
-    .button {
-      font-size: 24px;
-      font-weight: 600;
-      background-color: lightblue;
-      border-radius: 12px;
-      padding: 10px 30px;
-      margin-top: 10px;
-    }
-
-    .centerFlex {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      text-align: center;
-    }
-
-    .splashPage > .description > div {
-      flex-basis: 300px;
-    }
-
-    .whyContainer {
-      margin-top: 30px;
-      margin-bottom: 30px;
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-    }
-
-    .whyContainer > h3 {
-      margin-top: 0;
-    }
-
-    .whyLearnMore {
-      justify-content: flex-end;
-      margin: 0 10px;
-    }
-
-    .splashPage > .banner > h1, h2 {
-      padding: 0;
-      line-height: 1.5;
-      text-align: center;
-      max-width: 350px;
-      margin: auto;
-      font-size: 29px;
-    }
-
-    .splashPage > h1,
-    .splashPage > h2 {
-      text-align: center;
-    }
-
-    h2.supports {
-      text-align: center;
-    }
-
-    ul.features {
-      list-style-type: none;
+    {{!-- global content max-width of 800px --}}
+    .splashPage > .banner > .content {
+      max-width: 800px;
+      margin: 0 auto;
       padding: 0 30px;
-      margin: auto;
     }
 
-    #mce-responses {
-      display: none;
-    }
-      
-    ul.features > li > a {
-      text-decoration: none;
-      color: inherit;
+    .splashPage > .banner > .content > *:not(:last-child) {
+      margin-bottom: 30px;
     }
 
-    ul.features > li > a > div {
-      height: 315px;
-      max-width: 250px;
-      padding: 1px;
+    .splashPage > .banner h2 {
+      max-width: 500px;
+    }
+
+    .payments {
+      background: linear-gradient(90deg, #6558f5, #8976ef);
+      color: white;
+    }
+
+    .payments a:not(.button) {
+      color: #96E6B3;
+      transition: color .1s ease-in;
+    }
+
+    .payments a:not(.button):hover, .payments a:not(.button):focus {
+      color: #B1E4C3;
+    }
+
+    .infoSection > * {
+      max-width: 800px;
+      padding: 0px 30px;
+      margin: 0 auto;
+    }
+
+    .infoSection > *:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    .infoSection > .details {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+    }
+
+    .infoSection > .details > *:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    .infoSection .text {
+      flex-basis: 175px;
+      flex-shrink: 0;
+      flex-grow: 1;
+    }
+
+    .infoSection .text p {
+      margin-bottom: 1.3em;
+    }
+
+    @media(max-width: 500px) {
+      .infoSection > .details > *:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      .infoSection .text p {
+        margin-bottom: 0;
+      }
+
+      .infoSection .text > a {
+        display: none;
+      }
+    }
+
+    @media(max-width: 400px) {
+      .rahaBasicIncome > .details > *:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+
+    @media(min-width: 500px) {
+      .infoSection .bottomLink {
+        display: none;
+      }
+    }
+
+    {{!-- Necessary since AMP images in flex parents receive no width:
+    https://github.com/ampproject/amphtml/issues/7144 --}}
+    .infoSection > .details > amp-img {
+      flex-basis: 50%;
     }
 
     .splashPage > .login {
@@ -117,69 +112,35 @@
   {{#content "body"}}
     <main class="splashPage">
       <section class="banner">
-        <h1>Raha</h1>
-        <h2 data-t="splashPage.bannerTitle"></h2>
-        <amp-img class="networkImg" height="9" width="16" layout="responsive" src="/assets/img/Network.png"></amp-img>
-      </section>
-      <section class="description centerFlex">
-        <div>
-          <h4 data-t="splashPage.problem"></h4>
-          <h4 data-t="splashPage.solution"></h4>
-          <h4 data-t="splashPage.description"> </h4>
-          <a href="/what-is-raha/"><button class="button" data-t="learnMore"></button></a>
-          <div class="spacer"></div>
-          <h4 data-t="splashPage.everyLife"></h4>
-          <form method="post" action-xhr="https://raha.us18.list-manage.com/subscribe/post?u=df19cb2bb2149b51990f5aa31&amp;id=865d902f37" target="_top">
-            <fieldset>
-              <input class="emailInput" type="email" name="EMAIL" placeholder="ENTER YOUR EMAIL" required>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div id="mce-responses">
-                <div class="response" id="mce-error-response"></div>
-                <div class="response" id="mce-success-response"></div>
-              </div> 
-              <input class="button" type="submit" data-attr-t value-t="splashPage.join">
-            </fieldset>
-            <div submit-success>
-                Subscription successful!
-            </div>
-            {{!-- TODO This should show failure, but it gets shown even for 200 --}}
-            <div submit-error>
-                Subscribed!
-            </div>
-          </form>
+        <div class="content">
+          <h2 data-t="splashPage.bannerTitle"></h2>
+          <button on="tap:joinUs.scrollTo(duration=200)" data-t="util.signUpLong"></button>
+          <amp-img height="7" width="16" layout="responsive" src="/assets/img/toons/family.png"></amp-img>
         </div>
       </section>
-      <section>
-        <ul class="features centerFlex">
-          <li>
-            <a href="/why-ubi/">
-              <div class="whyContainer">
-                <amp-img height="9" width="16" layout="responsive" src="/assets/img/Mint.png"></amp-img>
-                <h3 data-t="splashPage.ubi"></h3>
-                <div class="button whyLearnMore" data-t="learnMore" />
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="/why-trust/">
-              <div class="whyContainer">
-                <amp-img height="9" width="16" layout="responsive" src="/assets/img/Give.png"></amp-img>
-                <h3 data-t="splashPage.trust"></h3>
-                <div class="button whyLearnMore" data-t="learnMore" />
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="/why-values/">
-              <div class="whyContainer">
-                <amp-img height="9" width="16" layout="responsive" src="/assets/img/Video.png"></amp-img>
-                <h3 data-t="splashPage.values"></h3>
-                <div class="button whyLearnMore" data-t="learnMore" />
-              </div>
-            </a>
-          </li>
-        </ul>
+      <section class="rahaBasicIncome infoSection">
+        <h2 data-t="splashPage.rahaBasicIncome.title"></h2>
+        <div class="details">
+          <div class="text">
+            <p data-t="splashPage.rahaBasicIncome.description"></p>
+            <a href="/why-ubi" data-t="splashPage.rahaBasicIncome.learnMore"></a>
+          </div>
+          <amp-img height="4" width="5" layout="responsive" src="/assets/img/toons/coin.png"></amp-img>
+        </div>
+        <a class="bottomLink" href="/why-ubi" data-t="splashPage.rahaBasicIncome.learnMore"></a>
       </section>
+      <section class="payments infoSection">
+        <h2 data-t="splashPage.payments.title"></h2>
+        <div class="details">
+          <amp-img height="10" width="16" layout="responsive" src="/assets/img/toons/give.png"></amp-img>
+          <div class="text">
+            <p data-t="splashPage.payments.description"></p>
+            <a href="/what-is-raha" data-t="splashPage.payments.learnMore"></a>
+          </div>
+        </div>
+        <a class="bottomLink" href="/what-is-raha" data-t="splashPage.payments.learnMore"></a>
+      </section>
+
       <section class="login">
         <a href="https://web.raha.app/login" data-t>splashPage.alreadyMember</a>
       </section>

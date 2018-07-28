@@ -5,11 +5,16 @@
       <meta charset="utf-8">
       {{> raha/layout/base/ampBoilerplate }}
 
-      <title data-t>raha_network</title>
+      <title data-t="raha"></title>
+
+      {{!-- Global AMP extensions --}}
+      {{!-- amp-form: For global Join Us form. --}}
+      <script async custom-element="amp-form"
+      src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 
       <!-- Webfonts -->
-      <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Aleo:700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lato:400,600" rel="stylesheet">
 
       <!-- Favicons -->
       <link rel="shortcut icon" href="/assets/lib/icons/favicons/favicon.ico">
@@ -35,15 +40,13 @@
 
       <style amp-custom>
         {{#block "styles" }}
-          {{!-- colors are taken from material-ui colors--}}
-          {{!-- http://www.material-ui.com/#/customization/colors --}}
-
           html, body {
-            font-size: 20px;
+            font-size: 1.1rem;
+            background-color: #fcfcfc;
           }
 
           * {
-            font-family: 'Source Sans Pro', sans-serif;
+            font-family: 'Lato', sans-serif;
             margin: 0;
             border: 0;
             line-height: 1.58;
@@ -52,8 +55,8 @@
           {{!-- text styles --}}
           h1, h2, h3, h4, h5,
           h1 *, h2 *, h3 *, h4 *, h5 * {
-            font-family: 'Raleway', sans-serif;
-            font-weight: 700;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
             line-height: 1.1;
           }
 
@@ -76,6 +79,49 @@
             margin-top: 1.5rem;
           }
 
+          a:not(.button) {
+            color: #6558f5;
+            transition: color .1s ease-in;
+          }
+
+          a:not(.button):hover, a:not(.button):focus {
+            color: #8976ef;
+          }
+
+          button, .button {
+            font-size: 1.1rem;
+            display: inline-block;
+            color: white;
+            background-color: #6558f5;
+            border-radius: 4px;
+            padding: 10px 30px;
+            text-decoration: none;
+            cursor: hand;
+            cursor: pointer;
+            transition: background-color .1s ease-in;
+          }
+
+          button:hover, button:focus, .button:hover, .button:focus {
+            background-color: #8976ef;
+          }
+
+          fieldset {
+            padding: 0;
+          }
+
+          input[type="text"], input[type="email"] {
+            font-size: 1.1rem;
+            display: inline-block;
+            border: 4px solid transparent;
+            border-radius: 4px;
+            padding: 10px 30px;
+            transition: border-color .1s ease-in;
+          }
+
+          input[type="text"]:focus, input[type="email"]:focus {
+            border-color: #8976ef;
+          }
+
           h1, article h1 {
             font-size: 1.85rem;
           }
@@ -86,26 +132,129 @@
 
           {{!-- page layout --}}
 
-          {{!-- flex for pushing footer to the bottom --}}
+          {{!-- top padding offsets the fixed header height --}}
           body {
             font-family: sans-serif;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            padding-top: 80px;
           }
 
           body > .pageSpacer {
             flex-grow: 1;
+          }
+
+          {{!-- fixed header height and position for sticky header --}}
+          body > header {
+            height: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, #5ec3e9, #96E6B3);
+            display: flex;
+            align-items: center;
+            z-index: 1;
+            box-shadow:rgba(0, 0, 0, .2) 0px 0px 4px;
+            padding: 0 15px;
+          }
+
+          body > header .logoText {
+            height: 65px;
+          }
+
+          {{!-- global content max-width of 800px --}}
+          body > header > .content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+          }
+
+          #joinUs {
+            background: linear-gradient(90deg, #5ec3e9, #96E6B3);
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+
+          #joinUs > form {
+            max-width: 800px;
+          }
+
+          #joinUs > form > *:not(:last-child) {
+            margin-bottom: 20px;
+          }
+
+          #joinUs h3 {
+            font-family: "Aleo";
+            font-weight: 700;
+          }
+
+          #joinUs label {
+            font-weight: 600;
+            margin-right: 15px;
+          }
+
+          body > footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background-color: #4c4c4c;
+            color: #efefef;
+            text-align: center;
           }
         {{/block }}
       </style>
     {{/block }}
   </head>
 
-  <body>
+  <body id="pageTop">
     {{> raha/layout/base/trackPageview}}
+    {{> raha/layout/base/header}}
     {{#block "body"}}
     {{/block}}
+
+    {{!-- Show join form on all pages --}}
+    <section id="joinUs">
+      <form method="post"
+      action-xhr="https://raha.us18.list-manage.com/subscribe/post?u=df19cb2bb2149b51990f5aa31&amp;id=865d902f37"
+      target="_top">
+        <h3 data-t="joinForm.title"></h3>
+        <p data-t="joinForm.description"></p>
+        <fieldset>
+          <label for="joinForm.emailInput" data-t="joinForm.email">
+          </label>
+          <input
+            id="joinForm.emailInput"
+            class="emailInput" type="email" name="EMAIL"
+            placeholder="you@gmail.com" required
+          >
+        </fieldset>
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div id="mce-responses">
+          <div class="response" id="mce-error-response"></div>
+          <div class="response" id="mce-success-response"></div>
+        </div>
+        <input class="button" type="submit" data-attr-t value-t="joinForm.submit">
+        <div submit-success>
+            Subscription successful!
+        </div>
+        {{!-- TODO This should show failure, but it gets shown even for 200 --}}
+        <div submit-error>
+            Subscribed!
+        </div>
+      </form>
+    </section>
+    <footer>
+      <span>Raha, 2018</span>
+    </footer>
   </body>
 </html>
 

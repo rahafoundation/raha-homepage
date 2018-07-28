@@ -1,9 +1,16 @@
 {{#extend "raha/layout/base/layout"}}
+  {{#content "styles" mode="append"}}
+    .whyValues {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  {{/content}}
+
   {{#content "body"}}
-    <main>
+    <main class="whyValues">
       <article>
         {{> raha/util/backHome }}
-        <h2 data-t>splashPage.values</h2>
+        <h2 data-t>whyValues.title</h2>
         <p data-t>whyValues.p1</p>
         <p data-t>whyValues.p2</p>
         <p data-t>whyValues.p3</p>
