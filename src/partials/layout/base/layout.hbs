@@ -143,11 +143,33 @@
     {{/block }}
   </head>
 
-  <body>
+  <body id="pageTop">
     {{> raha/layout/base/trackPageview}}
     {{> raha/layout/base/header}}
     {{#block "body"}}
     {{/block}}
+
+    {{!-- Show join form on all pages --}}
+    <section id="joinUs">
+      <form method="post" action-xhr="https://raha.us18.list-manage.com/subscribe/post?u=df19cb2bb2149b51990f5aa31&amp;id=865d902f37" target="_top">
+        <fieldset>
+          <input class="emailInput" type="email" name="EMAIL" placeholder="ENTER YOUR EMAIL" required>
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div id="mce-responses">
+            <div class="response" id="mce-error-response"></div>
+            <div class="response" id="mce-success-response"></div>
+          </div>
+          <input class="button" type="submit" data-attr-t value-t="splashPage.join">
+        </fieldset>
+        <div submit-success>
+            Subscription successful!
+        </div>
+        {{!-- TODO This should show failure, but it gets shown even for 200 --}}
+        <div submit-error>
+            Subscribed!
+        </div>
+      </form>
+    </section>
   </body>
 </html>
 
