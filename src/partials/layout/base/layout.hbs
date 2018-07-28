@@ -13,7 +13,6 @@
       src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 
       <!-- Webfonts -->
-      <link href="/assets/fonts/Aleo-Bold-webfont.woff" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Lato:400,600" rel="stylesheet">
 
       <!-- Favicons -->
@@ -40,6 +39,13 @@
 
       <style amp-custom>
         {{#block "styles" }}
+          @font-face {
+            font-family: 'Aleo';
+            src: url('/assets/fonts/Aleo-Bold-webfont.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+          }
+
           html, body {
             font-size: 1.1rem;
             background-color: #fcfcfc;
