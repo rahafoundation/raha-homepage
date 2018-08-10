@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build-and-test:
+  build:
     docker:
       - image: circleci/node:9
     steps:
@@ -16,8 +16,8 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-      - run: yarn lint
-  build-test-and-deploy:
+      - run: yarn build
+  build-and-deploy:
     docker:
       - image: circleci/node:9
     steps:
@@ -41,10 +41,10 @@ jobs:
           command: yarn deploy
 workflows:
   version: 2
-  build-and-test:
+  build:
     jobs:
-      - build-and-test
-      - build-test-and-deploy:
+      - build
+      - build-and-deploy:
           filters:
             branches:
               only: master
