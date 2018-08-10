@@ -276,10 +276,14 @@
           // overlaps the top of the form. Since header is 80px tall, this will
           // scroll correctly.
           scrollTo({
-            // scroll a little further to avoid white line bleeding through
-            top: document
-              .querySelector('#mailingListSignUpForm')
-              .getBoundingClientRect().top - HEADER_HEIGHT + 1,
+            top:
+              // scrollTo scrolls to position relative to top of page,
+              // but getBoundingClientRect gets position relative to viewport.
+              // So, calculate page y (well, 1px further to avoid an awkward
+              // white line) by the difference from body elem and target elem.
+              (document.querySelector('#mailingListSignUpForm')
+                .getBoundingClientRect().top - HEADER_HEIGHT + 1
+              ) - document.body.getBoundingClientRect().top,
             behavior: "smooth",
           });
         })
