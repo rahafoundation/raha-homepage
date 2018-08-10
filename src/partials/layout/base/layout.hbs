@@ -253,5 +253,38 @@
       <span>Raha, 2018</span>
     </footer>
   </body>
+
+  {{!-- Polyfill for standardized smooth scrolling for browsers that don't yet
+  support it. --}}
+  {{!-- https://github.com/iamdustan/smoothscroll --}}
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.min.js"
+    async
+  ></script>
+
+  {{!-- Any element of class .mailingListFormLink will smooth scroll to the mailing
+  list element. --}}
+  <script>
+    // run in closure to prevent altering global namespace
+    (function() {
+      var mailingListLinks = document.querySelectorAll(".mailingListFormLink");
+      var HEADER_HEIGHT = 80;
+      for (var linkIdx = 0; linkIdx < mailingListLinks.length; ++linkIdx) {
+        mailingListLinks[linkIdx].addEventListener("click", function(event) {
+          event.preventDefault();
+          // would use element.scrollIntoView, but header is fixed position and
+          // overlaps the top of the form. Since header is 80px tall, this will
+          // scroll correctly.
+          scrollTo({
+            // scroll a little further to avoid white line bleeding through
+            top: document
+              .querySelector('#mailingListSignUpForm')
+              .getBoundingClientRect().top - HEADER_HEIGHT + 1,
+            behavior: "smooth",
+          });
+        })
+      }
+    })();
+  </script>
 </html>
 
