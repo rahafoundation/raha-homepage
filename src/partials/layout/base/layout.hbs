@@ -183,7 +183,7 @@
             margin: 0 auto;
           }
 
-          #joinUs {
+          #mailingListSignUpForm {
             background: linear-gradient(90deg, #5ec3e9, #96E6B3);
             padding: 40px 20px;
             display: flex;
@@ -192,20 +192,20 @@
             text-align: center;
           }
 
-          #joinUs > form {
+          #mailingListSignUpForm > form {
             max-width: 800px;
           }
 
-          #joinUs > form > *:not(:last-child) {
+          #mailingListSignUpForm > form > *:not(:last-child) {
             margin-bottom: 20px;
           }
 
-          #joinUs h3 {
+          #mailingListSignUpForm h3 {
             font-family: "Aleo";
             font-weight: 700;
           }
 
-          #joinUs label {
+          #mailingListSignUpForm label {
             font-weight: 600;
             margin-right: 15px;
           }
@@ -231,10 +231,12 @@
     {{/block}}
 
     {{!-- Show join form on all pages --}}
-    <section id="joinUs">
-      <form method="post"
-      action-xhr="https://raha.us18.list-manage.com/subscribe/post?u=df19cb2bb2149b51990f5aa31&amp;id=865d902f37"
-      target="_top">
+    <section id="mailingListSignUpForm">
+      <form
+        action="https://app.us18.list-manage.com/subscribe/post?u=df19cb2bb2149b51990f5aa31&amp;id=865d902f37"
+        method="post"
+        target="_blank"
+      >
         <h3 data-t="joinForm.title"></h3>
         <p data-t="joinForm.description"></p>
         <fieldset>
@@ -247,18 +249,10 @@
           >
         </fieldset>
         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div id="mce-responses">
-          <div class="response" id="mce-error-response"></div>
-          <div class="response" id="mce-success-response"></div>
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+          <input type="text" name="b_df19cb2bb2149b51990f5aa31_865d902f37" tabindex="-1" value="">
         </div>
         <input class="button" type="submit" data-attr-t value-t="joinForm.submit">
-        <div submit-success>
-            Subscription successful!
-        </div>
-        {{!-- TODO This should show failure, but it gets shown even for 200 --}}
-        <div submit-error>
-            Subscribed!
-        </div>
       </form>
     </section>
     <footer>
