@@ -100,7 +100,7 @@
 
     {{!-- Necessary since AMP images in flex parents receive no width:
     https://github.com/ampproject/amphtml/issues/7144 --}}
-    .infoSection > .details > amp-img {
+    .infoSection > .details > img {
       flex-basis: 50%;
     }
 
@@ -115,7 +115,7 @@
         <div class="content">
           <h2 data-t="splashPage.bannerTitle"></h2>
           <button on="tap:mailingListSignUpForm.scrollTo(duration=200)" data-t="util.signUpLong"></button>
-          <amp-img height="7" width="16" layout="responsive" src="/assets/img/toons/family.png"></amp-img>
+          <img height="7" width="16" layout="responsive" src="/assets/img/toons/family.png"></img>
         </div>
       </section>
       <section class="rahaBasicIncome infoSection">
@@ -125,14 +125,14 @@
             <p data-t="splashPage.rahaBasicIncome.description"></p>
             <a href="/why-ubi" data-t="splashPage.rahaBasicIncome.learnMore"></a>
           </div>
-          <amp-img height="4" width="5" layout="responsive" src="/assets/img/toons/coin.png"></amp-img>
+          <img height="4" width="5" layout="responsive" src="/assets/img/toons/coin.png"></img>
         </div>
         <a class="bottomLink" href="/why-ubi" data-t="splashPage.rahaBasicIncome.learnMore"></a>
       </section>
       <section class="payments infoSection">
         <h2 data-t="splashPage.payments.title"></h2>
         <div class="details">
-          <amp-img height="10" width="16" layout="responsive" src="/assets/img/toons/give.png"></amp-img>
+          <img height="10" width="16" layout="responsive" src="/assets/img/toons/give.png"></img>
           <div class="text">
             <p data-t="splashPage.payments.description"></p>
             <a href="/what-is-raha" data-t="splashPage.payments.learnMore"></a>
