@@ -14,9 +14,17 @@
 
     {{!-- global content max-width of 800px --}}
     .splashPage > .banner > .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       max-width: 800px;
       margin: 0 auto;
       padding: 0 30px;
+    }
+
+    .splashImage {
+      width: 600px;
+      max-width: 100%;
     }
 
     .splashPage > .banner > .content > *:not(:last-child) {
@@ -56,6 +64,10 @@
       align-items: center;
       justify-content: center;
       text-align: left;
+    }
+
+    .infoSection > .details > img {
+      max-width: 100%;
     }
 
     .infoSection > .details > *:not(:last-child) {
@@ -115,7 +127,7 @@
         <div class="content">
           <h2 data-t="splashPage.bannerTitle"></h2>
           <button on="tap:mailingListSignUpForm.scrollTo(duration=200)" data-t="util.signUpLong"></button>
-          <img height="7" width="16" layout="responsive" src="/assets/img/toons/family.png"></img>
+          <img class="splashImage" src="/assets/img/toons/family.png"></img>
         </div>
       </section>
       <section class="rahaBasicIncome infoSection">
@@ -125,14 +137,14 @@
             <p data-t="splashPage.rahaBasicIncome.description"></p>
             <a href="/why-ubi" data-t="splashPage.rahaBasicIncome.learnMore"></a>
           </div>
-          <img height="4" width="5" layout="responsive" src="/assets/img/toons/coin.png"></img>
+          <img src="/assets/img/toons/coin.png"></img>
         </div>
         <a class="bottomLink" href="/why-ubi" data-t="splashPage.rahaBasicIncome.learnMore"></a>
       </section>
       <section class="payments infoSection">
         <h2 data-t="splashPage.payments.title"></h2>
         <div class="details">
-          <img height="10" width="16" layout="responsive" src="/assets/img/toons/give.png"></img>
+          <img src="/assets/img/toons/give.png"></img>
           <div class="text">
             <p data-t="splashPage.payments.description"></p>
             <a href="/what-is-raha" data-t="splashPage.payments.learnMore"></a>
