@@ -2,14 +2,8 @@
 <html lang="en" amp="">
   <head>
       <meta charset="utf-8">
-      <script async src="https://cdn.ampproject.org/v0.js"></script>
-      <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-      <style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-      <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
       <title>Raha - Basic Income App</title>
-
-      <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 
       <!-- Webfonts -->
       <link href="https://fonts.googleapis.com/css?family=Lato:400,600" rel="stylesheet">
@@ -161,7 +155,7 @@
           }
 
           body > header .logoText {
-            height: 65px;
+            width: 100px;
           }
 
           body > header > .content {
@@ -173,7 +167,7 @@
             margin: 0 auto;
           }
 
-          #joinUs {
+          #mailingListSignUpForm {
             background: linear-gradient(90deg, #5ec3e9, #96E6B3);
             padding: 40px 20px;
             display: flex;
@@ -182,20 +176,20 @@
             text-align: center;
           }
 
-          #joinUs > form {
+          #mailingListSignUpForm > form {
             max-width: 800px;
           }
 
-          #joinUs > form > *:not(:last-child) {
+          #mailingListSignUpForm > form > *:not(:last-child) {
             margin-bottom: 20px;
           }
 
-          #joinUs h3 {
+          #mailingListSignUpForm h3 {
             font-family: "Aleo";
             font-weight: 700;
           }
 
-          #joinUs label {
+          #mailingListSignUpForm label {
             font-weight: 600;
             margin-right: 15px;
           }
@@ -222,9 +216,17 @@
     }
 
     .splashPage > .banner > .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       max-width: 800px;
       margin: 0 auto;
       padding: 0 30px;
+    }
+
+    .splashImage {
+      width: 600px;
+      max-width: 100%;
     }
 
     .splashPage > .banner > .content > *:not(:last-child) {
@@ -264,6 +266,10 @@
       align-items: center;
       justify-content: center;
       text-align: left;
+    }
+
+    .infoSection > .details > img {
+      max-width: 100%;
     }
 
     .infoSection > .details > *:not(:last-child) {
@@ -306,7 +312,7 @@
       }
     }
 
-    .infoSection > .details > amp-img {
+    .infoSection > .details > img {
       flex-basis: 50%;
     }
 
@@ -334,15 +340,15 @@
     </amp-analytics>
     <header>
       <div class="content">
-        <amp-img class="logoText" src="/assets/img/logo/text.svg" width="110" height="35" noloading="" layout="fixed"></amp-img>
-        <button on="tap:joinUs.scrollTo(duration=200)">Sign Up</button>
+        <img class="logoText" src="/assets/img/logo/text.svg">
+        <button class="mailingListFormLink">Sign Up</button>
       </div>
     </header>    <main class="splashPage">
       <section class="banner">
         <div class="content">
           <h2>Join us on our quest to build the economy of the future.</h2>
-          <button on="tap:joinUs.scrollTo(duration=200)">Sign Up for the Raha App</button>
-          <amp-img height="7" width="16" layout="responsive" src="/assets/img/toons/family.png"></amp-img>
+          <button class="mailingListFormLink">Sign Up for the Raha App</button>
+          <img class="splashImage" src="/assets/img/toons/family.png">
         </div>
       </section>
       <section class="rahaBasicIncome infoSection">
@@ -352,14 +358,14 @@
             <p>Snap a video to prove you're real, then start minting your basic income.</p>
             <a href="/why-ubi">Learn more about the Raha Basic Income.</a>
           </div>
-          <amp-img height="4" width="5" layout="responsive" src="/assets/img/toons/coin.png"></amp-img>
+          <img src="/assets/img/toons/coin.png">
         </div>
         <a class="bottomLink" href="/why-ubi">Learn more about the Raha Basic Income.</a>
       </section>
       <section class="payments infoSection">
         <h2>Give your friends Raha for doing great things.</h2>
         <div class="details">
-          <amp-img height="10" width="16" layout="responsive" src="/assets/img/toons/give.png"></amp-img>
+          <img src="/assets/img/toons/give.png">
           <div class="text">
             <p>Show your gratitude, and make the world better while doing it.</p>
             <a href="/what-is-raha">Learn how members give back to the community when they receive Raha.</a>
@@ -373,8 +379,8 @@
       </section>
     </main>
 
-    <section id="joinUs">
-      <form method="post" action-xhr="https://raha.us18.list-manage.com/subscribe/post?u=df19cb2bb2149b51990f5aa31&amp;id=865d902f37" target="_top">
+    <section id="mailingListSignUpForm">
+      <form action="https://app.us18.list-manage.com/subscribe/post?u=df19cb2bb2149b51990f5aa31&amp;id=865d902f37" method="post" target="_blank">
         <h3>Sign up for our mailing list</h3>
         <p>We're excited to shape the future together! The app is coming out soon. Until then, sign up to get updates about Raha.</p>
         <fieldset>
@@ -382,22 +388,44 @@
           <input id="joinForm.emailInput" class="emailInput" type="email" name="EMAIL" placeholder="you@gmail.com" required>
         </fieldset>
         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div id="mce-responses">
-          <div class="response" id="mce-error-response"></div>
-          <div class="response" id="mce-success-response"></div>
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+          <input type="text" name="b_df19cb2bb2149b51990f5aa31_865d902f37" tabindex="-1" value="">
         </div>
         <input class="button" type="submit" value="Join the movement">
-        <div submit-success="">
-            Subscription successful!
-        </div>
-        <div submit-error="">
-            Subscribed!
-        </div>
       </form>
     </section>
     <footer>
       <span>Raha, 2018</span>
     </footer>
   </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.min.js" async></script>
+
+  <script>
+    // run in closure to prevent altering global namespace
+    (function() {
+      var mailingListLinks = document.querySelectorAll(".mailingListFormLink");
+      var HEADER_HEIGHT = 80;
+      for (var linkIdx = 0; linkIdx < mailingListLinks.length; ++linkIdx) {
+        mailingListLinks[linkIdx].addEventListener("click", function(event) {
+          event.preventDefault();
+          // would use element.scrollIntoView, but header is fixed position and
+          // overlaps the top of the form. Since header is 80px tall, this will
+          // scroll correctly.
+          scrollTo({
+            top:
+              // scrollTo scrolls to position relative to top of page,
+              // but getBoundingClientRect gets position relative to viewport.
+              // So, calculate page y (well, 1px further to avoid an awkward
+              // white line) by the difference from body elem and target elem.
+              (document.querySelector('#mailingListSignUpForm')
+                .getBoundingClientRect().top - HEADER_HEIGHT + 1
+              ) - document.body.getBoundingClientRect().top,
+            behavior: "smooth",
+          });
+        })
+      }
+    })();
+  </script>
 </html>
 
