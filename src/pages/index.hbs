@@ -1,5 +1,9 @@
 {{#extend "raha/layout/base/layout"}}
   {{#content "styles" mode="append"}}
+    .splashPage {
+      width: 100%;
+    }
+
     .splashPage > section {
       display: flex;
       flex-direction: column;
@@ -66,7 +70,12 @@
       text-align: left;
     }
 
-    .infoSection > .details > img {
+    {{!-- wrapper to prevent messing with image aspect ratio in flex --}}
+    .infoSection > .details > .imgWrapper {
+      flex-basis: 50%;
+    }
+
+    .infoSection > .details > .imgWrapper > img {
       max-width: 100%;
     }
 
@@ -110,12 +119,6 @@
       }
     }
 
-    {{!-- Necessary since AMP images in flex parents receive no width:
-    https://github.com/ampproject/amphtml/issues/7144 --}}
-    .infoSection > .details > img {
-      flex-basis: 50%;
-    }
-
     .splashPage > .login {
       text-align: center;
     }
@@ -137,14 +140,14 @@
             <p data-t="splashPage.rahaBasicIncome.description"></p>
             <a href="/why-ubi" data-t="splashPage.rahaBasicIncome.learnMore"></a>
           </div>
-          <img src="/assets/img/toons/coin.png"></img>
+          <span class="imgWrapper"><img src="/assets/img/toons/coin.png"></img></span>
         </div>
         <a class="bottomLink" href="/why-ubi" data-t="splashPage.rahaBasicIncome.learnMore"></a>
       </section>
       <section class="payments infoSection">
         <h2 data-t="splashPage.payments.title"></h2>
         <div class="details">
-          <img src="/assets/img/toons/give.png"></img>
+          <span class="imgWrapper"><img src="/assets/img/toons/give.png"></img></span>
           <div class="text">
             <p data-t="splashPage.payments.description"></p>
             <a href="/what-is-raha" data-t="splashPage.payments.learnMore"></a>
