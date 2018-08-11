@@ -3,14 +3,8 @@
   <head>
     {{#block "head"}}
       <meta charset="utf-8">
-      {{> raha/layout/base/ampBoilerplate }}
 
       <title data-t="raha"></title>
-
-      {{!-- Global AMP extensions --}}
-      {{!-- amp-form: For global Join Us form. --}}
-      <script async custom-element="amp-form"
-      src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 
       <!-- Webfonts -->
       <link href="https://fonts.googleapis.com/css?family=Lato:400,600" rel="stylesheet">
@@ -170,7 +164,7 @@
           }
 
           body > header .logoText {
-            height: 65px;
+            width: 100px;
           }
 
           {{!-- global content max-width of 800px --}}
@@ -183,7 +177,7 @@
             margin: 0 auto;
           }
 
-          #joinUs {
+          #mailingListSignUpForm {
             background: linear-gradient(90deg, #5ec3e9, #96E6B3);
             padding: 40px 20px;
             display: flex;
@@ -192,20 +186,20 @@
             text-align: center;
           }
 
-          #joinUs > form {
+          #mailingListSignUpForm > form {
             max-width: 800px;
           }
 
-          #joinUs > form > *:not(:last-child) {
+          #mailingListSignUpForm > form > *:not(:last-child) {
             margin-bottom: 20px;
           }
 
-          #joinUs h3 {
+          #mailingListSignUpForm h3 {
             font-family: "Aleo";
             font-weight: 700;
           }
 
-          #joinUs label {
+          #mailingListSignUpForm label {
             font-weight: 600;
             margin-right: 15px;
           }
@@ -231,10 +225,12 @@
     {{/block}}
 
     {{!-- Show join form on all pages --}}
-    <section id="joinUs">
-      <form method="post"
-      action-xhr="https://raha.us18.list-manage.com/subscribe/post?u=df19cb2bb2149b51990f5aa31&amp;id=865d902f37"
-      target="_top">
+    <section id="mailingListSignUpForm">
+      <form
+        action="https://app.us18.list-manage.com/subscribe/post?u=df19cb2bb2149b51990f5aa31&amp;id=865d902f37"
+        method="post"
+        target="_blank"
+      >
         <h3 data-t="joinForm.title"></h3>
         <p data-t="joinForm.description"></p>
         <fieldset>
@@ -247,23 +243,52 @@
           >
         </fieldset>
         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div id="mce-responses">
-          <div class="response" id="mce-error-response"></div>
-          <div class="response" id="mce-success-response"></div>
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+          <input type="text" name="b_df19cb2bb2149b51990f5aa31_865d902f37" tabindex="-1" value="">
         </div>
         <input class="button" type="submit" data-attr-t value-t="joinForm.submit">
-        <div submit-success>
-            Subscription successful!
-        </div>
-        {{!-- TODO This should show failure, but it gets shown even for 200 --}}
-        <div submit-error>
-            Subscribed!
-        </div>
       </form>
     </section>
     <footer>
       <span>Raha, 2018</span>
     </footer>
   </body>
+
+  {{!-- Polyfill for standardized smooth scrolling for browsers that don't yet
+  support it. --}}
+  {{!-- https://github.com/iamdustan/smoothscroll --}}
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.min.js"
+    async
+  ></script>
+
+  {{!-- Any element of class .mailingListFormLink will smooth scroll to the mailing
+  list element. --}}
+  <script>
+    // run in closure to prevent altering global namespace
+    (function() {
+      var mailingListLinks = document.querySelectorAll(".mailingListFormLink");
+      var HEADER_HEIGHT = 80;
+      for (var linkIdx = 0; linkIdx < mailingListLinks.length; ++linkIdx) {
+        mailingListLinks[linkIdx].addEventListener("click", function(event) {
+          event.preventDefault();
+          // would use element.scrollIntoView, but header is fixed position and
+          // overlaps the top of the form. Since header is 80px tall, this will
+          // scroll correctly.
+          scrollTo({
+            top:
+              // scrollTo scrolls to position relative to top of page,
+              // but getBoundingClientRect gets position relative to viewport.
+              // So, calculate page y (well, 1px further to avoid an awkward
+              // white line) by the difference from body elem and target elem.
+              (document.querySelector('#mailingListSignUpForm')
+                .getBoundingClientRect().top - HEADER_HEIGHT + 1
+              ) - document.body.getBoundingClientRect().top,
+            behavior: "smooth",
+          });
+        })
+      }
+    })();
+  </script>
 </html>
 
