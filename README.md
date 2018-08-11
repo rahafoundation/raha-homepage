@@ -11,7 +11,7 @@ yarn serve
 # To deploy the site. This happens automatically on a successful merge.
 yarn deploy
 
-# To run lint
+# To run lint (just checks completeness of translations at the moment)
 yarn lint
 ```
 

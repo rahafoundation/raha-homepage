@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# do everything in a subshell
+(
+  # colors for output
+  RED='\033[0;31m'
+  GREEN='\033[0;32m'
+  BLUE='\033[0;34m'
+  DARK_GRAY='\033[1;30m'
+  NO_COLOR='\033[0m'
+
+  function getScriptLocation()
+  {
+    local source="${BASH_SOURCE[0]}"
+    while [ -h "$source" ]; do # resolve $source until the file is no longer a symlink
+      local sourceDir="$( cd -P "$( dirname "$source" )" && pwd )"
+      local source="$(readlink "$source")"
+      [[ $source != /* ]] && source="$sourceDir/$source" # if $source was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+    done
+    echo "$( cd -P "$( dirname "$source" )" && pwd )"
+  }
+
+  scriptDir=$(getScriptLocation)
+  rootDir=$(dirname "$scriptDir")
+  buildDir="$rootDir/build"
+
+  echo -e "${BLUE}Checking if all english locale strings are present in other languages.${NO_COLOR}"
+  node "$rootDir/scripts/checkLocaleKeys.js" "$rootDir/locales"
+
+  if ! [ $? -eq 0 ]; then
+    echo -e "${RED}Error: Locales are invalid, aborting${NO_COLOR}"
+    exit 1
+  fi
+
+  echo -e "${GREEN}Lint passed${NO_COLOR}"
+)
