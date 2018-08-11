@@ -16,6 +16,7 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+      - run: yarn build
       - run: yarn lint
   build-test-and-deploy:
     docker:
