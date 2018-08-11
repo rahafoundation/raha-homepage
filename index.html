@@ -5,6 +5,8 @@
 
       <title>Raha - Basic Income App</title>
 
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
       <!-- Webfonts -->
       <link href="https://fonts.googleapis.com/css?family=Lato:400,600" rel="stylesheet">
 
@@ -39,6 +41,7 @@
           html, body {
             font-size: 1.1rem;
             background-color: #fcfcfc;
+            width: 100%;
           }
 
           * {
@@ -203,6 +206,10 @@
             color: #efefef;
             text-align: center;
           }
+    .splashPage {
+      width: 100%;
+    }
+
     .splashPage > section {
       display: flex;
       flex-direction: column;
@@ -268,7 +275,11 @@
       text-align: left;
     }
 
-    .infoSection > .details > img {
+    .infoSection > .details > .imgWrapper {
+      flex-basis: 50%;
+    }
+
+    .infoSection > .details > .imgWrapper > img {
       max-width: 100%;
     }
 
@@ -310,10 +321,6 @@
       .infoSection .bottomLink {
         display: none;
       }
-    }
-
-    .infoSection > .details > img {
-      flex-basis: 50%;
     }
 
     .splashPage > .login {
@@ -358,14 +365,14 @@
             <p>Snap a video to prove you're real, then start minting your basic income.</p>
             <a href="/why-ubi">Learn more about the Raha Basic Income.</a>
           </div>
-          <img src="/assets/img/toons/coin.png">
+          <span class="imgWrapper"><img src="/assets/img/toons/coin.png"></span>
         </div>
         <a class="bottomLink" href="/why-ubi">Learn more about the Raha Basic Income.</a>
       </section>
       <section class="payments infoSection">
         <h2>Give your friends Raha for doing great things.</h2>
         <div class="details">
-          <img src="/assets/img/toons/give.png">
+          <span class="imgWrapper"><img src="/assets/img/toons/give.png"></span>
           <div class="text">
             <p>Show your gratitude, and make the world better while doing it.</p>
             <a href="/what-is-raha">Learn how members give back to the community when they receive Raha.</a>
