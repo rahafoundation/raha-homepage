@@ -32,32 +32,5 @@
     exit 1
   fi
 
-  echo -e "${DARK_GRAY}Building${NO_COLOR}"
-  yarn build
-
-  if ! [ $? -eq 0 ]; then
-    echo -e "${RED}Build failed${NO_COLOR}"
-    exit 1
-  fi
-
-  invalidHTMLExists=0
-  for htmlFile in $(find "$buildDir" -name "*.html"); do
-    echo -e "${BLUE}===========================${NO_COLOR}"
-    echo -e "${BLUE}Checking $htmlFile${NO_COLOR}"
-    echo -e "${BLUE}===========================${NO_COLOR}\n"
-
-    npx amphtml-validator $htmlFile
-
-    if ! [ $? -eq 0 ]; then
-      echo -e "\n${RED}${htmlFile} is invalid AMP HTML.${NO_COLOR}"
-      invalidHTMLExists=1
-    fi
-  done
-
-  if ! [ $invalidHTMLExists -eq 0 ]; then
-    echo -e "${RED}Invalid AMP HTML was present, aborting.${NO_COLOR}"
-    exit 1
-  fi
-
   echo -e "${GREEN}Lint passed${NO_COLOR}"
 )
