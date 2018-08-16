@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" amp="">
+<html lang="en">
   <head>
       <meta charset="utf-8">
 
@@ -170,7 +170,7 @@
             margin: 0 auto;
           }
 
-          #mailingListSignUpForm {
+          #mailingList {
             background: linear-gradient(90deg, #5ec3e9, #96E6B3);
             padding: 40px 20px;
             display: flex;
@@ -179,20 +179,20 @@
             text-align: center;
           }
 
-          #mailingListSignUpForm > form {
+          #mailingList > form {
             max-width: 800px;
           }
 
-          #mailingListSignUpForm > form > *:not(:last-child) {
+          #mailingList > form > *:not(:last-child) {
             margin-bottom: 20px;
           }
 
-          #mailingListSignUpForm h3 {
+          #mailingList h3 {
             font-family: "Aleo";
             font-weight: 700;
           }
 
-          #mailingListSignUpForm label {
+          #mailingList label {
             font-weight: 600;
             margin-right: 15px;
           }
@@ -244,7 +244,7 @@
       </article>
     </main>
 
-    <section id="mailingListSignUpForm">
+    <section id="mailingList">
       <form action="https://app.us18.list-manage.com/subscribe/post?u=df19cb2bb2149b51990f5aa31&amp;id=865d902f37" method="post" target="_blank">
         <h3>Sign up for our mailing list</h3>
         <p>We're excited to shape the future together! The app is coming out soon. Until then, sign up to get updates about Raha.</p>
@@ -283,7 +283,7 @@
               // but getBoundingClientRect gets position relative to viewport.
               // So, calculate page y (well, 1px further to avoid an awkward
               // white line) by the difference from body elem and target elem.
-              (document.querySelector('#mailingListSignUpForm')
+              (document.querySelector('#mailingList')
                 .getBoundingClientRect().top - HEADER_HEIGHT + 1
               ) - document.body.getBoundingClientRect().top,
             behavior: "smooth",
