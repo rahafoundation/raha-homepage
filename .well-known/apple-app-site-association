@@ -1,7 +1,16 @@
 {
-   "webcredentials": {
-       "apps": [
-         "VZLJ238PWZ.app.raha.mobile.ios"
-       ]
-    }
+ "webcredentials": {
+   "apps": [
+     "VZLJ238PWZ.app.raha.mobile.ios"
+   ]
+  },
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "VZLJ238PWZ.app.raha.mobile.ios",
+        "paths": ["/invite"]
+      }
+    ]
+  }
 }
