@@ -230,13 +230,15 @@
 
     {{!-- Show join form on all pages --}}
     <section id="mailingList">
+      <h3 data-t="joinForm.title"></h3>
+      <p data-t="joinForm.description"></p>
+      {{> raha/layout/base/appLinks}} 
+      
       <form
         action="https://app.us18.list-manage.com/subscribe/post?u=df19cb2bb2149b51990f5aa31&amp;id=865d902f37"
         method="post"
         target="_blank"
       >
-        <h3 data-t="joinForm.title"></h3>
-        <p data-t="joinForm.description"></p>
         <fieldset>
           <label for="joinForm.emailInput" data-t="joinForm.email">
           </label>
@@ -250,11 +252,19 @@
         <div style="position: absolute; left: -5000px;" aria-hidden="true">
           <input type="text" name="b_df19cb2bb2149b51990f5aa31_865d902f37" tabindex="-1" value="">
         </div>
-        <input class="button" type="submit" data-attr-t value-t="joinForm.submit">
+        <input class="button" type="submit" data-attr-t value-t="joinForm.emailSubmit">
       </form>
     </section>
     <footer>
-      <span>Raha, 2018</span>
+      <span>
+        Raha, 2018<br/>
+        <sub>Google Play and the Google Play logo are trademarks of Google LLC.</sub><br/>
+        <sub>
+          Apple and the Apple logo are trademarks of Apple Inc., registered in
+          the U.S. and other countries and regions. App Store is a service mark
+          of Apple Inc.
+        </sub>
+      </span>
     </footer>
   </body>
 

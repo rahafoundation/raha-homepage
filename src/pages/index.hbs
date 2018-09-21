@@ -119,7 +119,7 @@
       }
     }
 
-    .splashPage > .login {
+    .splashPage > .verifyInterest {
       text-align: center;
     }
   {{/content}}
@@ -129,7 +129,7 @@
       <section class="banner">
         <div class="content">
           <h2 data-t="splashPage.bannerTitle"></h2>
-          <button class="mailingListFormLink" data-t="util.signUpLong"></button>
+          {{> raha/layout/base/appLinks}}
           <img class="splashImage" src="/assets/img/toons/family.png"></img>
         </div>
       </section>
@@ -156,8 +156,8 @@
         <a class="bottomLink" href="/what-is-raha" data-t="splashPage.payments.learnMore"></a>
       </section>
 
-      <section class="login">
-        <a href="https://web.raha.app/login" data-t>splashPage.alreadyMember</a>
+      <section class="verifyInterest">
+        <a href="mailto:verify@raha.app" data-t>splashPage.verifyInterest</a>
       </section>
     </main>
   {{/content}}
