@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     {{#block "head"}}
+      {{> raha/layout/base/trackPageview}}
       <meta charset="utf-8">
 
       <title data-t="raha"></title>
@@ -223,7 +224,6 @@
   </head>
 
   <body id="pageTop">
-    {{> raha/layout/base/trackPageview}}
     {{> raha/layout/base/header}}
     {{#block "body"}}
     {{/block}}

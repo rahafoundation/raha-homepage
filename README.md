@@ -17,10 +17,8 @@ yarn lint
 
 ## Architecture
 
-It's a static [Google AMP](https://www.ampproject.org/) site; the AMP subset of
-HTML in the `src/` directory, written in handlebars templates and with an
-internationalization layer. This gets built into a static site with very fast
-performance.
+Written in handlebars templates and with an internationalization layer.
+This gets built into a simple static site.
 
 ### Handlebars
 
