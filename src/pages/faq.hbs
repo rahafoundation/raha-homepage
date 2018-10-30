@@ -1,0 +1,35 @@
+{{#extend "raha/layout/base/layout"}}
+  {{#content "styles" mode="append"}}
+    .faq {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  {{/content}}
+
+  {{#content "body"}}
+    <main class="faq">
+      <article>
+        <h1 id="top" data-t>faqTitle</h1>
+        
+        {{#each faq as |sectionValue sectionKey|}}
+            <h3>{{sectionKey}}</h3>
+            <ul>
+                {{#each this}}
+                    <li><a href="#{{@key}}" data-t>faq.{{sectionKey}}.{{@key}}.question</a></li>
+                {{/each}}
+            </ul>
+        {{/each}}
+
+        {{#each faq as |sectionValue sectionKey|}}
+            <h1>{{sectionKey}}</h1>
+            {{#each this}}
+                <h3 id="{{@key}}" data-t>faq.{{sectionKey}}.{{@key}}.question</h3>
+                <p data-t>faq.{{sectionKey}}.{{@key}}.answer</p> 
+                <a href="#top" style="text-decoration: none;">&#10514;</a>
+            {{/each}}
+        {{/each}}
+        
+      </article>
+    </main>
+  {{/content}}
+{{/extend }}

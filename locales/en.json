@@ -133,5 +133,29 @@
     "tbu": "The number of underlying units is limited to 10 billion, so Raha gradually redistributes wealth by encouraging optional 3% donations with every transaction and inactive account donation after 400 days of no transactions.",
     "poverty": "While a 3% transaction donation might sound small, 3% of world GDP would be over 2.3 trillion dollars a year - spread evenly, that's enough to give every person over $300 a year, which would end extreme poverty in poor countries.",
     "paymentsNetwork": "By using the Raha payments network of trusted identities, you can protect yourself from fraud and theft while supporting a more prosperous future for all."
+  },
+
+  "faqTitle": "Frequently Asked Questions",
+  "faq": {
+    "General": {
+      "q1": {
+        "question": "What is Raha?",
+        "answer": "Raha is a mobile app."
+      },
+      "q2": {
+        "question": "How is Raha?",
+        "answer": "Raha is an app."
+      }
+    },
+    "Another": {
+      "q1": {
+        "question": "What is Raha?",
+        "answer": "Raha is a mobile app. <a href=\"#top\">hello</a>"
+      },
+      "q2": {
+        "question": "How is Raha?",
+        "answer": "Raha is an app."
+      }
+    }
   }
 }
