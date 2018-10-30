@@ -138,24 +138,190 @@
   "faqTitle": "Frequently Asked Questions",
   "faq": {
     "General": {
-      "q1": {
-        "question": "What is Raha?",
-        "answer": "Raha is a mobile app."
+      "what-is-raha": {
+        "q": "What is Raha?",
+        "a": "Raha is an attempt to create an economy that every person can participate in. It currently consists of the Raha mobile app on <a href=\"https://play.google.com/store/apps/details?id=app.raha.mobile\">Android</a> or <a href=\"https://play.google.com/store/apps/details?id=app.raha.mobile\">iOS</a>, where you can mint the Raha currency for verifying that you're a real human."
       },
-      "q2": {
-        "question": "How is Raha?",
-        "answer": "Raha is an app."
+      "what-is-ubi": {
+        "q": "What is UBI / universal basic income?",
+        "a": "UBI, short for Universal Basic Income, is an idea that by giving money to everyone in the world and providing them with economic security, we can lead to greater human prosperity. <a href=\"https://www.youtube.com/watch?v=kl39KHS07Xc\">This video</a> introduces the concept well. <a href=\"https://raha.app/why-ubi\">Read more on why we're excited about it here</a>."
+      },
+      "what-is-minting": {
+        "q": "What is minting?",
+        "a": "\"Minting\" means to create currency. Usually, a government mints currency and distributes to its people. On Raha, we want individuals globally to have the ability to mint their own currency, rather than receiving it from a government, since we believe every life has value."
+      },
+      "how-do-i-mint-basic-income": {
+        "q": "How do I mint basic income?",
+        "a": "Go to the \"Wallet\" tab and press the mint button. You are able to mint 10 Raha per week. If you don't mint within 4 weeks, your basic income will stop accruing at 40 Raha."
+      },
+      "how-do-i-give-raha": {
+        "q": "How do I give Raha?",
+        "a": "Click \"Give\" on the top right and search the member's name. You can also click \"R\" from a member's profile."
+      },
+      "difference-giving-donating": {
+        "q": "What's the difference between \"giving\" and \"donating\"?        ",
+        "a": "When you \"give\", you're sending someone Raha. When you \"donate\", you're donating Raha back into the Raha basic income pool so that other people can mint Raha."
+      },
+      "why-donations": {
+        "q": "Why are there donations?",
+        "a": "Donations are a way to make Raha sustainable in the long run. On credit cards, there's often a 3% transaction fee that is usually paid by the seller that pay for the system. We want to make donations a default of the platform, but optional. <a href=\"https://raha.app/what-is-raha\">Read more here</a>."
+      },
+      "where-can-i-see-my-donations": {
+        "q": "Where can I see my donations?",
+        "a": "You can see how much you've donated over time on the \"Wallet\" tab."
+      },
+      "adjust-donations": {
+        "q": "Can I adjust my donation?",
+        "a": "Currently, every transaction has a fixed 3% donation. We'll add a way to modify this in the future."
+      },
+      "join-cost": {
+        "q": "Does it cost anything to join?",
+        "a": "No, it's free to join."
+      },
+      "send-cost": {
+        "q": "Does it cost anything to send Raha?",
+        "a": "It doesn't cost the sender anything extra, but the person who receives Raha from you will donate 3% of the received amount."
+      },
+      "what-is-trust": {
+        "q": "What does it mean to trust someone?",
+        "a": "It indicates that you know the person. This allows other members to trust that person is real more and could help the person recover a lost account. In the future, we'll add more functionality around trust levels."
+      },
+      "what-do-i-get-for-inviting": {
+        "q": "What do I get for inviting someone?",
+        "a": "You <a href=\"https://raha.app/what-is-raha/#invite-bonus\">currently receive a bonus in Raha</a> when you invite someone and verify their identity. You can mint this bonus through the \"Wallet\" tab. Make sure your friend clicks on the invite link so that you receive your referral bonus."
+      },
+      "how-do-i-invite": {
+        "q": "How do I invite someone?",
+        "a": "Click on \"Invite\" button on the header and follow the flow. Once your friend joins, you have to verify their video to complete the invite flow."
+      },
+      "how-do-i-sign-up": {
+        "q": "How do I sign up?",
+        "a": "You can sign up through the app on your <a href=\"https://play.google.com/store/apps/details?id=app.raha.mobile\">Android</a> or <a href=\"https://play.google.com/store/apps/details?id=app.raha.mobile\">iOS</a> device. To be able to use it fully, you'll need to be <a href=\"https://raha.app/why-trust\">verified by an existing member</a>."
       }
     },
-    "Another": {
-      "q1": {
-        "question": "What is Raha?",
-        "answer": "Raha is a mobile app. <a href=\"#top\">hello</a>"
+    "Accounts": {
+      "create-account": {
+        "q": "How do I create an account?",
+        "a": "You can create an account by logging in with a mobile phone number through the app."
       },
-      "q2": {
-        "question": "How is Raha?",
-        "answer": "Raha is an app."
+      "why-full-name": {
+        "q": "Why do I need to provide my full name?",
+        "a": "Raha relies on a social graph of trust to verify that every member is a unique, real human being. Everyone's full names are displayed publicly so that others can easily verify each other."
+      },
+      "why-phone-number": {
+        "q": "Why do I need to provide my phone number?",
+        "a": "While our social graph of trust is being built out, we need to keep it resilient against fake accounts. We use mobile, non-VoIP phone numbers as a signal since most people have a single mobile phone. We hope to eventually make phone numbers optional."
+      },
+      "why-video-selfie": {
+        "q": "Why do I need to take a video selfie?",
+        "a": "Video selfies are the best proof that you are a real person since it's still expensive and difficult to fake videos of people. In the future, we will use machine learning to help detect duplicate accounts."
+      },
+      "change-video": {
+        "q": "Can I change my video?",
+        "a": "The ability to change your profile video is coming soon."
+      },
+      "change-phone-number": {
+        "q": "What happens if my phone number changes?",
+        "a": "We will build a way for you to change your phone number. For now, contact us at <a href=\"mailto:help@raha.app\">help@raha.app</a>."
+      },
+      "what-is-unverified": {
+        "q": "What does it mean to be unverified?",
+        "a": "If a user is unverified, that means no existing member has verified that they are who they say they are. An unverified user is unable to mint, give, or receive Raha. If you see an unverified person you know and you checked that it's not someone pretending to be them, please verify them."
+      },
+      "how-do-i-get-verified": {
+        "q": "How do I get verified?",
+        "a": "If you have an existing friend on Raha, ask them to verify you. Otherwise, you can email <a href=\"mailto:verify@raha.app\">verify@raha.app</a> and one of us can verify you."
+      },
+      "required-to-verify": {
+        "q": "Am I required to verify my identity?",
+        "a": "In order to mint, give, or receive Raha basic income, you will need to verify your identity. You can explore parts of the app before you are verified."
+      },
+      "how-do-i-verify-someone": {
+        "q": "How do I verify someone else?",
+        "a": "You can click on an unverified user and click the \"Verify\" button on their profile. You should verify only those that you know are real human beings."
+      },
+      "duplicate-account": {
+        "q": "Can I create more than one account?",
+        "a": "No, you may only create one account. If you create duplicates, we may lock out you and the people you invited."
+      },
+      "delete-video": {
+        "q": "Can I delete my video(s)?",
+        "a": "Currently, there's no way to delete your videos."
+      },
+      "hacked-lost-account": {
+        "q": "What happens if I get hacked or lose my account?",
+        "a": "We will try to recover your account by verifying you through people you trust. Please reach out to <a href=\"mailto:help@raha.app\">help@raha.app</a>."
+      },
+      "delete-account": {
+        "q": "Can I delete my account?",
+        "a": "Please reach out to <a href=\"mailto:help@raha.app\">help@raha.app</a> if you'd like to delete your account."
       }
+    },
+    "Flagging": {
+      "what-is-flagged": {
+        "q": "What does it mean to be flagged?",
+        "a": "It means something looks suspicious or needs to be fixed on that account. For instance, if you didn't enter your full name, you can go to \"Settings > Edit Name\"."
+      },
+      "how-to-unflag": {
+        "q": "How can I get unflagged?",
+        "a": "There will be a reason included for each flag. Once you've resolved each concern, you can either ask any member to unflag you or ask us at <a href=\"mailto:help@raha.app\">help@raha.app</a>."
+      },
+      "how-to-flag": {
+        "q": "How can I flag an account?",
+        "a": "You can flag an account through the flag icon on their profile. You need to be verified by 5 people in order to flag other accounts."
+      }
+    },
+    "Community": {
+      "community-guidelines": {
+        "q": "Are there any Community Guidelines for Raha?",
+        "a": "Yes, here: <a href=\"https://web.raha.app/code-of-conduct\">Code of Conduct</a>"
+      },
+      "global-expansion": {
+        "q": "What are your plans to expand globally?",
+        "a": "We're currently building for English-speaking members. Once we find success, we will spend time localizing the app. For reaching out to communities that are more difficult to reach, we hope to partner with other trusted identity providers and organizations to sign people up."
+      }
+    },
+    "Governance": {
+      "what-is-raha-parliament": {
+        "q": "What is the Raha Parliament?",
+        "a": "We want the currency to be flexible and managed by a democratically elected government. <a href=\"https://raha.app/what-is-raha/\">Read more about the Raha Parliament here</a> and let us know what you think about this idea <a href=\"https://discuss.raha.app/c/raha\">on the forums</a>."
+      },
+      "what-is-voting": {
+        "q": "How does voting work?",
+        "a": "You will be able to vote for the Raha Parliament in the future. If you feel like you know someone else who would make a more informed decision than you, you can delegate your vote to them. <a href=\"https://raha.app/why-values/\">Read more about delegative democracy here</a>."
+      }
+    },
+    "Company": {
+      "who-works-at-raha": {
+        "q": "Who works at Raha?",
+        "a": "Right now, it's four friends from Stanford: <a href=\"https://www.linkedin.com/in/markulr/\">Mark Ulrich</a>, <a href=\"http://www.rahulgi.com/\">Rahul Gupta-Iwasaki</a>, <a href=\"https://omardiab.com/\">Omar Diab</a>, and <a href=\"https://www.linkedin.com/in/tinaroh/\">Tina Roh</a>. We also get design advice from <a href=\"https://www.linkedin.com/in/hsiungjonathan/\">Jon Hsiung</a>."
+      },
+      "is-raha-nonprofit": {
+        "q": "Is Raha a non-profit?",
+        "a": "It's currently an LLC and we're trying to make the part that governs the currency a non-profit. If you know of any lawyers who would be willing to help us, let us know at <a href=\"mailto:hi@raha.app\">hi@raha.app</a>."
+      },
+      "what-is-your-motivation": {
+        "q": "What's your motivation?",
+        "a": "We're all motivated for different reasons, but we all believe the current economic system is broken and wanted to do something about it. You can read about Tina's personal motivation <a href=\"https://medium.com/@tinaroh/why-im-working-on-raha-29800a0c31a\">here</a>, which she wrote before she quit her last job to work on Raha."
+      },
+      "how-will-you-make-money": {
+        "q": "How will you make money?",
+        "a": "We're currently building Raha on our savings. For more sustainable long-term development plan, <a href=\"https://raha.app/what-is-raha/#budget\">the Raha Parliament Budget</a> could help."
+      }
+    }
+  },
+  "Developers": {
+    "is-raha-open-source": {
+      "q": "Is Raha open source?",
+      "a": "Yes, all our code is available on <a href=\"https://github.com/rahafoundation\">GitHub</a>."
+    },
+    "can-i-develop-on-raha": {
+      "q": "Can I develop on top of Raha?",
+      "a": "This is not actually a frequently asked question, so if you have this question, let us know at <a href=\"mailto:hi@raha.app\">hi@raha.app</a> and let's try to figure out APIs that make sense. :) "
+    },
+    "what-is-your-vision": {
+      "q": "What is your vision for the Raha ecosystem?",
+      "a": "We want the Raha currency to be managed by a democratically elected Raha Parliament in a non-profit and an ecosystem of apps that help the currency sustain value. This is all to create an economy that everyone in the world can participate in."
     }
   }
 }
