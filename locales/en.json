@@ -65,11 +65,11 @@
     },
     "parliament": {
       "title": "Raha Parliament",
-      "text1": "The Raha Network will evolve over time, based on the decisions of the member-elected Raha Parliament. The Raha Parliament has three primary responsibilities: changing network parameters, and approving budgets.",
-      "resp1": "Future: designing the future of Raha, including approving feature development and changing network parameters.",
-      "resp2": "Budget: approve which individuals and organization have the right to mint Raha.",
-      "resp3": "Judicial: dispute resolution in cases of fraud, fake accounts, money laundering, or harrassment.",
-      "text2": "For instance, if all <a href=\"/economy/#tbu\">TBUs</a> are in circulation, then no one could mint their own basic income, so the Raha Parliament will likely have to. The good news is that because of Metcalfe’s Law, more members means a much more valuable network. Even as the basic income decreases in amount, it will likely increase in market value.",
+      "text1": "The Raha Network will evolve over time, based on the decisions of the member-elected Raha Parliament. The Raha Parliament exists to serve all Raha members, and its responsibilities include:",
+      "resp1": "Future - Create a brighter future for Raha members by approving feature development and changing network parameters based on our <a href=\"#core\">core values</a>.",
+      "resp2": "Judicial - Dispute resolution in cases of fraud, fake accounts, money laundering, or harassment.",
+      "resp3": "Budget - Approve which individuals and organizations have the right to mint Raha from the 20% pool for helping with the development of Raha or global equality and sustainability.",
+      "text2": "For instance, if all <a href=\"#tbu\">TBUs</a> are in circulation, then no one could mint their own basic income, so the Raha Parliament will likely have to gradually decrease the mint rate as the number of members increase.",
       "text3": "The Raha Parliament will be elected by members of Raha, but the voting system and mechanisms are still under consideration.",
       "participate": "Help design the Raha voting system."
     },
