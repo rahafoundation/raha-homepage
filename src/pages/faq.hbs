@@ -5,10 +5,11 @@
       margin-bottom: 30px;
     }
 
-    .linkBuffer:before {
-      height: 80px;
+    .anchorOffset {
       display: block;
-      content: '';
+      position: relative;
+      top: -80px;
+      visibility: hidden;
     }
     
     .bareLink {
@@ -19,7 +20,7 @@
   {{#content "body"}}
     <main class="faq">
       <article>
-        <h1 id="top" data-t>faqTitle</h1>
+        <h1 class="anchorOffset" id="top" data-t>faqTitle</h1>
         
         {{#each faq as |sectionValue sectionKey|}}
             <h3>{{sectionKey}}</h3>
@@ -33,7 +34,8 @@
         {{#each faq as |sectionValue sectionKey|}}
             <h1>{{sectionKey}}</h1>
             {{#each this}}
-                <h3 id="{{@key}}" class="linkBuffer" data-t>faq.{{sectionKey}}.{{@key}}.q</h3>
+                <a id="{{@key}}" href="#" class="anchorOffset"></a>
+                <h3 data-t>faq.{{sectionKey}}.{{@key}}.q</h3>
                 <p data-t>faq.{{sectionKey}}.{{@key}}.a</p> 
                 <a href="#top" class="bareLink">&#10514;</a>
             {{/each}}
