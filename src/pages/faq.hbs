@@ -22,21 +22,22 @@
       <article>
         <h1 class="anchorOffset" id="top" data-t>faqTitle</h1>
         
-        {{#each faq as |sectionValue sectionKey|}}
-            <h3>{{sectionKey}}</h3>
+        {{#each faqQuestions as |sectionValue sectionKey|}}
+            <h3 data-t>faqSectionTitles.{{sectionKey}}</h3>
             <ul>
                 {{#each this}}
-                    <li><a href="#{{@key}}" class="bareLink" data-t>faq.{{sectionKey}}.{{@key}}.q</a></li>
+                    <li><a href="#{{@key}}" class="bareLink" data-t>faqQuestions.{{sectionKey}}.{{@key}}.q</a></li>
                 {{/each}}
             </ul>
         {{/each}}
 
-        {{#each faq as |sectionValue sectionKey|}}
-            <h1>{{sectionKey}}</h1>
+        {{#each faqQuestions as |sectionValue sectionKey|}}
+            <h1 data-t>faqSectionTitles.{{sectionKey}}</h1>
             {{#each this}}
                 <a id="{{@key}}" href="#" class="anchorOffset"></a>
-                <h3 data-t>faq.{{sectionKey}}.{{@key}}.q</h3>
-                <p data-t>faq.{{sectionKey}}.{{@key}}.a</p> 
+                <h3 data-t>faqQuestions.{{sectionKey}}.{{@key}}.q</h3>
+                <p data-t>faqQuestions.{{sectionKey}}.{{@key}}.a</p> 
+                {{!-- arrow to bar icon --}}
                 <a href="#top" class="bareLink">&#10514;</a>
             {{/each}}
         {{/each}}

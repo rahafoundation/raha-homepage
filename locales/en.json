@@ -136,8 +136,16 @@
   },
 
   "faqTitle": "Frequently Asked Questions",
-  "faq": {
-    "General": {
+  "faqSectionTitles": {
+    "general": "General",
+    "accounts": "Accounts",
+    "flagging": "Flagging",
+    "community": "Community",
+    "governance": "Governance",
+    "company": "Company"
+  },
+  "faqQuestions": {
+    "general": {
       "what-is-raha": {
         "q": "What is Raha?",
         "a": "Raha is an attempt to create an economy that every person can participate in. It currently consists of the Raha mobile app on <a href=\"https://play.google.com/store/apps/details?id=app.raha.mobile\">Android</a> or <a href=\"https://play.google.com/store/apps/details?id=app.raha.mobile\">iOS</a>, where you can mint the Raha currency for verifying that you're a real human."
@@ -199,7 +207,7 @@
         "a": "You can sign up through the app on your <a href=\"https://play.google.com/store/apps/details?id=app.raha.mobile\">Android</a> or <a href=\"https://play.google.com/store/apps/details?id=app.raha.mobile\">iOS</a> device. To be able to use it fully, you'll need to be <a href=\"https://raha.app/why-trust\">verified by an existing member</a>."
       }
     },
-    "Accounts": {
+    "accounts": {
       "create-account": {
         "q": "How do I create an account?",
         "a": "You can create an account by logging in with a mobile phone number through the app."
@@ -257,7 +265,7 @@
         "a": "Please reach out to <a href=\"mailto:help@raha.app\">help@raha.app</a> if you'd like to delete your account."
       }
     },
-    "Flagging": {
+    "flagging": {
       "what-is-flagged": {
         "q": "What does it mean to be flagged?",
         "a": "It means something looks suspicious or needs to be fixed on that account. For instance, if you didn't enter your full name, you can go to \"Settings > Edit Name\"."
@@ -271,7 +279,7 @@
         "a": "You can flag an account through the flag icon on their profile. You need to be verified by 5 people in order to flag other accounts."
       }
     },
-    "Community": {
+    "community": {
       "community-guidelines": {
         "q": "Are there any Community Guidelines for Raha?",
         "a": "Yes, here: <a href=\"https://web.raha.app/code-of-conduct\">Code of Conduct</a>"
@@ -281,7 +289,7 @@
         "a": "We're currently building for English-speaking members. Once we find success, we will spend time localizing the app. For reaching out to communities that are more difficult to reach, we hope to partner with other trusted identity providers and organizations to sign people up."
       }
     },
-    "Governance": {
+    "governance": {
       "what-is-raha-parliament": {
         "q": "What is the Raha Parliament?",
         "a": "We want the currency to be flexible and managed by a democratically elected government. <a href=\"https://raha.app/what-is-raha/\">Read more about the Raha Parliament here</a> and let us know what you think about this idea <a href=\"https://discuss.raha.app/c/raha\">on the forums</a>."
@@ -291,7 +299,7 @@
         "a": "You will be able to vote for the Raha Parliament in the future. If you feel like you know someone else who would make a more informed decision than you, you can delegate your vote to them. <a href=\"https://raha.app/why-values/\">Read more about delegative democracy here</a>."
       }
     },
-    "Company": {
+    "company": {
       "who-works-at-raha": {
         "q": "Who works at Raha?",
         "a": "Right now, it's four friends from Stanford: <a href=\"https://www.linkedin.com/in/markulr/\">Mark Ulrich</a>, <a href=\"http://www.rahulgi.com/\">Rahul Gupta-Iwasaki</a>, <a href=\"https://omardiab.com/\">Omar Diab</a>, and <a href=\"https://www.linkedin.com/in/tinaroh/\">Tina Roh</a>. We also get design advice from <a href=\"https://www.linkedin.com/in/hsiungjonathan/\">Jon Hsiung</a>."
@@ -306,11 +314,11 @@
       },
       "how-will-you-make-money": {
         "q": "How will you make money?",
-        "a": "We're currently building Raha on our savings. For more sustainable long-term development plan, <a href=\"https://raha.app/what-is-raha/#budget\">the Raha Parliament Budget</a> could help."
+        "a": "To sustain Raha, <a href=\"https://raha.app/what-is-raha/#budget\">the Raha Parliament Budget</a> could help."
       }
     }
   },
-  "Developers": {
+  "developers": {
     "is-raha-open-source": {
       "q": "Is Raha open source?",
       "a": "Yes, all our code is available on <a href=\"https://github.com/rahafoundation\">GitHub</a>."
