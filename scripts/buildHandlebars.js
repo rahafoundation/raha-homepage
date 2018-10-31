@@ -81,9 +81,15 @@ async function compileTemplates(localesDir, outputDir) {
 
       console.log(fileName, pathWithoutExtension, uri);
 
+      // Read the JSON so that we can iterate over keys
+      const baseJson = JSON.parse(
+        await readFileAsync(`${localesDir}/en.json`, "utf8")
+      );
       return {
         uri,
-        html: compiler.compile(await readFileAsync(templateFile, "utf8"))()
+        html: compiler.compile(await readFileAsync(templateFile, "utf8"))(
+          baseJson
+        )
       };
     })
   );
