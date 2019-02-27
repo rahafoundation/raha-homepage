@@ -41,7 +41,7 @@
     },
     "inactive": {
       "title": "Inactivity Donations",
-      "text": "If you do not issue any transactions for 400 days, your account will be marked as inactive. Until you send another transaction or your account balance runs out, 1% of your balance when your account became inactive will automatically be donated back the basic income fund."
+      "text": "If you do not issue any transactions for 400 days, your account will be flagged as inactive. If another 100 days passes without resolving the flag and creating a transaction, then your account will be permanently deleted and all of your Raha donated to the basic income pool."
     },
     "transactions": {
       "title": "Transaction Donations",
