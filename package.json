@@ -8,7 +8,7 @@
   "devDependencies": {
     "colors": "^1.2.1",
     "concurrently": "^3.5.1",
-    "gh-pages": "^1.1.0",
+    "gh-pages": "^2.0.1",
     "glob": "^7.1.2",
     "glob-promise": "^3.4.0",
     "handlebars": "^4.0.11",
