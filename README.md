@@ -1,3 +1,7 @@
+# DEPRECATED
+
+This repo is inactive and not being monitored for security and functionality updates.
+
 # raha-homepage
 
 [The public website of the Raha Foundation.](https://raha.app)
